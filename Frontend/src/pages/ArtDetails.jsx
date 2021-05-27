@@ -33,7 +33,7 @@ const mapStateToProps = (state) =>{
         // art: state.artModule.selectedArt,
         art:{
             "_id": "a101",
-            "title": "The Sky",
+            "title": "The Sky runner",
             "price": 120,
             "imgUrl": "/img/img1.jpg",
             "material": "Canvas",
