@@ -1,5 +1,3 @@
-
-
 export const storageService = {
     query,
     get,
@@ -12,7 +10,7 @@ function query(entityType) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     return Promise.resolve(entities)
 }
-
+//await
 
 function get(entityType, entityId) {
     return query(entityType)
@@ -27,8 +25,6 @@ function post(entityType, newEntity) {
             return newEntity
         })
 }
-
-
 
 function put(entityType, updatedEntity) {
     return query(entityType)
