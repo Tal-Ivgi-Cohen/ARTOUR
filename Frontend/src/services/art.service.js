@@ -1,13 +1,10 @@
-import React from 'react'
+import { storageService } from './asyncStorageService.js'
 
+export const toyService = {
+    getById, 
+}
 
-export class service extends React.Component {
-
-    render() {
-        return (
-           
-                <h1>Logo</h1>
-
-        )
-    }
+function getById(artId) {
+    console.log(' get art service fromt',artId);
+    return storageService.get('art', artId)
 }

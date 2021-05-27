@@ -5,12 +5,14 @@ import {App} from './App.jsx';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { store } from './store/store'
+import { store } from './store/store.js'
 
 
 ReactDOM.render(
   <React.StrictMode>
+  <Provider store={store}>
     <App />
+  </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

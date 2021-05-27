@@ -1,13 +1,13 @@
-import React from 'react'
+import { artService } from '../../services/art.service.js'
 
 
-export class ArtAdd extends React.Component {
-
-    render() {
-        return (
-           
-                <h1>Logo</h1>
-
-        )
+export function selectedArt(artId) { 
+    return  async dispatch => {
+       try{
+        await artService.getById(artId)
+        dispatch({ type: 'SELECTED_ART', artId })
+        } catch (err) {
+       console.log('Art Actions: err in selected Art', err)
+       }
     }
 }
