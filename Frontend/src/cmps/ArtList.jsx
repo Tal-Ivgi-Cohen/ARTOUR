@@ -1,13 +1,12 @@
-import React from 'react'
+import { ArtPreview } from './ArtPreview.jsx'
 
+export function ArtList({ arts}) {
 
-export class ArtList extends React.Component {
-
-    render() {
-        return (
-           
-                <h1>Logo</h1>
-
-        )
-    }
+    return (
+        <section className="art-list">
+            {arts.map(art => <ArtPreview art={art} key={art._id}  />)}
+        </section>
+    )
 }
+
+

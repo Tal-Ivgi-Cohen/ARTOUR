@@ -1,13 +1,14 @@
-import React from 'react'
+const { Link } = ReactRouterDOM
 
+export function ArtPreview({ art}) {
 
-export class ArtPreview extends React.Component {
-
-    render() {
-        return (
-           
-                <h1>Logo</h1>
-
-        )
-    }
+    return (
+        <article className="art-preview">
+        <img src={art.imgUrl} alt="" />
+        <p>{`Title: $${art.title}`}</p>
+        <p>{`Artist: $${art.artist}`}</p>
+        <p>{`Price: $${art.price}`}</p>
+        <Link to={`/art/:artId`}> Details</Link>
+    </article>
+    )
 }
