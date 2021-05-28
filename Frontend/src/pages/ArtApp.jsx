@@ -10,13 +10,14 @@ class _ArtApp extends React.Component {
         this.props.loadArts()
     }
     render() {
-        const { arts } = this.props
+        // const { arts } = this.props
         return (
             <div className="art-container">
+            <h1>ArtApp</h1>
 
-                <section className="container art-app">
-                    <ArtList arts={arts} />
-                </section>
+            <section className="container art-app">
+            <ArtList arts={arts} />
+            </section>
             </div>
         )
     }
@@ -24,7 +25,7 @@ class _ArtApp extends React.Component {
 
 function mapStateToProps({ artModule }) {
     return {
-        arts: artModule.arts,
+        // arts: artModule.arts,
     }
 }
 
