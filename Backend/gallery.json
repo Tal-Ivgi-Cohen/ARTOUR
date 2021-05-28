@@ -27,7 +27,12 @@
     {
       "_id": "a101",
       "title": "The Sky",
+      "description":"lorem...",
       "price": 120,
+      "size":{
+        "height":10,
+        "width":10
+      },
       "imgUrl": "/img/img1.jpg",
       "material": "Canvas",
       "technique": "Oil",

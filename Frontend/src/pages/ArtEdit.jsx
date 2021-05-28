@@ -1,47 +1,35 @@
 import React from 'react';
-import { TextField } from '@material-ui/core';
+import { ArtForm } from '../cmps/ArtForm';
+import { connect } from 'react-redux';
+import { selectedArt } from '../store/art/art.action.js';
 
-export class ArtEdit extends React.Component {
-  state = {
-    emptySizeObj: {
-      height: null,
-      width: null,
-    },
-    sizes: [this.state.emptySizeObj],
-  };
+class _ArtEdit extends React.Component {
+  state = { art: null };
+
   componentDidMount() {
-      console.log('Yaron buzzzzzzz')
+    this.loadSelectedArt();
   }
-  
 
-  addSizeRow = () => {
-    const updatedSizes = [...this.state.sizes];
-    this.setState({ sizes: updatedSizes });
-    updatedSizes.push(this.state.emptySizeObj);
-  };
-
+  loadSelectedArt() {
+    const id = this.props.match.params.artId;
+    const art = this.props.selectedArt(id);
+    this.setState({ art: art });
+  }
   render() {
-    const { sizes } = this.state;
-    return (
-      <form>
-        <TextField label='Title' variant='outlined' />
-        <TextField label='Description' variant='outlined' />
-        <TextField label='Category' variant='outlined' />
-        <TextField label='Technique' variant='outlined' />
-        <TextField label='Style' variant='outlined' />
-        <TextField label='Color' variant='outlined' />
-        <section className='art-size'>
-          <ul>
-            {sizes.map((size, idx) => (
-              <li key={idx}>
-                <input placeholder='Height' /> <input placeholder='Width' />
-              </li>
-            ))}
-            <li onClick={this.addSizeRow}> + </li>
-          </ul>
-        </section>
-        <TextField label='Price' variant='outlined' />
-      </form>
-    );
+    const { art } = this.props;
+    console.log(art);
+    return <ArtForm art={art} />;
   }
 }
+
+function mapStateToProps({ artModule }) {
+  return {
+    art: artModule.selectedArt,
+  };
+}
+
+const mapDispatchToProps = {
+  selectedArt,
+};
+
+export const ArtEdit = connect(mapStateToProps, mapDispatchToProps)(_ArtEdit);
