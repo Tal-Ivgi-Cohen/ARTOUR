@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import {App} from './App.jsx';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import './index.css';
+import './index.scss';
+import './styles/styles.scss';
+
 import reportWebVitals from './reportWebVitals';
 import { store } from './store/store.js'
 

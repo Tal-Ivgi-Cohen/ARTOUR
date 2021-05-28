@@ -3,6 +3,11 @@ import { routes } from './routes.js'
 import { Header} from './cmps/Header.jsx'
 import { Footer} from './cmps/Footer.jsx'
 
+import './App.scss';
+import './styles/styles.scss'
+
+
+
 
  export function App() {
   return (

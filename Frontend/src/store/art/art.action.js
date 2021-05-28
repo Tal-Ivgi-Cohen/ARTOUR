@@ -12,7 +12,6 @@ export function loadArts() {
         }
     }
 }
-
 export function removeArt(artId) {
     return async dispatch => {
         try {
@@ -23,7 +22,6 @@ export function removeArt(artId) {
         }
     }
 }
-
 export function saveArt(art) {
     return async dispatch => {
         try {
@@ -39,14 +37,13 @@ export function saveArt(art) {
 
     }
 }
-
-    export function selectedArt(artId) {
+export function selectedArt(artId) {
         return async dispatch => {
             try {
-                await artService.getById(artId)
-                dispatch({ type: 'SELECTED_ART', artId })
+                const art = await artService.getById(artId)
+                dispatch({ type: 'SELECTED_ART', art })
             } catch (err) {
                 console.log('Art Actions: err in selected Art', err)
             }
         }
-    }
+}

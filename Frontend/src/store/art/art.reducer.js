@@ -18,5 +18,4 @@ export function artReducer(state = initialState, action = {}) {
         default:
             return state
     }
-
 }
