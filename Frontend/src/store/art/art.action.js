@@ -16,8 +16,8 @@ export function loadArts() {
 export function selectedArt(artId) { 
     return  async dispatch => {
        try{
-        await artService.getById(artId)
-        dispatch({ type: 'SELECTED_ART', artId })
+        const art = await artService.getById(artId)
+        dispatch({ type: 'SELECTED_ART', art })
         } catch (err) {
        console.log('Art Actions: err in selected Art', err)
        }
