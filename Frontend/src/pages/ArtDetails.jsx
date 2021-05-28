@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 // test url : 
 // http://localhost:3000/#/art/a101
@@ -23,6 +24,7 @@ export class _ArtDetails extends React.Component {
                 <p>technique: {this.props.art.technique}</p>
                 <p>style: {this.props.art.style}</p>
                 <p>Price: {this.props.art.price}</p>
+                <Link to={`/art/edit/${this.props.art._id}`}> Edit </Link>
                 <div>Reviews cmp</div>
             </div>
         )
