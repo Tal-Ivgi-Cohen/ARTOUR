@@ -14,7 +14,7 @@ function query() {
     return storageService.query(STORAGE_KEY)
 }
 function getById(artId) {
-    console.log(' get art service fromt',artId);
+    console.log(' get art service from',artId);
     return storageService.get('art', artId)
 }
 function remove(artId) {
