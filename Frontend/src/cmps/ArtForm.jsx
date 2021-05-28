@@ -1,25 +1,24 @@
 import React from 'react';
-import { TextField, MenuItem } from '@material-ui/core';
+import { TextField, MenuItem, Button } from '@material-ui/core';
 
 export class ArtForm extends React.Component {
   state = {
+    isEditMode: this.props.art ? true : false,
     title: this.props.art ? this.props.art.title : '',
-    description: '',
-    category: '',
-    technique: '',
-    style: '',
-    color: '',
-    size: {
-      height: 0,
-      width: 0,
-    },
-    price: 0,
-  };
-
-  handleChange = ({ target }) => {
-    const field = target.name;
-    const value = target.type === 'number' ? +target.value : target.value;
-    this.setState({ [field]: value });
+    description: this.props.art ? this.props.art.description : '',
+    category: this.props.art ? this.props.art.category : 'Painting',
+    material: this.props.art ? this.props.art.material : 'Canvas',
+    technique: this.props.art ? this.props.art.technique : 'Oil',
+    style: this.props.art ? this.props.art.style : 'Abstract',
+    color: this.props.art ? this.props.art.color : 'Black',
+    size: this.props.art
+      ? this.props.art.size
+      : {
+          height: 0,
+          width: 0,
+        },
+    price: this.props.art ? this.props.art.price : 0,
+    imgUrl: this.props.art ? this.props.art.imgUrl : null,
   };
 
   selectOptions = {
@@ -49,6 +48,27 @@ export class ArtForm extends React.Component {
       'Purple',
       'Brown',
     ],
+    material: ['Canvas', 'Wood', 'Paper', 'Other'],
+  };
+
+  handleChange = ({ target }) => {
+    const field = target.name;
+    const value = target.type === 'number' ? +target.value : target.value;
+    this.setState({ [field]: value });
+  };
+
+  handleSubmit = () => {
+    console.log('Submit clicked');
+    // check if edit or add by this.state.isEditMode
+    // if edit => const artData = editable details from state && uneditable details from props
+    // if add => const artData = new details from state && artist from user && empty arr for reviews
+    // call action saveArt with artData
+    // go to details route with the same art id
+  };
+
+  handleImgUpload = () => {
+    //get img (file)
+    // update the state with correct imgURL 
   };
 
   render() {
@@ -61,9 +81,11 @@ export class ArtForm extends React.Component {
       color,
       size,
       price,
+      material,
+      imgUrl,
     } = this.state;
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <TextField
           required
           value={title}
@@ -92,6 +114,21 @@ export class ArtForm extends React.Component {
         >
           {this.selectOptions.category.map((item, idx) => (
             <MenuItem key={`c${idx}`} value={item}>
+              {item}
+            </MenuItem>
+          ))}
+        </TextField>
+        <TextField
+          required
+          value={material}
+          name='material'
+          select
+          label='Material'
+          variant='outlined'
+          onChange={this.handleChange}
+        >
+          {this.selectOptions.material.map((item, idx) => (
+            <MenuItem key={`m${idx}`} value={item}>
               {item}
             </MenuItem>
           ))}
@@ -162,6 +199,7 @@ export class ArtForm extends React.Component {
             variant='outlined'
             onChange={this.handleChange}
           />
+          <span>cm</span>
         </section>
         <TextField
           value={price}
@@ -173,6 +211,17 @@ export class ArtForm extends React.Component {
           variant='outlined'
           onChange={this.handleChange}
         />
+        <section>
+          {imgUrl ? (
+            <img src={imgUrl} alt='' />
+          ) : (
+            <div className='empty-img'>Upload an Image</div>
+          )}
+          <Button>Upload</Button>
+        </section>
+        <Button variant='outlined' type='submit'>
+          Submit
+        </Button>
       </form>
     );
   }
