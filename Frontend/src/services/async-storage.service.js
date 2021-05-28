@@ -5,17 +5,45 @@ export const storageService = {
     put,
     remove,
 }
+const gData=[
+    {
+      "_id": "a101",
+      "title": "The Sky",
+      "price": 120,
+      "imgUrl": "/img/img1.jpg",
+      "material": "Canvas",
+      "technique": "Oil",
+      "category": "Photograph",
+      "style": "abstract",
+      "color": "red",
+      "artist": {
+        "id": "_u101",
+        "fullname": "Tair Bitan",
+        "imgUrl": "/img/img2.jpg"
+      },
+    }
+]
 
-function query(entityType) {
+//READ LIST
+function query(entityType, delay = 600) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
-    return Promise.resolve(entities)
+    if (!entities || !entities.length){
+        entities = gData
+    }
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            // reject('OOOOPs')
+            resolve(entities)
+        }, delay)   
+    })
+    // return Promise.resolve(entities)
 }
-//await
-
+//DETAILS FIND ONE BY ID
 function get(entityType, entityId) {
     return query(entityType)
         .then(entities => entities.find(entity => entity._id === entityId))
 }
+//ADD
 function post(entityType, newEntity) {
     newEntity._id = _makeId()
     return query(entityType)
@@ -25,7 +53,7 @@ function post(entityType, newEntity) {
             return newEntity
         })
 }
-
+//UPDATE
 function put(entityType, updatedEntity) {
     return query(entityType)
         .then(entities => {
@@ -35,7 +63,7 @@ function put(entityType, updatedEntity) {
             return updatedEntity
         })
 }
-
+//DELETE
 function remove(entityType, entityId) {
     return query(entityType)
         .then(entities => {
@@ -44,12 +72,11 @@ function remove(entityType, entityId) {
             _save(entityType, entities)
         })
 }
-
-
+//SAVE TO STORAGE
 function _save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
-
+//UTIL-MAKE-ID
 function _makeId(length = 5) {
     var text = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'

@@ -1,10 +1,12 @@
-const { connect } = ReactRedux
+import { connect } from 'react-redux'
+import  React  from 'react'
 import { ArtList } from '../cmps/ArtList.jsx'
 import { loadArts} from '../store/art/art.action.js'
 
 class _ArtApp extends React.Component {
 
     componentDidMount() {
+        console.log('Hiiiiiiiiiii')
         this.props.loadArts()
     }
     render() {
@@ -28,7 +30,6 @@ function mapStateToProps({ artModule }) {
 
 const mapDispatchToProps = {
     loadArts,
-
 }
 
 export const ArtApp = connect(mapStateToProps, mapDispatchToProps)(_ArtApp)
