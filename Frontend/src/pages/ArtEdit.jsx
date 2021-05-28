@@ -9,11 +9,15 @@ export class ArtEdit extends React.Component {
     },
     sizes: [this.state.emptySizeObj],
   };
+  componentDidMount() {
+      console.log('Yaron buzzzzzzz')
+  }
+  
 
   addSizeRow = () => {
     const updatedSizes = [...this.state.sizes];
-    updatedSizes.push(this.state.emptySizeObj);
     this.setState({ sizes: updatedSizes });
+    updatedSizes.push(this.state.emptySizeObj);
   };
 
   render() {
