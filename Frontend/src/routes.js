@@ -1,8 +1,8 @@
-import { Home } from './pages/Home.jsx'
-import { About } from './pages/About.jsx'
-import { ArtApp } from './pages/ArtApp.jsx'
-import { ArtEdit } from './pages/ArtEdit.jsx'
-import { ArtDetails } from './pages/ArtDetails.jsx'
+import { Home } from './pages/Home.jsx';
+import { About } from './pages/About.jsx';
+import { ArtApp } from './pages/ArtApp.jsx';
+import { ArtEdit } from './pages/ArtEdit.jsx';
+import { ArtDetails } from './pages/ArtDetails.jsx';
 
 
 export const routes = [
@@ -20,7 +20,7 @@ export const routes = [
     },
     {
         path: '/art/edit/:artId',
-        component:ArtEdit,
+        component: ArtEdit,
     },
     {
         path: '/art/edit',
@@ -30,4 +30,4 @@ export const routes = [
         path: '/about',
         component: About,
     }
-]
+];

@@ -2,23 +2,19 @@ import React from 'react';
 import { ArtForm } from '../cmps/ArtForm';
 import { connect } from 'react-redux';
 import { selectedArt } from '../store/art/art.action.js';
+import {Loader} from '../cmps/Loader';
 
 class _ArtEdit extends React.Component {
-  state = { art: null };
-
   componentDidMount() {
-    this.loadSelectedArt();
+    const { artId } = this.props.match.params;
+    this.props.selectedArt(artId);
   }
 
-  loadSelectedArt() {
-    const id = this.props.match.params.artId;
-    const art = this.props.selectedArt(id);
-    this.setState({ art: art });
-  }
   render() {
     const { art } = this.props;
     console.log(art);
-    return <ArtForm art={art} />;
+    return ( art? 
+    <ArtForm art={art} />: <Loader/>)
   }
 }
 
