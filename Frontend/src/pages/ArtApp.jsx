@@ -12,8 +12,6 @@ class _ArtApp extends React.Component {
         const { arts } = this.props
         return (
             <div className="art-container">
-                <h1>ArtApp</h1>
-
                 <section className="container art-app">
                     <ArtList arts={arts} />
                 </section>
