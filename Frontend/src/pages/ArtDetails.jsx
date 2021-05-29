@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setArt } from '../store/art/art.action.js';
+import { setArt,removeArt } from '../store/art/art.action.js';
 import { Loader } from '../cmps/Loader.jsx';
 
 // test url :
@@ -41,6 +41,11 @@ class _ArtDetails extends React.Component {
             <p>technique: {selectedArt.technique}</p>
             <p>style: {selectedArt.style}</p>
             <p>Price: {selectedArt.price}</p>
+            <button>Purchase</button>
+            <button className="btn-remove" onClick={()=>{
+                this.props.removeArt(this.props.art._id)
+                this.props.history.push('/art')
+                }}>Delete</button>
           </div>
         )}
       </div>
@@ -55,6 +60,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   setArt,
+  removeArt
 };
 export const ArtDetails = connect(
   mapStateToProps,

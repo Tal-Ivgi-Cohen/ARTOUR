@@ -12,6 +12,7 @@ export function loadArts() {
         }
     };
 }
+//REMOVE/DELETE
 export function removeArt(artId) {
     return async dispatch => {
         try {

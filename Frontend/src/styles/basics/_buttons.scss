@@ -1,0 +1,28 @@
+button{
+    // border:none;
+    border: solid 1px  $clr2;
+    color: $clr2;
+    background-color:inherit;
+    margin-bottom: .5rem;
+    margin: 0px 8px 8px 0px;
+    font-style: italic;
+    &:hover{
+        color:$clr4;
+    }
+}
+
+// .btn-remove{
+// background-color:$clr3;
+// }
+
+// .btns-locations{
+//     max-width: 300px;
+//     margin-bottom: .625rem;
+// }
+// .btns-dashboard{
+//     max-width: 480px;
+//     margin-bottom: .625rem;
+// }
+// .select, .checkbox{
+// margin-left: 1.25rem;
+// }

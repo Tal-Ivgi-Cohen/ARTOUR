@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $clr1;
+    color: #fff;
+}
+
+html {
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+    font-style: italic;
+    // font-size: rem(18px);
+    color: $clr6;
+    line-height: 1.6;
+}
+
+body {
+    margin: 0;
+    background-color: $clr6;
+    color: $clr2;
+}
+
+img {
+    width: 80%;
+    height: 80%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: caveat, sans-serif;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0 0 0.6em;
+}
+
+h1 {
+    font-size: rem(35px);
+}
+a{
+    color: $clr2;
+    text-decoration: none;
+}
+a:hover{
+    color: $clr3;
+}
+input, select, a, button{
+    cursor: pointer;
+}
+button{
+  background-color: $clr1;
+  padding: .5rem;
+}
+// .locName{
+// color:$clr1;
+// border-radius: 2px;
+// }
+p{
+    margin: 0;
+}
