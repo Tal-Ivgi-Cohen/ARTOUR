@@ -1,25 +1,46 @@
 import React from 'react';
 import { TextField, MenuItem, Button } from '@material-ui/core';
+import { ImgUploadPreview } from './ImgUploadPreview';
+import { Loader } from './Loader';
 
 export class ArtForm extends React.Component {
   state = {
-    isEditMode: this.props.art ? true : false,
-    title: this.props.art ? this.props.art.title : '',
-    description: this.props.art ? this.props.art.description : '',
-    category: this.props.art ? this.props.art.category : 'Painting',
-    material: this.props.art ? this.props.art.material : 'Canvas',
-    technique: this.props.art ? this.props.art.technique : 'Oil',
-    style: this.props.art ? this.props.art.style : 'Abstract',
-    color: this.props.art ? this.props.art.color : 'Black',
-    size: this.props.art
-      ? this.props.art.size
-      : {
-          height: 0,
-          width: 0,
-        },
-    price: this.props.art ? this.props.art.price : 0,
-    imgUrl: this.props.art ? this.props.art.imgUrl : null,
+    art: {
+      title: '',
+      price: 0,
+      imgUrl: '',
+      material: '',
+      technique: '',
+      category: '',
+      style: '',
+      color: '',
+      artist: '',
+      reviews: [],
+      description: '',
+      size: { height: 0, width: 0 },
+    },
   };
+
+  componentDidMount() {
+    const { art } = this.state;
+    this.setState({ art: this.props.selectedArt }, () => {
+      console.log('art in form', this.state.art);
+      const currUserArtist = {
+        id: '_u101',
+        fullname: 'Tair Bitan',
+        imgUrl: '/img/img2.jpg',
+      };
+      if (!art.artist)
+        this.setState((prevState) => {
+          return {
+            art: {
+              ...prevState.art,
+              artist: currUserArtist,
+            },
+          };
+        });
+    });
+  }
 
   selectOptions = {
     category: ['Painting', 'Photograph', 'Digital art', 'Other'],
@@ -54,24 +75,58 @@ export class ArtForm extends React.Component {
   handleChange = ({ target }) => {
     const field = target.name;
     const value = target.type === 'number' ? +target.value : target.value;
-    this.setState({ [field]: value });
+    if (field === 'height' || field === 'width') {
+      this.setState(
+        (prevState) => {
+          return {
+            art: {
+              ...prevState.art,
+              size: { ...prevState.art.size, [field]: value },
+            },
+          };
+        },
+        () => console.log('updated art', this.state.art)
+      );
+    } else {
+      this.setState(
+        (prevState) => {
+          return {
+            art: {
+              ...prevState.art,
+              [field]: value,
+            },
+          };
+        },
+        () => console.log('updated art', this.state.art)
+      );
+    }
   };
 
-  handleSubmit = () => {
-    console.log('Submit clicked');
-    // check if edit or add by this.state.isEditMode
-    // if edit => const artData = editable details from state && uneditable details from props
-    // if add => const artData = new details from state && artist from user && empty arr for reviews
-    // call action saveArt with artData
-    // go to details route with the same art id
+  onImgChange = (url) => {
+    this.setState(
+      (prevState) => {
+        return {
+          art: {
+            ...prevState.art,
+            imgUrl: url,
+          },
+        };
+      },
+      () => console.log('updated art', this.state.art)
+    );
   };
 
-  handleImgUpload = () => {
-    //get img (file)
-    // update the state with correct imgURL 
+  onSubmit = (ev) => {
+    ev.preventDefault();
+    const { art } = this.state;
+    this.props.saveArt(art);
+    // go to explore page
+    this.props.history.push(`/art/`);
   };
 
   render() {
+    const { art } = this.state;
+    if (!art) return <Loader />;
     const {
       title,
       description,
@@ -83,9 +138,9 @@ export class ArtForm extends React.Component {
       price,
       material,
       imgUrl,
-    } = this.state;
+    } = art;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.onSubmit}>
         <TextField
           required
           value={title}
@@ -211,14 +266,7 @@ export class ArtForm extends React.Component {
           variant='outlined'
           onChange={this.handleChange}
         />
-        <section>
-          {imgUrl ? (
-            <img src={imgUrl} alt='' />
-          ) : (
-            <div className='empty-img'>Upload an Image</div>
-          )}
-          <Button>Upload</Button>
-        </section>
+        <ImgUploadPreview imgUrl={imgUrl} onImgChange={this.onImgChange} />
         <Button variant='outlined' type='submit'>
           Submit
         </Button>

@@ -1,31 +1,35 @@
 import React from 'react';
 import { ArtForm } from '../cmps/ArtForm';
 import { connect } from 'react-redux';
-import { selectedArt } from '../store/art/art.action.js';
-import {Loader} from '../cmps/Loader';
+import { setArt, saveArt } from '../store/art/art.action.js';
+import { Loader } from '../cmps/Loader';
 
 class _ArtEdit extends React.Component {
-  componentDidMount() {
+  async componentDidMount() {
     const { artId } = this.props.match.params;
-    this.props.selectedArt(artId);
+    await this.props.setArt(artId);
   }
 
   render() {
-    const { art } = this.props;
-    console.log(art);
-    return ( art? 
-    <ArtForm art={art} />: <Loader/>)
+    const { selectedArt, saveArt, history } = this.props;
+
+    return selectedArt ? (
+      <ArtForm selectedArt={selectedArt} saveArt={saveArt} history={history} />
+    ) : (
+      <Loader />
+    );
   }
 }
 
 function mapStateToProps({ artModule }) {
   return {
-    art: artModule.selectedArt,
+    selectedArt: artModule.selectedArt,
   };
 }
 
 const mapDispatchToProps = {
-  selectedArt,
+  setArt,
+  saveArt,
 };
 
 export const ArtEdit = connect(mapStateToProps, mapDispatchToProps)(_ArtEdit);

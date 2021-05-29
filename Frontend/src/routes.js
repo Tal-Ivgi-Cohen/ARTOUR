@@ -3,6 +3,7 @@ import { About } from './pages/About.jsx';
 import { ArtApp } from './pages/ArtApp.jsx';
 import { ArtEdit } from './pages/ArtEdit.jsx';
 import { ArtDetails } from './pages/ArtDetails.jsx';
+import { ArtAdd } from './pages/ArtAdd.jsx';
 
 
 export const routes = [
@@ -23,8 +24,8 @@ export const routes = [
         component: ArtEdit,
     },
     {
-        path: '/art/edit',
-        component: ArtEdit,
+        path: '/art/add',
+        component: ArtAdd,
     },
     {
         path: '/about',

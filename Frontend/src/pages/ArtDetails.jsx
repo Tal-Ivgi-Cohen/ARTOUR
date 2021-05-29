@@ -1,45 +1,62 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { selectedArt } from '../store/art/art.action.js'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setArt } from '../store/art/art.action.js';
+import { Loader } from '../cmps/Loader.jsx';
 
-
-// test url : 
+// test url :
 // http://localhost:3000/#/art/a101
 
 class _ArtDetails extends React.Component {
+  componentDidMount() {
+    const { artId } = this.props.match.params;
+    this.props.setArt(artId);
+    console.log('art in details', this.props.selectedArt);
+  }
 
-    componentDidMount() {
-        const {artId} = this.props.match.params
-        this.props.selectedArt(artId)
-    }
-
-    render() {
-
-        return (
-            <div className="main-art-details">
-
-               {this.props.art && 
-                <div>
-                <button className="btn-back" onClick={() => this.props.history.push('/art')}>Go Back</button>
-                <div><img className="img-details" src={this.props.art.imgUrl} alt={`${this.props.art.title}`} /></div> 
-                <h2>{this.props.art.title}</h2> 
-                <p>Artist: {this.props.art.artist.fullname}</p>
-                <p>material: {this.props.art.material}</p>
-                <p>technique: {this.props.art.technique}</p>
-                <p>style: {this.props.art.style}</p>
-                <p>Price: {this.props.art.price}</p>
-                </div> 
-               }
+  render() {
+    const { selectedArt } = this.props;
+    if (!selectedArt) return <Loader />;
+    return (
+      <div className='main-art-details'>
+        {selectedArt && (
+          <div>
+            <button
+              className='btn-back'
+              onClick={() => this.props.history.push('/art')}
+            >
+              Go Back
+            </button>
+            <Link to={`/art/edit/${selectedArt._id}`}>details</Link>
+            <div>
+              <img
+                className='img-details'
+                src={selectedArt.imgUrl}
+                alt={`${selectedArt.title}`}
+              />
             </div>
-        )
-    }
+            <h2>{selectedArt.title}</h2>
+            <p>Artist: {selectedArt.artist?.fullname || ''}</p>
+            <p>material: {selectedArt.material}</p>
+            <p>technique: {selectedArt.technique}</p>
+            <p>style: {selectedArt.style}</p>
+            <p>Price: {selectedArt.price}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
 }
 const mapStateToProps = (state) => {
-    return {
-        art: state.artModule.selectedArt
-    }
-}
+  return {
+    selectedArt: state.artModule.selectedArt,
+  };
+};
+
 const mapDispatchToProps = {
-    selectedArt,
-}
-export const ArtDetails = connect(mapStateToProps,mapDispatchToProps)(_ArtDetails)
+  setArt,
+};
+export const ArtDetails = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(_ArtDetails);
