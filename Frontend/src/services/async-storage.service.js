@@ -12,8 +12,11 @@ export const storageService = {
 //READ LIST
 function query(entityType, delay = 600) {
   var entities = JSON.parse(localStorage.getItem(entityType)) || [];
+  console.log('had in storage');
   if (!entities || !entities.length) {
+    console.log('set to storage');
     entities = gData.artworks;
+    _save(entityType, entities);
   }
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -37,11 +40,12 @@ async function post(entityType, newEntity) {
 }
 //UPDATE
 async function put(entityType, updatedEntity) {
+  console.log('the art in storage service', updatedEntity);
   const entities = await query(entityType);
   const idx = entities.findIndex(entity => entity._id === updatedEntity._id);
   entities.splice(idx, 1, updatedEntity);
   _save(entityType, entities);
-  return updatedEntity;
+  return entities;
 }
 //DELETE
 async function remove(entityType, entityId) {

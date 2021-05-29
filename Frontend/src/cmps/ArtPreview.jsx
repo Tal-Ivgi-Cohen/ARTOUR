@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function ArtPreview({ art }) {
-        console.log('Art', art);
         return (
                 <div className="art-preview flex">
                 <Link to={`/art/${art._id}`} >

@@ -1,8 +1,6 @@
-import { ArtPreview } from './ArtPreview.jsx'
-
+import { ArtPreview } from './ArtPreview.jsx';
 
 export function ArtList({ arts }) {
-    console.log('Arts', arts);
 
     return (
         <section className="art-list ">
@@ -10,7 +8,3 @@ export function ArtList({ arts }) {
         </section>
     )
 }
-
-
-
-
