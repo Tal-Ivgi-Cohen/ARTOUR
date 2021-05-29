@@ -35,6 +35,7 @@ class _ArtDetails extends React.Component {
                 <p>style: {this.props.art.style}</p>
                 <p>Price: {this.props.art.price}</p>
 
+                <button>Purchase</button>
                 <button className="btn-remove" onClick={()=>{
                 this.props.removeArt(this.props.art._id)
                 this.props.history.push('/art')
