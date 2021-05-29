@@ -3,11 +3,7 @@ import { routes } from './routes.js'
 import { Header} from './cmps/Header.jsx'
 import { Footer} from './cmps/Footer.jsx'
 
-import './App.scss';
 import './styles/styles.scss'
-
-
-
 
  export function App() {
   return (
@@ -17,7 +13,7 @@ import './styles/styles.scss'
         <main>
           {routes.map(route => <Route key={route.path} exact component={route.component} path={route.path} />)}
         </main>
-        <Footer/>
+        {/* <Footer/> */}
       </Router>
     </div>
 

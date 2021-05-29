@@ -11,10 +11,14 @@ class _ArtApp extends React.Component {
     render() {
         const { arts } = this.props
         return (
-            <div className="art-container">
-                <section className="container art-app">
+            <div>
+            <div className="main-container">
+                <section className="art-container">
+                <main>
                     <ArtList arts={arts} />
+                </main>
                 </section>
+            </div>
             </div>
         )
     }

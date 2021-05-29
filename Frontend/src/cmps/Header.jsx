@@ -7,7 +7,7 @@ export class Header extends React.Component {
     render() {
         return (
             <header className="app-header">
-                <h1>Logo</h1>
+                <h2>Logo</h2>
                 <nav>
                     <NavLink to="/">Home</NavLink> |
                     <NavLink to="/art">Explore</NavLink> |

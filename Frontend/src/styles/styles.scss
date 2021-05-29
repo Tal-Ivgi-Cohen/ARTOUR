@@ -1,3 +1,15 @@
-body{
-    background-color: rgb(225, 228, 165);
-}
+
+//SETUP
+@import './setup/variables.scss';
+@import './setup/typography.scss';
+@import './setup/mixins.scss';
+@import './setup/functions.scss';
+
+// //BASICS
+@import './basics/base.scss';
+@import './basics/buttons.scss';
+@import './basics/helpers.scss';
+@import './basics/layout.scss';
+
+//CMPS
+
