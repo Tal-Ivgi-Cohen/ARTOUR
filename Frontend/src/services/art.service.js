@@ -14,11 +14,13 @@ function query() {
     return storageService.query(STORAGE_KEY)
 }
 function getById(artId) {
-    console.log(' get art service from',artId);
+    console.log(' get art service front',artId);
     return storageService.get('art', artId)
 }
 function remove(artId) {
-    return storageService.delete(`art/${artId}`)
+    console.log(' remove art service front',artId);
+    return storageService.remove('art', artId)
+
 }
 async function save(art) {
     if (art._id) {
