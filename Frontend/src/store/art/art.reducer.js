@@ -1,6 +1,6 @@
 const initialState = {
     arts: [],
-    selectedArt: {},
+    selectedArt: null,
 };
 
 export function artReducer(state = initialState, action = {}) {

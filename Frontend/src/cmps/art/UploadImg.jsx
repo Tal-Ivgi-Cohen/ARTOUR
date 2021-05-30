@@ -18,10 +18,11 @@ const useStyles = makeStyles((theme) => ({
 export function UploadImg({ handleImgChange }) {
   const classes = useStyles();
 
-  const handleImgUpload = ({ target }) => {
+  const handleImgUpload = async ({ target }) => {
     const file = target.files[0];
     if (file) {
-      handleImgChange(URL.createObjectURL(file));
+      const url = await URL.createObjectURL(file);
+      handleImgChange(url);
     }
   };
 

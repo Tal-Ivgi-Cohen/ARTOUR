@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArtForm } from '../cmps/ArtForm';
+import { ArtForm } from '../../cmps/art/ArtForm.jsx';
 import { connect } from 'react-redux';
-import { setArt, saveArt } from '../store/art/art.action.js';
-import { Loader } from '../cmps/Loader';
+import { setArt, saveArt } from '../../store/art/art.action.js';
+import { Loader } from '../../cmps/util/Loader';
 
 class _ArtEdit extends React.Component {
   async componentDidMount() {
@@ -12,7 +12,6 @@ class _ArtEdit extends React.Component {
 
   render() {
     const { selectedArt, saveArt, history } = this.props;
-
     return selectedArt ? (
       <ArtForm selectedArt={selectedArt} saveArt={saveArt} history={history} />
     ) : (

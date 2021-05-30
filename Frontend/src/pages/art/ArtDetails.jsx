@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setArt,removeArt } from '../store/art/art.action.js';
-import { Loader } from '../cmps/Loader.jsx';
+import { setArt, removeArt } from '../../store/art/art.action.js';
+import { Loader } from '../../cmps/util/Loader.jsx';
 
 // test url :
 // http://localhost:3000/#/art/a101
@@ -27,7 +27,7 @@ class _ArtDetails extends React.Component {
             >
               Go Back
             </button>
-            <Link to={`/art/edit/${selectedArt._id}`}>details</Link>
+            {/* <Link to={`/art/edit/${selectedArt._id}`}>Edit</Link> */}
             <div>
               <img
                 className='img-details'
@@ -42,10 +42,15 @@ class _ArtDetails extends React.Component {
             <p>style: {selectedArt.style}</p>
             <p>Price: {selectedArt.price}</p>
             <button>Purchase</button>
-            <button className="btn-remove" onClick={()=>{
-                this.props.removeArt(this.props.art._id)
-                this.props.history.push('/art')
-                }}>Delete</button>
+            {/* <button
+              className='btn-remove'
+              onClick={() => {
+                this.props.removeArt(this.props.art._id);
+                this.props.history.push('/art');
+              }}
+            >
+              Delete
+            </button> */}
           </div>
         )}
       </div>
@@ -60,7 +65,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   setArt,
-  removeArt
+  removeArt,
 };
 export const ArtDetails = connect(
   mapStateToProps,
