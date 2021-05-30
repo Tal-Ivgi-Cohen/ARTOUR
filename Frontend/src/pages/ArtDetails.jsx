@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setArt,removeArt } from '../store/art/art.action.js';
+import { setArt, removeArt } from '../store/art/art.action.js';
 import { Loader } from '../cmps/Loader.jsx';
-
+import { PurchaseModal } from '../cmps/Modal.jsx'
 // test url :
 // http://localhost:3000/#/art/a101
 
@@ -18,38 +18,32 @@ class _ArtDetails extends React.Component {
     const { selectedArt } = this.props;
     if (!selectedArt) return <Loader />;
     return (
-      <div className='main-art-details'>
-        {selectedArt && (
-          <div>
-            <button
-              className='btn-back'
-              onClick={() => this.props.history.push('/art')}
-            >
-              Go Back
-            </button>
-            <Link to={`/art/edit/${selectedArt._id}`}>details</Link>
-            <div>
-              <img
-                className='img-details'
-                src={selectedArt.imgUrl}
-                alt={`${selectedArt.title}`}
-              />
+      <div>
+        {selectedArt &&
+          <section className="main-art-details">
+            <div className="content-img">
+              <button className="btn-back" onClick={() => this.props.history.push('/art')}>Go Back</button>
+              <img className="img-details flex" src={selectedArt.imgUrl} alt={`${selectedArt.title}`} />
             </div>
-            <h2>{selectedArt.title}</h2>
-            <p>Artist: {selectedArt.artist?.fullname || ''}</p>
-            <p>material: {selectedArt.material}</p>
-            <p>technique: {selectedArt.technique}</p>
-            <p>style: {selectedArt.style}</p>
-            <p>Price: {selectedArt.price}</p>
-            <button>Purchase</button>
-            <button className="btn-remove" onClick={()=>{
-                this.props.removeArt(this.props.art._id)
+            <div className="content-txt">
+              <h2>{selectedArt.title}</h2>
+              <p>Artist: {selectedArt.artist?.fullname || ''}</p>
+              <p>material: {selectedArt.material}</p>
+              <p>technique: {selectedArt.technique}</p>
+              <p>style: {selectedArt.style}</p>
+              <p>Price: {selectedArt.price}</p>
+              <PurchaseModal selectedArt={selectedArt} />
+              <button className="btn-remove" onClick={() => {
+                this.props.removeArt(selectedArt._id)
                 this.props.history.push('/art')
-                }}>Delete</button>
-          </div>
-        )}
+              }}>Delete</button>
+
+            </div>
+          </section>
+        }
+
       </div>
-    );
+    )
   }
 }
 const mapStateToProps = (state) => {
@@ -62,7 +56,4 @@ const mapDispatchToProps = {
   setArt,
   removeArt
 };
-export const ArtDetails = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(_ArtDetails);
+export const ArtDetails = connect(mapStateToProps, mapDispatchToProps)(_ArtDetails);

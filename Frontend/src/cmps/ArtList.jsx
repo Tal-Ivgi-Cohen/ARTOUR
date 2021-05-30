@@ -3,7 +3,7 @@ import { ArtPreview } from './ArtPreview.jsx';
 export function ArtList({ arts }) {
 
     return (
-        <section className="art-list ">
+        <section className="art-list">
             {arts.map(art => <ArtPreview art={art} key={art._id} />)}
         </section>
     )
