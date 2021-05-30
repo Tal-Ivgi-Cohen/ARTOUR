@@ -1,4 +1,4 @@
-import { storageService } from './async-storage.service.js';
+import { storageService } from './art-storage.service.js';
 
 const STORAGE_KEY = 'arts';
 

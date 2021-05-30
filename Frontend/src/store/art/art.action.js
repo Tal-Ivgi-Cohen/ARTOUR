@@ -1,4 +1,4 @@
-import { artService } from '../../services/art.service.js';
+import { artService } from '../../services/art/art.service.js';
 
 export function loadArts() {
     return async dispatch => {

@@ -1,23 +1,20 @@
-import { Home } from './pages/Home.jsx';
-import { About } from './pages/About.jsx';
-import { ArtApp } from './pages/ArtApp.jsx';
-import { ArtEdit } from './pages/ArtEdit.jsx';
-import { ArtDetails } from './pages/ArtDetails.jsx';
-import { ArtAdd } from './pages/ArtAdd.jsx';
+import { Home } from './pages/util/Home.jsx';
+import { About } from './pages/util/About.jsx';
+import { ArtApp } from './pages/art/ArtApp.jsx';
+import { ArtEdit } from './pages/art/ArtEdit.jsx';
+import { ArtDetails } from './pages/art/ArtDetails.jsx';
+import { ArtAdd } from './pages/art/ArtAdd.jsx';
+import { Account } from './pages/user/Account.jsx';
 
 
 export const routes = [
     {
-        path: '/',
+        path: '/home',
         component: Home,
     },
     {
         path: '/art',
         component: ArtApp,
-    },
-    {
-        path: '/art/:artId',
-        component: ArtDetails,
     },
     {
         path: '/art/edit/:artId',
@@ -28,7 +25,15 @@ export const routes = [
         component: ArtAdd,
     },
     {
+        path: '/art/:artId',
+        component: ArtDetails,
+    },
+    {
         path: '/about',
         component: About,
+    },
+    {
+        path: '/account',
+        component: Account
     }
 ];

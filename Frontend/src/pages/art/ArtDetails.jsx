@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setArt, removeArt } from '../store/art/art.action.js';
-import { Loader } from '../cmps/Loader.jsx';
-import { PurchaseModal } from '../cmps/Modal.jsx'
+import { setArt, removeArt } from '../../store/art/art.action.js';
+import { Loader } from '../../cmps/util/Loader.jsx';
+import { PurchaseModal } from '../../cmps/Modal.jsx'
 // test url :
 // http://localhost:3000/#/art/a101
 
@@ -33,10 +33,6 @@ class _ArtDetails extends React.Component {
               <p>style: {selectedArt.style}</p>
               <p>Price: {selectedArt.price}</p>
               <PurchaseModal selectedArt={selectedArt} />
-              <button className="btn-remove" onClick={() => {
-                this.props.removeArt(selectedArt._id)
-                this.props.history.push('/art')
-              }}>Delete</button>
 
             </div>
           </section>
@@ -54,6 +50,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   setArt,
-  removeArt
+  removeArt,
 };
 export const ArtDetails = connect(mapStateToProps, mapDispatchToProps)(_ArtDetails);

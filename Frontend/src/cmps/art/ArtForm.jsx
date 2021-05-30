@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextField, MenuItem, Button } from '@material-ui/core';
 import { ImgUploadPreview } from './ImgUploadPreview';
-import { Loader } from './Loader';
+import { Loader } from '../util/Loader';
 
 export class ArtForm extends React.Component {
   state = {
@@ -23,23 +23,25 @@ export class ArtForm extends React.Component {
 
   componentDidMount() {
     const { art } = this.state;
-    this.setState({ art: this.props.selectedArt }, () => {
-      console.log('art in form', this.state.art);
-      const currUserArtist = {
-        id: '_u101',
-        fullname: 'Tair Bitan',
-        imgUrl: '/img/img2.jpg',
-      };
-      if (!art.artist)
-        this.setState((prevState) => {
-          return {
-            art: {
-              ...prevState.art,
-              artist: currUserArtist,
-            },
-          };
-        });
-    });
+    if (this.props.selectedArt) {
+      this.setState({ art: this.props.selectedArt }, () => {
+        console.log('art in form', this.state.art);
+        const currUserArtist = {
+          id: '_u101',
+          fullname: 'Tair Bitan',
+          imgUrl: '/img/img2.jpg',
+        };
+        if (!art.artist)
+          this.setState((prevState) => {
+            return {
+              art: {
+                ...prevState.art,
+                artist: currUserArtist,
+              },
+            };
+          });
+      });
+    }
   }
 
   selectOptions = {
@@ -121,7 +123,7 @@ export class ArtForm extends React.Component {
     const { art } = this.state;
     this.props.saveArt(art);
     // go to explore page
-    this.props.history.push(`/art/`);
+    this.props.history.push(`/art`);
   };
 
   render() {
@@ -138,7 +140,7 @@ export class ArtForm extends React.Component {
       price,
       material,
       imgUrl,
-    } = art;
+    } = this.state.art;
     return (
       <form onSubmit={this.onSubmit}>
         <TextField
