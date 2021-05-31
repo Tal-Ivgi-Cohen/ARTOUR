@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setArt, removeArt } from '../../store/art/art.action.js';
 import { Loader } from '../../cmps/util/Loader.jsx';

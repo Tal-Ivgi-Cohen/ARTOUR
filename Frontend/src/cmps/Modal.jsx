@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 function getModalStyle() {
 
     return {
-        top: '10px',
-        left: '10px',
+        top: 0,
+        right: 0,
         //transform: `translate(-${top}%, -${left}%)`,
     };
 }
@@ -42,7 +42,7 @@ export function PurchaseModal({ selectedArt }) {
             <h2 id="simple-modal-title">JUST ADDED TO YOUR CART</h2>
             <p id="simple-modal-description">
                 Added to cart successfully</p>
-            <img src={selectedArt.imgUrl} />
+            <img src={selectedArt.imgUrl}  alt={selectedArt.imgUrl}/>
             <h2>{selectedArt.title}</h2>
             <p>Artist: {selectedArt.artist?.fullname || ''}</p>
             <p>Price: {selectedArt.price}</p>
@@ -59,11 +59,10 @@ export function PurchaseModal({ selectedArt }) {
       </button>
             <Modal
                 open={open}
-                onClose={handleClose}
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
-            >
-                {body}
+                onClick={handleClose}>
+                    {body}
             </Modal>
         </div>
     );

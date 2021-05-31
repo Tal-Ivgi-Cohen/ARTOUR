@@ -121,9 +121,9 @@
 
 
 .home-section {
-    background-image: url("//cdn.shopify.com/s/files/1/0941/7736/files/FiroozehNeman-Banner02_2048x.jpg?v=1622084011");
+   /* background-image: url("//cdn.shopify.com/s/files/1/0941/7736/files/SaraMarloweHall-Banner01_2048x.jpg?v=1621301210");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100%;*/
     width: 100%;
     height: 70vh;
     margin-bottom: 20px;
@@ -143,3 +143,9 @@
 .art-add-btn{
 border:1px solid $clr2;
 }
+
+.heroes-container {
+    width: 70%;
+    height: 10vh;
+    margin: auto;
+  }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ArtApp } from './ArtApp.jsx'
-import { Hero } from '../cmps/Hero.jsx'
+import { Link } from 'react-router-dom';
 
 
 export class Home extends React.Component {
@@ -9,17 +9,17 @@ export class Home extends React.Component {
         return (
             <section>
                 <div className="home-section">
-                   {/* <Hero />*/}
-               {/*    <img src="//cdn.shopify.com/s/files/1/0941/7736/files/FiroozehNeman-Banner02_2048x.jpg?v=1622084011"/>*/}
-                   <div className="hero-content">
-                       <h2>New works</h2>
-                       <h1>TAIR BITAN</h1>
-                   </div>
+
+                    <div className="hero-content">
+                        <h2>New works</h2>
+                        <h1>TAIR BITAN</h1>
+                    </div>
                 </div>
-                <ArtApp />
-            </section>
-
-
+               <ArtApp />
+                <div className="btn">
+                <button><Link to={`/art`}> Shop All Art</Link></button>            
+                </div>
+                </section>
         )
     }
 }
