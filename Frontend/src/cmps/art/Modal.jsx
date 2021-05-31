@@ -47,7 +47,8 @@ export function PurchaseModal({ selectedArt }) {
             <p>Artist: {selectedArt.artist?.fullname || ''}</p>
             <p>Price: {selectedArt.price}</p>
 
-            <button ><Link to={`/art`}> Continue Shopping</Link></button>
+            <button ><Link to={`/cart`}>VIEW CART</Link></button>
+            <Link to={`/art`}> continue shopping</Link>
             <Modal />
         </div>
     );

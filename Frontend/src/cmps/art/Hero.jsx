@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 
 export class Hero extends React.Component {
@@ -19,4 +19,4 @@ export class Hero extends React.Component {
 
     );
   }
-}*/
+}

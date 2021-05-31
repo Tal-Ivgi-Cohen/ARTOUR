@@ -1,0 +1,7 @@
+.art-list {
+    display: grid;
+    width: 100%;
+    gap: 0.625rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+

@@ -1,0 +1,13 @@
+.app-footer {
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $clr1;
+    width: 100vw;
+    p {
+        text-align: center;
+        color: blanchedalmond;
+    }
+}

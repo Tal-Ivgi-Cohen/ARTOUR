@@ -12,4 +12,13 @@
 @import './basics/layout.scss';
 
 //CMPS
+@import './cmps/art-preview.scss';
+@import './cmps/art-list.scss';
+@import './cmps/header.scss';
+
+//PAGES
+@import './pages/art-details.scss';
+@import './pages/home.scss';
+@import './pages/art-cart.scss';
+
 

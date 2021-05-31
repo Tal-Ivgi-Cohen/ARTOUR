@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setArt, removeArt } from '../../store/art/art.action.js';
 import { Loader } from '../../cmps/util/Loader.jsx';
-import { PurchaseModal } from '../../cmps/Modal.jsx'
+import { PurchaseModal } from '../../cmps/art/Modal.jsx'
 // test url :
 // http://localhost:3000/#/art/a101
 
