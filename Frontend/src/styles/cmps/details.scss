@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+//FRAMES
+.none-border{
+  border: 10px solid rgb(255, 255, 255);
+  border-image: none;
+}
+.dark {
+  border: 35px solid rgb(255, 255, 255);
+  border-image: url("../../assets/svg/1402636079.svg")  18% stretch;
+}
+.black{
+  border: 30px solid rgb(243, 243, 245);
+  border-image:  url("../../assets/svg/Black-Frame.svg")  18% stretch;
+}
+.bright{
+  border: 35px solid rgb(255, 255, 255);
+  border-image:  url("../../assets/svg/vintage.svg")  20% stretch;
+}
+// .room{
+//   border: 18px solid rgba(216, 191, 191, 0.954);
+//   border-image: url("../../assets/svg/OrnatePictureFramePlain.svg")  12% stretch;
+// }
+
+//INPUT
+// input[type=radio]:checked{
+// background-color: $clr1;
+// }
+// input[type=radio]{
+//   list-style-type: square;
+//   background-color: #ffff;
+// }
+
+//LAYOUT
+.radio-buttons, .art-details{
+margin-bottom: 1.25rem;
+}
+.content-txt{
+text-align: start;
+}
+.details-modals{
+  text-align: center;
+}
+//WISHLIST MODAL
+.img-wish{
+  width: 5rem;
+  height: 5rem;
+}

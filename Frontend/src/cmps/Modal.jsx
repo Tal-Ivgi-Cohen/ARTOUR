@@ -54,9 +54,54 @@ export function PurchaseModal({ selectedArt }) {
 
     return (
         <div>
-            <button type="button" onClick={handleOpen}>
-                Purchase
+            <button className="btn-add-to-bag" type="button" onClick={handleOpen}>
+                Add To Bag
       </button>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+            >
+                {body}
+            </Modal>
+        </div>
+    );
+}
+
+export function WishListModal({ selectedArt }) {
+    const classes = useStyles();
+    const [modalStyle] = React.useState(getModalStyle);
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const body = (
+        <div style={modalStyle} className={classes.paper}>
+            <div id="simple-modal-title-wish">This item has been added to youre Wishlist</div>
+            <div id="simple-modal-description flex">
+            <img className="img-wish" src={selectedArt.imgUrl} />
+            <p className="flex column">
+            <span>{selectedArt.title}</span> 
+            <span>${selectedArt.price} </span>   
+            </p>
+           </div>
+            {/* <button ><Link to={`/art/${selectedArt._id}`}> Continue Shopping</Link></button> */}
+            <Modal />
+        </div>
+    );
+
+    return (
+        <div>
+            <a className="btn-wish-list" type="button" onClick={handleOpen}>
+            ♡ WISHLIST
+            </a>
             <Modal
                 open={open}
                 onClose={handleClose}
