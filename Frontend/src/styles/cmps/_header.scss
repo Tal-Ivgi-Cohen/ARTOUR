@@ -1,0 +1,28 @@
+.app-header {
+    margin-bottom: 0.9375rem;
+    background-color: $clr1;
+    display: flex;
+    flex-direction: row;
+    height: 8vh;
+    align-items: center;
+    justify-content: space-around;
+    h2 {
+        color: $clr5;
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        color: $clr5;
+        gap: 0.625rem;
+
+        .nav-link {
+            color: $clr5;
+            .nav-link:hover {
+                color: $clr3;
+            }
+            &.active {
+                color: $clr3;
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setArt, removeArt, loadArts } from "../../store/art/art.action.js";
 import { Loader } from "../../cmps/util/Loader.jsx";
 import { ArtListByArtist } from "../../cmps/art/ArtList.jsx";
-import { PurchaseModal, WishListModal } from "../../cmps/Modal.jsx";
+import { PurchaseModal, WishListModal } from "../../cmps/art/Modal.jsx";
 
 // test url :
 // http://localhost:3000/#/art/a101
@@ -32,7 +32,7 @@ class _ArtDetails extends React.Component {
     return (
       <div>
         {selectedArt && (
-          <section className="main-art-details">
+          <section className="main-art-details flex">
             <div className="content-img">
               <button
                 className="btn-back"

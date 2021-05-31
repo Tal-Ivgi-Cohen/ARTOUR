@@ -1,0 +1,31 @@
+.home-section {
+     width: 100%;
+     margin-bottom: 20px;
+     z-index: 1 ;
+     align-items: center;
+     justify-content: center;
+     display: flex;
+ 
+ }
+ .hero-content{
+     z-index: 2; 
+ }
+ .home-section h2{
+     text-align: center;
+ }
+
+ .carousel-container{
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.heros-container{
+    width: 100%;
+    object-fit: fill;
+}
+
+.Carousel-root-1 {
+    margin: auto;
+    object-fit: cover;
+  }

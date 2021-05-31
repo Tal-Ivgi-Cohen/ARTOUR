@@ -5,6 +5,8 @@ import { ArtEdit } from './pages/art/ArtEdit.jsx';
 import { ArtDetails } from './pages/art/ArtDetails.jsx';
 import { ArtAdd } from './pages/art/ArtAdd.jsx';
 import { Account } from './pages/user/Account.jsx';
+import { ArtCart } from './pages/art/ArtCart.jsx';
+import { Checkout } from './pages/art/Checkout.jsx';
 
 
 export const routes = [
@@ -31,6 +33,14 @@ export const routes = [
     {
         path: '/about',
         component: About,
+    },
+    {
+        path: '/cart',
+        component: ArtCart,
+    },
+    {
+        path: '/checkout',
+        component: Checkout,
     },
     {
         path: '/account',
