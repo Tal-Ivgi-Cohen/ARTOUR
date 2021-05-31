@@ -1,56 +1,64 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+
 import { setArt, removeArt, loadArts } from "../../store/art/art.action.js";
 import { Loader } from "../../cmps/util/Loader.jsx";
-import { ArtListByArtist } from "../../cmps/art/ArtList.jsx";
+import { ArtListByArtist} from "../../cmps/art/ArtList.jsx";
 import { PurchaseModal, WishListModal } from "../../cmps/art/Modal.jsx";
+
 
 // test url :
 // http://localhost:3000/#/art/a101
 
 class _ArtDetails extends React.Component {
   state = {
-    frame: "none-border",
+    frame: "none-border"
   };
 
   componentDidMount() {
     const { artId } = this.props.match.params;
-    this.props.setArt(artId);
-    console.log("art in details", this.props.selectedArt);
-  }
+    this.props.setArt(artId)
+    this.props.loadArts();
 
+  }
+  
   handleChange = (ev) => {
     const frameOption = ev.target.value;
     this.setState({ frame: frameOption });
   };
-
+  
   render() {
-    const { arts } = this.props;
+  
     const { selectedArt } = this.props;
     if (!selectedArt) return <Loader />;
-
+    const { arts } = this.props;
+    
     return (
       <div>
         {selectedArt && (
-          <section className="main-art-details flex">
-            <div className="content-img">
-              <button
+        <section className="main-art-details flex">
+           <div className="content-img">
+             <button
                 className="btn-back"
                 onClick={() => this.props.history.push("/art")}
               >
                 Go Back
               </button>
-
-              <div className="img-details flex">
+          <div className="container-img">
+                <img src="https://d3t95n9c6zzriw.cloudfront.net/static/img/view_in_a_room_2019_2b.jpg" className="img1" />
+                <img src={selectedArt.imgUrl} className="img2" />
+        </div>
+        </div>
+              <div className="img-details">
                 <img
                   className={`${this.state.frame}`}
                   src={selectedArt.imgUrl}
                   alt={`${selectedArt.title}`}
                 />
-              </div>
-            </div>
-
-            <div className="content-txt">
+        </div>
+        
+        <div className="content-txt">
               <div className="art-details">
                 <p>{selectedArt.artist?.fullname || ""}</p>
                 <h1>{selectedArt.title}</h1>
@@ -60,7 +68,7 @@ class _ArtDetails extends React.Component {
                 </p>
                 <p>${selectedArt.price}</p>
                 <p> Size {selectedArt.size.height}/{selectedArt.size.width}</p>
-              </div>
+        </div>
 
               <div className="frame">
                 <h5>Frame</h5>
@@ -111,23 +119,19 @@ class _ArtDetails extends React.Component {
               <PurchaseModal selectedArt={selectedArt} />
               <WishListModal selectedArt={selectedArt} />
               </div>
-              <br />
+              <br/>
               <p>DESCRIPTION</p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis aperiam porro tempora modi expedita, sapiente impedit
-                pariatur dignissimos similique rerum natus aliquid dicta
-                recusandae iste veritatis ducimus quaerat ipsam non!
-              </p>
-              <ArtListByArtist
-                arts={arts}
-                artist={selectedArt.artist.fullname}
-              />
-            </div>
-          </section>
+              <br/>
+              <p>{selectedArt.description}</p>
+          </div>
+        </section>
         )}
-      </div>
+    <div className="artist-list-details flex space-between">
+      
+    <Link to={`/artist/${selectedArt.artist.id}`}> <button>More work by {selectedArt.artist.fullname}</button></Link>
+    <ArtListByArtist arts={arts} artist={selectedArt.artist.fullname}/>  
+    </div>
+    </div>
     );
   }
 }

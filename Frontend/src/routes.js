@@ -7,6 +7,8 @@ import { ArtAdd } from './pages/art/ArtAdd.jsx';
 import { Account } from './pages/user/Account.jsx';
 import { ArtCart } from './pages/art/ArtCart.jsx';
 import { Checkout } from './pages/art/Checkout.jsx';
+import { ArtistProfile } from './pages/artist/ArtistProfile.jsx';
+
 
 
 export const routes = [
@@ -21,6 +23,10 @@ export const routes = [
     {
         path: '/art/edit/:artId',
         component: ArtEdit,
+    },
+    {
+        path: '/artist/:artistId',
+        component: ArtistProfile, 
     },
     {
         path: '/art/add',

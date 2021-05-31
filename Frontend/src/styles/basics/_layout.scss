@@ -1,6 +1,5 @@
 // .main-container , .main-deshboard, .main-about ,.main-header, .main-toy-details{
-.main-container,
-.main-art-details {
+.main-container{
     display: grid;
     font-size: small;
     height: 70vh;
@@ -16,8 +15,7 @@
         &.full {
             grid-column: 1 / -1;
         }
-    }
-
+}
     @include for-mobile-layout {
         grid-template-columns:
             minmax(2rem, 1fr)

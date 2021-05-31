@@ -24,14 +24,29 @@
 //   border-image: url("../../assets/svg/OrnatePictureFramePlain.svg")  12% stretch;
 // }
 
-//INPUT
-// input[type=radio]:checked{
-// background-color: $clr1;
-// }
-// input[type=radio]{
-//   list-style-type: square;
-//   background-color: #ffff;
-// }
+
+//IMG
+.container-img {
+  position:relative;
+}
+.img1{
+  box-shadow: 0 10px 6px -6px #777;
+  width: 21.875rem;
+  height: 470px;
+
+}
+.img2 {
+  box-shadow: 0 10px 6px -6px #777;
+  position: absolute;
+  max-width: 180px;
+  max-height: 180px;
+  left: 35px;
+  top: 50px;
+}
+.img-details{
+ max-height: 420px ;
+ min-width: 20rem;
+}
 
 //LAYOUT
 .radio-buttons, .art-details{
@@ -43,8 +58,27 @@ text-align: start;
 .details-modals{
   text-align: center;
 }
+.content-txt{
+  margin: 3.125rem 1.25rem 0 3.125rem;
+}
+.artist-list-details {
+margin: 3.125rem 0 0 1.25rem;
+}
+.container-img, .img-details{
+  margin: 4.3rem 0 0 1.25rem;
+}
+
 //WISHLIST MODAL
 .img-wish{
   width: 5rem;
   height: 5rem;
 }
+
+//INPUT
+// input[type=radio]:checked{
+// background-color: $clr1;
+// }
+// input[type=radio]{
+//   list-style-type: square;
+//   background-color: #ffff;
+// }

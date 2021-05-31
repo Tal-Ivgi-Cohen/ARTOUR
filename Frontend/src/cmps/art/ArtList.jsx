@@ -9,21 +9,13 @@ export function ArtList({ arts }) {
     )
 }
 
+
 export function ArtListByArtist({ arts , artist }) {
 
+    const filteredArts = arts.filter(art => art.artist.fullname === artist)
 return (
     <section className="art-list">
-        
-           {()=>{
-               console.log('artistArts',artistArts);
-            const artistArts =  arts.filter((art) =>{
-               return (art.artist.fullname === artist)
-            })
-          return artistArts.map(art => <ArtPreview art={art} key={art._id} />)
-            }
-    }
-        
-            <h1>test</h1>
+         {filteredArts.map(art => <ArtPreview art={art} key={art._id} />)}  
     </section>
     )
 }
