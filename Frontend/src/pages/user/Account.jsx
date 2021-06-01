@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { UserDashboard } from '../../cmps/user/dashboard/UserDashboard.jsx';
-import { SignInSignUp } from '../../cmps/user/SignInSignUp.jsx';
+import { LoginSignUp } from '../../cmps/user/LoginSignUp.jsx';
 import {
   loadLoggedInUser,
   login,
   logout,
   signup,
+  updateUser,
 } from '../../store/user/user.action.js';
 import { removeArt, loadArts } from '../../store/art/art.action.js';
 
@@ -17,7 +18,8 @@ class _Account extends Component {
     // TODO: load orders
   }
   render() {
-    const { loggedInUser, removeArt, arts, login, logout, signup } = this.props;
+    const { loggedInUser, removeArt, arts, login, logout, signup, updateUser } =
+      this.props;
     if (loggedInUser) {
       const userArts = arts
         ? arts.filter((art) => art.artist._id === loggedInUser._id)
@@ -34,6 +36,7 @@ class _Account extends Component {
             // userOrders={orders}
             removeArt={removeArt}
             logout={logout}
+            updateUser={updateUser}
           />
         </>
       );
@@ -41,7 +44,7 @@ class _Account extends Component {
       return (
         <>
           <h3>Account</h3>
-          <SignInSignUp login={login} signup={signup} />
+          <LoginSignUp login={login} signup={signup} />
         </>
       );
   }
@@ -60,6 +63,7 @@ const mapDispatchToProps = {
   login,
   signup,
   logout,
+  updateUser,
   removeArt,
   loadArts,
 };

@@ -1,12 +1,38 @@
-import React from 'react';
-import { Avatar } from '@material-ui/core';
+import React, { Component } from 'react';
+import { Avatar, Button } from '@material-ui/core';
+import EditIcon from '@material-ui/icons/Edit';
+import { UserForm } from '../UserForm';
 
-export function UserDetails({ user }) {
-  return (
-    <section className='user-details'>
-      <p>Email: {user.email}</p>
-      <p>Password: {user.password}</p>
-      <Avatar src={user.imgUrl} alt={user.fullname} />
-    </section>
-  );
+export class UserDetails extends Component {
+  state = { isEditing: false };
+  editModeOn = () => this.setState({ isEditing: true });
+  editModeOff = () => this.setState({ isEditing: false });
+
+  render() {
+    const { email, password, fullname } = this.props.user;
+    const { isEditing } = this.state;
+    return (
+      <section className='user-details'>
+        {isEditing ? (
+          <UserForm
+            user={this.props.user}
+            updateUser={this.props.updateUser}
+            editModeOff={this.editModeOff}
+          />
+        ) : (
+          <>
+            <Avatar src='/img' alt={fullname} />
+            <ul>
+              <li>Email: {email}</li>
+              <li>Full name: {fullname}</li>
+              <li>Password: {password}</li>
+            </ul>
+            <Button onClick={this.editModeOn}>
+              <EditIcon />
+            </Button>
+          </>
+        )}
+      </section>
+    );
+  }
 }

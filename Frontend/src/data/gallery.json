@@ -16,8 +16,7 @@
           "amount": 1,
           "artist": {
             "id": "a101",
-            "fullname": "Tair Bitan",
-            "imgUrl": "url"
+            "fullname": "Tair Bitan"
           }
         }
       ]
@@ -36,18 +35,16 @@
       "color": "Beige",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -69,18 +66,16 @@
       "color": "Blue",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -102,18 +97,16 @@
       "color": "Brown",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -135,18 +128,16 @@
       "color": "Red",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -168,18 +159,16 @@
       "color": "Blue",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -201,18 +190,16 @@
       "color": "Yellow",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -234,18 +221,16 @@
       "color": "Red",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -267,18 +252,16 @@
       "color": "Brown",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -300,18 +283,16 @@
       "color": "Yellow",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -333,18 +314,16 @@
       "color": "Gray",
       "artist": {
         "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "fullname": "Tair Bitan"
       },
       "reviews": [
         {
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -362,8 +341,7 @@
       "email": "tairos@fake.com",
       "password": "tairking123",
       "isAdmin": false,
-      "isArtist": true,
-      "imgUrl": "http://some-img"
+      "isArtist": true
     },
     {
       "_id": "u102",
@@ -371,17 +349,15 @@
       "email": "AlonD@fake.com",
       "password": "alonking12",
       "isAdmin": true,
-      "isArtist": false,
-      "imgUrl": "http://some-img"
+      "isArtist": false
     },
     {
       "_id": "u103",
       "fullname": "Yaron Biton",
       "email": "vyaron@fake.com",
-      "password": "bigBoss",
+      "password": "bigBoss1",
       "isAdmin": false,
-      "isArtist": false,
-      "imgUrl": "http://some-img"
+      "isArtist": false
     }
   ]
 }

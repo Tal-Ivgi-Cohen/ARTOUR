@@ -14,7 +14,6 @@ async function query() {
     return await storageService.query(STORAGE_KEY);
 }
 async function getById(artId) {
-    console.log(' get art service from', artId);
     return await storageService.get('arts', artId);
 }
 async function remove(artId) {
