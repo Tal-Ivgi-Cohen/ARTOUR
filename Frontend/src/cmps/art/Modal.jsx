@@ -113,3 +113,43 @@ export function WishListModal({ selectedArt }) {
         </div>
     );
 }
+
+export function ArtistInfoModal({ artistInfo }) {
+    const classes = useStyles();
+    const [modalStyle] = React.useState(getModalStyle);
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const body = (
+        <div style={modalStyle} className={classes.paper}>
+            <div id="simple-modal-title"><h2>ARTIST STATEMENT</h2></div>
+            <div id="simple-modal-description flex">
+            <p>{artistInfo}</p>
+           </div>
+            <Modal />
+        </div>
+    );
+
+    return (
+        <div>
+            <a className="btn-wish-list"  onClick={handleOpen}>
+                View More
+            </a>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+            >
+                {body}
+            </Modal>
+        </div>
+    );
+}

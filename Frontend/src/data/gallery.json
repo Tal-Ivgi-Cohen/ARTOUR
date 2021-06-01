@@ -25,19 +25,22 @@
   ],
   "arts": [
     {
-      "_id": "a101",
-      "title": "Children on bicycle",
-      "price": 1200,
-      "imgUrl": "https://cdn.pixabay.com/photo/2017/12/28/16/18/bicycle-3045580_960_720.jpg",
+      "_id": "a102",
+      "title": "Backdrop",
+      "price": 1000,
+      "imgUrl": "https://cdn.pixabay.com/photo/2016/11/22/20/02/abstract-1850417_960_720.jpg",
       "material": "Canvas",
-      "technique": "Acrylics",
+      "technique": "Oil",
       "category": "Painting",
-      "style": "Graffiti",
-      "color": "Beige",
+      "style": "Abstract",
+      "color": "Blue",
       "artist": {
         "_id": "u101",
         "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
       },
       "reviews": [
         {
@@ -58,19 +61,22 @@
       }
     },
     {
-      "_id": "a102",
-      "title": "Backdrop",
-      "price": 1000,
-      "imgUrl": "https://cdn.pixabay.com/photo/2016/11/22/20/02/abstract-1850417_960_720.jpg",
+      "_id": "a101",
+      "title": "Children on bicycle",
+      "price": 1200,
+      "imgUrl": "https://cdn.pixabay.com/photo/2017/12/28/16/18/bicycle-3045580_960_720.jpg",
       "material": "Canvas",
-      "technique": "Oil",
+      "technique": "Acrylics",
       "category": "Painting",
-      "style": "Abstract",
-      "color": "Blue",
+      "style": "Graffiti",
+      "color": "Beige",
       "artist": {
         "_id": "u101",
         "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
       },
       "reviews": [
         {
@@ -103,40 +109,10 @@
       "artist": {
         "_id": "u101",
         "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
-      },
-      "reviews": [
-        {
-          "id": "madeId",
-          "txt": "a great place to dine..",
-          "rate": 4,
-          "by": {
-            "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
-          }
-        }
-      ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
-      "size": {
-        "height": 10,
-        "width": 10
-      }
-    },
-    {
-      "_id": "a104",
-      "title": "flowers",
-      "price": 1400,
-      "imgUrl": "https://cdn.pixabay.com/photo/2016/08/26/01/41/flowers-1621066_960_720.jpg",
-      "material": "Wood",
-      "technique": "Oil",
-      "category": "Painting",
-      "style": "Abstract",
-      "color": "Red",
-      "artist": {
-        "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
       },
       "reviews": [
         {
@@ -167,9 +143,48 @@
       "style": "Abstract",
       "color": "Blue",
       "artist": {
-        "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "_id": "u102",
+        "fullname": "Alon Dai",
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQF_dzAW9tEmVg/profile-displayphoto-shrink_800_800/0/1592643510622?e=1628121600&v=beta&t=9ln4WiV9tmvB6uBEvhpTK7AmDz4k-QM7YOB6TmKE9b4",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "a great place to dine..",
+          "rate": 4,
+          "by": {
+            "_id": "u102",
+            "fullname": "user2",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+      "size": {
+        "height": 10,
+        "width": 10
+      }
+    },
+    {
+      "_id": "a104",
+      "title": "flowers",
+      "price": 1400,
+      "imgUrl": "https://cdn.pixabay.com/photo/2016/08/26/01/41/flowers-1621066_960_720.jpg",
+      "material": "Wood",
+      "technique": "Oil",
+      "category": "Painting",
+      "style": "Abstract",
+      "color": "Red",
+      "artist": {
+        "_id": "u102",
+        "fullname": "Alon Dai",
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQF_dzAW9tEmVg/profile-displayphoto-shrink_800_800/0/1592643510622?e=1628121600&v=beta&t=9ln4WiV9tmvB6uBEvhpTK7AmDz4k-QM7YOB6TmKE9b4",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
       },
       "reviews": [
         {
@@ -200,9 +215,12 @@
       "style": "Classic",
       "color": "Yellow",
       "artist": {
-        "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "_id": "u102",
+        "fullname": "Alon Dai",
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQF_dzAW9tEmVg/profile-displayphoto-shrink_800_800/0/1592643510622?e=1628121600&v=beta&t=9ln4WiV9tmvB6uBEvhpTK7AmDz4k-QM7YOB6TmKE9b4",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
       },
       "reviews": [
         {
@@ -235,7 +253,10 @@
       "artist": {
         "_id": "u101",
         "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
       },
       "reviews": [
         {
@@ -268,7 +289,10 @@
       "artist": {
         "_id": "u101",
         "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
       },
       "reviews": [
         {
@@ -301,7 +325,10 @@
       "artist": {
         "_id": "u101",
         "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
       },
       "reviews": [
         {
@@ -334,7 +361,10 @@
       "artist": {
         "_id": "u101",
         "fullname": "Tair Bitan",
-        "imgUrl": "/img/img2.jpg"
+        "specializes": "Drawing & Prints",
+        "info":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
       },
       "reviews": [
         {
@@ -363,7 +393,8 @@
       "password": "tairking123",
       "isAdmin": false,
       "isArtist": true,
-      "imgUrl": "http://some-img"
+      "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
+      "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
     },
     {
       "_id": "u102",
@@ -372,7 +403,8 @@
       "password": "alonking12",
       "isAdmin": true,
       "isArtist": false,
-      "imgUrl": "http://some-img"
+      "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQF_dzAW9tEmVg/profile-displayphoto-shrink_800_800/0/1592643510622?e=1628121600&v=beta&t=9ln4WiV9tmvB6uBEvhpTK7AmDz4k-QM7YOB6TmKE9b4",
+      "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
     },
     {
       "_id": "u103",
@@ -381,7 +413,8 @@
       "password": "bigBoss",
       "isAdmin": false,
       "isArtist": false,
-      "imgUrl": "http://some-img"
+      "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQGe4gVfWRDFmQ/profile-displayphoto-shrink_800_800/0/1530218338581?e=1628121600&v=beta&t=Uba3rZCG0ZVGxdlQQmYDi3TM5Q0WrOQhTx1ZpfGTnVM",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
     }
   ]
 }
