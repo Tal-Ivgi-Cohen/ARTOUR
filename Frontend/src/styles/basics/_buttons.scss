@@ -10,19 +10,15 @@ button{
         color:$clr4;
     }
 }
+.btn-add-to-bag{
+background-color:$clr1;
+color: $clr6;
+width: 100%;
+padding: 5px;
+font-size: x-small;
+}
+.art-add-btn{
+    border:1px solid $clr2;
+}
+    
 
-// .btn-remove{
-// background-color:$clr3;
-// }
-
-// .btns-locations{
-//     max-width: 300px;
-//     margin-bottom: .625rem;
-// }
-// .btns-dashboard{
-//     max-width: 480px;
-//     margin-bottom: .625rem;
-// }
-// .select, .checkbox{
-// margin-left: 1.25rem;
-// }

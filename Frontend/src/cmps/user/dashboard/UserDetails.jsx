@@ -6,7 +6,7 @@ export function UserDetails({ user }) {
     <section className='user-details'>
       <p>Username: {user.userName}</p>
       <p>Password: {user.password}</p>
-      <Avatar src={user.imgUrl} alt={user.fullName} />
+      <Avatar src={user.imgUrl} alt={user.fullname} />
     </section>
   );
 }

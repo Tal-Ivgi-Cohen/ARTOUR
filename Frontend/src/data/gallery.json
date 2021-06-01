@@ -7,7 +7,7 @@
       "totalPrice": 20,
       "buyer": {
         "id": "a101",
-        "fullName": "Tair Bitan"
+        "fullname": "Tair Bitan"
       },
       "items": [
         {
@@ -16,7 +16,7 @@
           "amount": 1,
           "artist": {
             "id": "a101",
-            "fullName": "Tair Bitan",
+            "fullname": "Tair Bitan",
             "imgUrl": "url"
           }
         }
@@ -36,7 +36,7 @@
       "color": "Beige",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -46,12 +46,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -69,7 +69,7 @@
       "color": "Blue",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -79,12 +79,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -102,7 +102,7 @@
       "color": "Brown",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -112,12 +112,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -135,7 +135,7 @@
       "color": "Red",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -145,12 +145,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -168,7 +168,7 @@
       "color": "Blue",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -178,12 +178,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -201,7 +201,7 @@
       "color": "Yellow",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -211,12 +211,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -234,7 +234,7 @@
       "color": "Red",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -244,12 +244,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -267,7 +267,7 @@
       "color": "Brown",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -277,12 +277,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -300,7 +300,7 @@
       "color": "Yellow",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -310,12 +310,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -333,7 +333,7 @@
       "color": "Gray",
       "artist": {
         "_id": "u101",
-        "fullName": "Tair Bitan",
+        "fullname": "Tair Bitan",
         "imgUrl": "/img/img2.jpg"
       },
       "reviews": [
@@ -343,12 +343,12 @@
           "rate": 4,
           "by": {
             "_id": "u102",
-            "fullName": "user2",
+            "fullname": "user2",
             "imgUrl": "/img/img2.jpg"
           }
         }
       ],
-      "description": "lorem...",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "size": {
         "height": 10,
         "width": 10
@@ -358,7 +358,7 @@
   "users": [
     {
       "_id": "u101",
-      "fullName": "Tair Bitan",
+      "fullname": "Tair Bitan",
       "userName": "tairos",
       "password": "tairking123",
       "isAdmin": false,
@@ -367,7 +367,7 @@
     },
     {
       "_id": "u102",
-      "fullName": "Alon Dai",
+      "fullname": "Alon Dai",
       "userName": "AlonD",
       "password": "alonking12",
       "isAdmin": true,
@@ -376,7 +376,7 @@
     },
     {
       "_id": "u103",
-      "fullName": "Yaron Biton",
+      "fullname": "Yaron Biton",
       "userName": "vyaron",
       "password": "bigBoss",
       "isAdmin": false,

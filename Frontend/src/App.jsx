@@ -8,9 +8,11 @@ import './styles/styles.scss';
 
 export function App() {
   return (
-    <div className='App'>
-      <Router>
-        <Header />
+    <Router>
+      <div className='App'>
+        <header>
+          <Header />
+        </header>
         <main>
           <Switch>
             <Route exact path="/" render={() => (<Redirect to="/home" />)}>
@@ -26,7 +28,7 @@ export function App() {
           </Switch>
         </main>
         {/* <Footer/> */}
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }

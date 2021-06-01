@@ -1,6 +1,5 @@
 // .main-container , .main-deshboard, .main-about ,.main-header, .main-toy-details{
-.main-container,
-.main-art-details {
+.main-container{
     display: grid;
     font-size: small;
     height: 70vh;
@@ -16,8 +15,7 @@
         &.full {
             grid-column: 1 / -1;
         }
-    }
-
+}
     @include for-mobile-layout {
         grid-template-columns:
             minmax(2rem, 1fr)
@@ -43,103 +41,9 @@
             minmax(2rem, 1fr);
     }
 }
-.art-list {
-    display: grid;
-    width: 100%;
-    gap: 0.625rem;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
-.art-preview {
-    padding: 0.3125rem;
-    max-height: 250px;
-    background-color: $clr5;
-    justify-content: space-around;
-    img {
-        height: 11.25rem;
-    }
-}
-.main-art-details {
-    margin-left: 3.125rem;
-    display: flex;
-    max-width: 80%;
-}
-.content-txt {
-    width: 12.5rem;
-    margin-top: 3rem;
-}
-
-.app-footer {
-    display: flex;
-    flex-direction: column;
-    height: 10vh;
-    align-items: center;
-    justify-content: space-around;
-    background-color: $clr1;
-    width: 100vw;
-    p {
-        text-align: center;
-        color: blanchedalmond;
-    }
-}
-// main{
-//     height: 80vh;
-//     position: relative;
-// }
 .App {
     display: flex;
     flex-direction: column;
 }
 
-.app-header {
-    margin-bottom: 0.9375rem;
-    background-color: $clr1;
-    display: flex;
-    flex-direction: row;
-    height: 8vh;
-    align-items: center;
-    justify-content: space-around;
-    h2 {
-        color: $clr5;
-    }
-    nav {
-        display: flex;
-        align-items: center;
-        color: $clr5;
-        gap: 0.625rem;
-
-        .nav-link {
-            color: $clr5;
-            .nav-link:hover {
-                color: $clr3;
-            }
-            &.active {
-                color: $clr3;
-            }
-        }
-    }
-}
-
-
-.home-section {
-    background-image: url("//cdn.shopify.com/s/files/1/0941/7736/files/FiroozehNeman-Banner02_2048x.jpg?v=1622084011");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 70vh;
-    margin-bottom: 20px;
-    z-index: 1 ;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-
-}
-.hero-content{
-    z-index: 2; 
-}
-.home-section h2{
-    text-align: center;
-}
-
-.art-add-btn{
-border:1px solid $clr2;
-}
+  

@@ -8,9 +8,9 @@
 }
 
 html {
+    font-family: neuzeit;
     font-size: 13px;
     letter-spacing: 1.5px;
-    font-family: neuzeit;
     color: $clr6;
     line-height: 1.6;
 }
@@ -22,8 +22,8 @@ body {
 }
 
 img {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 500px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -50,10 +50,7 @@ button{
   background-color: $clr1;
   padding: .5rem;
 }
-// .locName{
-// color:$clr1;
-// border-radius: 2px;
-// }
+
 p{
     margin: 0;
 }

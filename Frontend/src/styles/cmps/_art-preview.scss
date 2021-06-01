@@ -1,0 +1,11 @@
+.art-preview {
+    padding: 0.3125rem;
+    max-height: 250px;
+    background-color: $clr5;
+    justify-content: space-around;
+    img {
+        height: 11.25rem;
+        width: 80%
+        ;
+    }
+}

@@ -8,3 +8,14 @@ export function ArtList({ arts }) {
         </section>
     )
 }
+
+
+export function ArtListByArtist({ arts , artist }) {
+
+    const filteredArts = arts.filter(art => art.artist.fullname === artist)
+return (
+    <section className="art-list">
+         {filteredArts.map(art => <ArtPreview art={art} key={art._id} />)}  
+    </section>
+    )
+}

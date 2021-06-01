@@ -9,7 +9,7 @@ export class UserDashboard extends Component {
     const { user, userArts, userOrders, removeArt, logout } = this.props;
     return (
       <div>
-        <h2>Hello, {user.fullName}</h2>
+        <h2>Hello, {user.fullname}</h2>
         <Button onClick={() => logout()}>Logout</Button>
         <UserDetails user={user} />
         {user.isArtist && <UserArts arts={userArts} removeArt={removeArt} />}
