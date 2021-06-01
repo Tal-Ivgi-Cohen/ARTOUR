@@ -7,8 +7,8 @@ export const userService = {
     logout,
     signup,
     getLoggedInUser,
-    // getUsers,
-    // getById,
+    query,
+    updateUser,
     // remove,
     // update,
     // increaseScore
@@ -45,10 +45,11 @@ async function getLoggedInUser() {
     return await storageService.getUser();
 }
 
-// function getUsers() {
-//     return storageService.query('user')
-//     // return httpService.get(`user`)
-// }
+async function query() {
+    return await storageService.query(STORAGE_KEY);
+}
+
+
 
 // function getById(userId) {
 //     return storageService.get('user', userId)
@@ -59,9 +60,7 @@ async function getLoggedInUser() {
 //     // return httpService.delete(`user/${userId}`)
 // }
 
-// async function update(user) {
-//     return storageService.put('user', user)
-//     // user = await httpService.put(`user/${user._id}`, user)
-//     // Handle case in which admin updates other user's details
-//     if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
-// }
+async function updateUser(user) {
+    return storageService.updateUser(user);
+}
+

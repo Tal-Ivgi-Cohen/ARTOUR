@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { ArtForm } from '../../cmps/art/ArtForm';
 import { saveArt } from '../../store/art/art.action.js';
 
-function _ArtAdd({ history, user }) {
+function _ArtAdd({ history, user, saveArt }) {
   return <ArtForm history={history} saveArt={saveArt} user={user} />;
 }
 
 function mapStateToProps({ userModule }) {
   return {
-    user: userModule.user,
+    user: userModule.loggedInUser,
   };
 }
 

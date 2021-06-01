@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Button, Link, TextField } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 
 export class SignInForm extends Component {
   state = {
-    username: '',
+    email: '',
     password: '',
   };
 
@@ -12,18 +12,24 @@ export class SignInForm extends Component {
     const value = target.value;
     this.setState({ [field]: value });
   };
+
+  login = () => {
+    const { email, password } = this.state;
+    this.props.login({ email, password });
+  };
   render() {
-    const { username, password } = this.state;
+    const { email, password } = this.state;
 
     return (
       <section className='login'>
-        <form onSubmit={() => this.props.login({ username, password })}>
+        <form onSubmit={this.login}>
           <TextField
-            label='Username'
+            label='Email'
             variant='outlined'
-            name='username'
-            value={username}
+            name='email'
+            value={email}
             onChange={this.handleChange}
+            required
           />
           <TextField
             label='Password'
@@ -31,6 +37,7 @@ export class SignInForm extends Component {
             name='password'
             value={password}
             onChange={this.handleChange}
+            required
           />
           <span to='/reset-password'>Forgot your password?</span>
           <Button variant='outlined' type='submit'>

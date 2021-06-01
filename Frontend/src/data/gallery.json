@@ -389,7 +389,7 @@
     {
       "_id": "u101",
       "fullname": "Tair Bitan",
-      "userName": "tairos",
+      "email": "tairos@fake.com",
       "password": "tairking123",
       "isAdmin": false,
       "isArtist": true,
@@ -399,7 +399,7 @@
     {
       "_id": "u102",
       "fullname": "Alon Dai",
-      "userName": "AlonD",
+      "email": "AlonD@fake.com",
       "password": "alonking12",
       "isAdmin": true,
       "isArtist": false,
@@ -409,7 +409,7 @@
     {
       "_id": "u103",
       "fullname": "Yaron Biton",
-      "userName": "vyaron",
+      "email": "vyaron@fake.com",
       "password": "bigBoss",
       "isAdmin": false,
       "isArtist": false,

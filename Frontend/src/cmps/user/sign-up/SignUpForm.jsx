@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Button, TextField } from '@material-ui/core';
+import { Button, TextField, FormControlLabel, Switch } from '@material-ui/core';
 import { ImgUploadPreview } from '../../util/ImgUploadPreview';
 
 export class SignUpForm extends Component {
   state = {
     email: '',
     username: '',
-    fullName: '',
+    fullname: '',
     password: '',
     imgUrl: null,
     isArtist: false,
@@ -14,7 +14,7 @@ export class SignUpForm extends Component {
 
   handleChange = ({ target }) => {
     const field = target.name;
-    const value = target.value;
+    const value = field === 'isArtist' ? target.checked : target.value;
     this.setState({ [field]: value });
   };
 
@@ -30,13 +30,21 @@ export class SignUpForm extends Component {
   };
 
   onSubmit = () => {
-    const userInfo = {};
+    const { email, fullname, password, imgUrl, isArtist } = this.state;
+    // TODO: validate email & password
+    const userInfo = {
+      email,
+      fullname,
+      password,
+      imgUrl,
+      isArtist,
+      isAdmin: false,
+    };
     this.props.signup(userInfo);
   };
 
   render() {
-    const { email, username, fullName, password, imgUrl, isArtist } =
-      this.state;
+    const { email, fullname, password, imgUrl, isArtist } = this.state;
     return (
       <section className='sign-up'>
         <form onSubmit={this.onSubmit}>
@@ -46,13 +54,15 @@ export class SignUpForm extends Component {
             name='email'
             value={email}
             onChange={this.handleChange}
+            required
           />
           <TextField
-            label='Username'
+            label='Full name'
             variant='outlined'
-            name='username'
-            value={username}
+            name='fullname'
+            value={fullname}
             onChange={this.handleChange}
+            required
           />
           <TextField
             label='Password'
@@ -60,9 +70,19 @@ export class SignUpForm extends Component {
             name='password'
             value={password}
             onChange={this.handleChange}
+            required
           />
           <ImgUploadPreview imgUrl={imgUrl} onImgChange={this.onImgChange} />
-          
+          <FormControlLabel
+            control={
+              <Switch
+                checked={isArtist}
+                onChange={this.handleChange}
+                name='isArtist'
+              />
+            }
+            label="I'm an artist"
+          />
           <Button variant='outlined' type='submit'>
             Submit
           </Button>
