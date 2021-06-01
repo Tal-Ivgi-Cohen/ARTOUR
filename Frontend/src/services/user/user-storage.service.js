@@ -5,7 +5,8 @@ export const storageService = {
   getUser,
   login,
   logout,
-  signup
+  signup,
+  updateUser
 };
 
 
@@ -13,9 +14,8 @@ export const storageService = {
 async function query(entityType) {
   let entities = await JSON.parse(localStorage.getItem(entityType)) || [];
   if (!entities || !entities.length) {
-    console.log('set to storage');
     entities = gData[entityType];
-    if (entityType !== "users") _save(entityType, entities);
+    _save(entityType, entities);
   }
   return entities;
 }
@@ -26,9 +26,9 @@ async function getUser(entityType) {
 
 async function login(credentials) {
   const users = await query('users');
-  const { username, password } = credentials;
+  const { email, password } = credentials;
   if (users) {
-    const user = users.find(user => user.userName === username && user.password === password);
+    const user = users.find(user => user.email === email && user.password === password);
     _saveLocalUser(user);
     return user || null;
   }
@@ -38,13 +38,23 @@ function logout(key) {
   sessionStorage.clear(key);
 }
 
-function signup(newUser) {
-  newUser._id = utilService.makeId();;
-  gData.users.push(newUser);
+async function signup(newUser) {
+  newUser._id = utilService.makeId();
+  const users = await query("users");
+  users.push(newUser);
+  _save("users", users);
   _saveLocalUser(newUser);
   return newUser;
 }
 
+//UPDATE
+async function updateUser(updatedUser) {
+  const users = await query('users');
+  const idx = users.findIndex(user => updatedUser._id === user._id);
+  users.splice(idx, 1, updatedUser);
+  _save('users', users);
+  return users;
+}
 
 //SAVE USER TO STORAGE
 function _saveLocalUser(user) {

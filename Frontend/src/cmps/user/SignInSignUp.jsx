@@ -20,12 +20,12 @@ export class SignInSignUp extends Component {
           <div>
             <span>Sign in with Google</span>
           </div>
-          {isSignInShown ? (
-            <SignIn login={login} goToSignUp={this.goToSignUp} />
-          ) : (
-            <SignUp signup={signup} />
-          )}
         </section>
+        {isSignInShown ? (
+          <SignIn login={login} goToSignUp={this.goToSignUp} />
+        ) : (
+          <SignUp signup={signup} />
+        )}
       </>
     );
   }
