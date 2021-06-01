@@ -1,5 +1,5 @@
 .main-artist{
-    margin-bottom: .625rem;
+    margin: 0 7rem 1rem 7rem;
     p{
         text-align: center;
         margin-bottom: 1.5rem;
@@ -7,7 +7,7 @@
 }
 .contianer-hiro{
     position:relative;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 .artist-hiro-title{
     color: $clr6;
@@ -17,22 +17,25 @@
     position: absolute;
     top: 35%;
     left: 40%;
+    *{
+        font-family: serif;
+        text-align: center;
+    }
     h1{
-       font-family: serif;
         font-size: 44px;
     }
     p{
         font-size: 1.25rem;  
     }
 }
-
-
-
 .artist-details{
     img{
         max-width: 40%;
         max-height: 21.875rem;
         margin: 0 3.125rem 0 1.25rem;
     }
-        margin-bottom: 1.25rem;
+    .text-description{
+        margin-top: 1.5rem;
+    }
+        margin-bottom: 2rem;
 }

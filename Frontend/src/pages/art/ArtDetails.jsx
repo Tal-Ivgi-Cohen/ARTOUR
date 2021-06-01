@@ -40,6 +40,7 @@ class _ArtDetails extends React.Component {
       <div>
         <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button>
         {selectedArt && (
+        <div className="main">
         <section className="main-art-details flex">
           
         <div className="imgs flex">
@@ -102,6 +103,7 @@ class _ArtDetails extends React.Component {
               <p>{selectedArt.description}</p>
           </div>
         </section>
+        </div>
         )
     }
     <div className="artist-list-details flex space-between">  

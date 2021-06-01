@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 
 import { ArtListByArtist} from "../../cmps/art/ArtList.jsx";
@@ -33,7 +33,7 @@ findImgArtist=()=>{
     render(){
         const { artist } = this.props;
         return(
-            <div className="main-artist">
+          <Fragment>
           <div className="contianer-hiro">
              <img src={this.findImgArtist()} alt="" className="img-hiro-artist"/> 
              <div className="artist-hiro-title">
@@ -41,6 +41,7 @@ findImgArtist=()=>{
              <h1>{artist.fullname}</h1>
              </div>  
           </div>
+            <div className="main-artist">
             
             <div className="artist-details flex">
             <img src={artist.imgUrl} alt={artist.fullname}/>
@@ -53,6 +54,7 @@ findImgArtist=()=>{
             </div>
             <ArtListByArtist arts={this.props.arts} artist={this.props.artist.fullname}/> 
             </div>
+            </Fragment>
         )
     }
 }
