@@ -10,15 +10,15 @@ export const artService = {
 
 };
 
-function query() {
-    return storageService.query(STORAGE_KEY);
+async function query() {
+    return await storageService.query(STORAGE_KEY);
 }
-function getById(artId) {
+async function getById(artId) {
     console.log(' get art service from', artId);
-    return storageService.get('arts', artId);
+    return await storageService.get('arts', artId);
 }
-function remove(artId) {
-    return storageService.remove('arts', artId);
+async function remove(artId) {
+    return await storageService.remove('arts', artId);
 }
 async function save(art) {
     if (art._id) {

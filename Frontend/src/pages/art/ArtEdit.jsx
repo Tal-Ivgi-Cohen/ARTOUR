@@ -11,18 +11,25 @@ class _ArtEdit extends React.Component {
   }
 
   render() {
-    const { selectedArt, saveArt, history } = this.props;
-    return selectedArt ? (
-      <ArtForm selectedArt={selectedArt} saveArt={saveArt} history={history} />
+    const { selectedArt, saveArt, history, user } = this.props;
+    const { artId } = this.props.match.params;
+    return selectedArt && selectedArt._id === artId ? (
+      <ArtForm
+        selectedArt={selectedArt}
+        saveArt={saveArt}
+        history={history}
+        user={user}
+      />
     ) : (
       <Loader />
     );
   }
 }
 
-function mapStateToProps({ artModule }) {
+function mapStateToProps({ artModule, userModule }) {
   return {
     selectedArt: artModule.selectedArt,
+    user: userModule.user,
   };
 }
 

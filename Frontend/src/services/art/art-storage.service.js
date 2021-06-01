@@ -1,3 +1,4 @@
+import { utilService } from "../utilService";
 const gData = require('../../data/gallery.json');
 
 export const storageService = {
@@ -10,19 +11,14 @@ export const storageService = {
 
 
 //READ LIST
-function query(entityType, delay = 600) {
-  var entities = JSON.parse(localStorage.getItem(entityType)) || [];
+async function query(entityType) {
+  let entities = await JSON.parse(localStorage.getItem(entityType)) || [];
   if (!entities || !entities.length) {
     console.log('set to storage');
-    entities = gData.artworks;
+    entities = gData[entityType];
     _save(entityType, entities);
   }
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(entities);
-    }, delay);
-  });
-  // return Promise.resolve(entities)
+  return entities;
 }
 //DETAILS FIND ONE BY ID
 async function get(entityType, entityId) {
@@ -31,7 +27,7 @@ async function get(entityType, entityId) {
 }
 //ADD
 async function post(entityType, newEntity) {
-  newEntity._id = _makeId();
+  newEntity._id = utilService.makeId();
   const entities = await query(entityType);
   entities.push(newEntity);
   _save(entityType, entities);
@@ -56,13 +52,4 @@ async function remove(entityType, entityId) {
 //SAVE TO STORAGE
 function _save(entityType, entities) {
   localStorage.setItem(entityType, JSON.stringify(entities));
-}
-//UTIL-MAKE-ID
-function _makeId(length = 5) {
-  var text = '';
-  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  for (var i = 0; i < length; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  return text;
 }

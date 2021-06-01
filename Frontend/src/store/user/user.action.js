@@ -4,10 +4,10 @@ export function loadUser() {
     return async dispatch => {
         try {
             const user = await userService.getLoggedInUser();
-            const arts = await userService.getUserArts();
-            const orders = await userService.getUserOrders();
-            dispatch({ type: 'SET_USER', user, arts, orders });
-            console.log('load user', user);
+            if (user) {
+                dispatch({ type: 'SET_USER', user });
+                console.log('load user', user._id);
+            }
 
         } catch (err) {
             console.log('User Actions: err in loaded User', err);
@@ -15,39 +15,40 @@ export function loadUser() {
     };
 }
 //LOGIN
-export function login(username, password) {
+export function login(credentials) {
     return async dispatch => {
         try {
-            const user = await userService.login(username, password);
-            dispatch({ type: 'LOGIN', user });
+            const user = await userService.login(credentials);
+            if (user) {
+                dispatch({ type: 'LOGIN', user });
+            }
         } catch (err) {
             console.log('User Actions: err in login', err);
         }
     };
 }
-// export function saveArt(art) {
-//     return async dispatch => {
-//         try {
-//             const arts = await artService.save(art);
-//             console.log('arts after update', arts);
-//             const action = {
-//                 type: 'SET_ARTS',
-//                 arts: arts
-//             };
-//             dispatch(action);
-//         } catch (err) {
-//             console.log('ArtActions: err in saveArt', err);
-//         }
+//LOGOUT
+export function logout() {
+    return dispatch => {
+        try {
+            userService.logout();
+            dispatch({ type: 'LOGOUT' });
+        } catch (err) {
+            console.log('User Actions: err in logout', err);
+        }
+    };
+}
 
-//     };
-// }
-// export function setArt(artId) {
-//     return async dispatch => {
-//         try {
-//             const art = await artService.getById(artId);
-//             dispatch({ type: 'SET_ART', art });
-//         } catch (err) {
-//             console.log('Art Actions: err in selected Art', err);
-//         }
-//     };
-// }
+//SIGNUP
+export function signup(userInfo) {
+    return async dispatch => {
+        try {
+            const user = await userService.signUp(userInfo);
+            if (user) {
+                dispatch({ type: 'SIGNUP', user });
+            }
+        } catch (err) {
+            console.log('User Actions: err in signUp', err);
+        }
+    };
+}

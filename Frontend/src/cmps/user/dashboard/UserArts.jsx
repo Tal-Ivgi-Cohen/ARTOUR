@@ -10,15 +10,16 @@ import {
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
+import { EmptyState } from '../../util/EmptyState';
 
 export function UserArts({ arts, removeArt }) {
   return (
     <section className='user-artworks'>
       <h3>Artworks</h3>
-      <Link to='/art/add'>
-        <Button className="art-add-btn">Add</Button>
+      <Link to={'/art/add'}>
+        <Button className='art-add-btn'>Add</Button>
       </Link>
-      {arts && (
+      {arts.length ? (
         <Table>
           <TableHead>
             <TableRow>
@@ -59,6 +60,8 @@ export function UserArts({ arts, removeArt }) {
             ))}
           </TableBody>
         </Table>
+      ) : (
+        <EmptyState txt="You don't have any artworks yet. You can add through the 'Add' button above." />
       )}
     </section>
   );

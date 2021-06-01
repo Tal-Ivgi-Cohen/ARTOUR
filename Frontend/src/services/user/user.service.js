@@ -1,31 +1,67 @@
-import { storageService } from './user-storage.service.js';
+
+import { storageService } from './user-storage.service';
 
 const STORAGE_KEY = 'user';
-
 export const userService = {
-    getLoggedInUser,
-    getUserArts,
-    getUserOrders,
     login,
-    // logout,
-    // signup,
-    // getLoggedinUser,
-
+    logout,
+    signup,
+    getLoggedInUser,
+    // getUsers,
+    // getById,
+    // remove,
+    // update,
+    // increaseScore
 };
 
-function getLoggedInUser() {
-    return storageService.getUser(STORAGE_KEY);
-}
-function getUserArts(userId) {
-    console.log(' get arts of user', userId);
-    return storageService.getArts(userId);
-}
-function getUserOrders(userId) {
-    console.log(' get orders of user', userId);
-    return storageService.getOrders(userId);
+
+async function login(credentials) {
+    try {
+        return await storageService.login(credentials);
+    } catch (err) {
+        throw err;
+    }
 }
 
-function login(username, password) {
-    console.log('login', username, password);
-    return storageService.login(username, password);
+async function signup(userInfo) {
+    try {
+        const user = await storageService.signup(userInfo);
+        return user;
+    } catch (err) {
+        throw err;
+    }
 }
+
+async function logout() {
+    try {
+        return await storageService.logout(STORAGE_KEY);
+    } catch (err) {
+        throw err;
+    }
+}
+
+
+async function getLoggedInUser() {
+    return await storageService.getUser();
+}
+
+// function getUsers() {
+//     return storageService.query('user')
+//     // return httpService.get(`user`)
+// }
+
+// function getById(userId) {
+//     return storageService.get('user', userId)
+//     // return httpService.get(`user/${userId}`)
+// }
+// function remove(userId) {
+//     return storageService.remove('user', userId)
+//     // return httpService.delete(`user/${userId}`)
+// }
+
+// async function update(user) {
+//     return storageService.put('user', user)
+//     // user = await httpService.put(`user/${user._id}`, user)
+//     // Handle case in which admin updates other user's details
+//     if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
+// }

@@ -1,63 +1,58 @@
+import { utilService } from "../utilService";
 const gData = require('../../data/gallery.json');
 
 export const storageService = {
   getUser,
-  getArts,
-  getOrders,
-  login
+  login,
+  logout,
+  signup
 };
 
 
 //READ LIST
-function query(entityType, delay = 600) {
-  var entities = JSON.parse(localStorage.getItem(entityType)) || [];
+async function query(entityType) {
+  let entities = await JSON.parse(localStorage.getItem(entityType)) || [];
   if (!entities || !entities.length) {
     console.log('set to storage');
     entities = gData[entityType];
+    if (entityType !== "users") _save(entityType, entities);
   }
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(entities);
-    }, delay);
-  });
-  // return Promise.resolve(entities)
+  return entities;
 }
 
-function getUser(entityType, delay = 600) {
-  var entities = JSON.parse(localStorage.getItem(entityType)) || null;
-  if (!entities || !entities.length) {
-    console.log('set to storage');
-    return entities;
-  }
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(entities);
-    }, delay);
-  });
-  // return Promise.resolve(entities)
-}
-//DETAILS FIND ONE BY ID
-async function getArts(userId) {
-  const arts = await query('arts');
-  if (arts) {
-    const userArts = arts.filter(art => art.artist._id === userId);
-    return userArts;
-  }
+async function getUser(entityType) {
+  return await JSON.parse(sessionStorage.getItem(entityType) || 'null');
 }
 
-async function getOrders(userId) {
-  const orders = await query('orders');
-  if (orders) {
-    const ordersByUser = orders.filter(order => order.buyer.id === userId);
-    const ordersToUser = orders.filter(order => order.items.filter(item => item.artist.id === userId));
-    return { byUser: ordersByUser, toUser: ordersToUser };
-  }
-}
-
-async function login(username, password) {
+async function login(credentials) {
   const users = await query('users');
+  const { username, password } = credentials;
   if (users) {
     const user = users.find(user => user.userName === username && user.password === password);
+    _saveLocalUser(user);
     return user || null;
   }
+}
+
+function logout(key) {
+  sessionStorage.clear(key);
+}
+
+function signup(newUser) {
+  newUser._id = utilService.makeId();;
+  gData.users.push(newUser);
+  _saveLocalUser(newUser);
+  return newUser;
+}
+
+
+//SAVE USER TO STORAGE
+function _saveLocalUser(user) {
+  sessionStorage.setItem("user", JSON.stringify(user));
+  return user;
+}
+
+//SAVE ENTITIES TO STORAGE
+function _save(entityType, entities) {
+  localStorage.setItem(entityType, JSON.stringify(entities));
 }
