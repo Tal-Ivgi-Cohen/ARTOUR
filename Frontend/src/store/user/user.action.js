@@ -5,8 +5,6 @@ export function loadUsers() {
         try {
             const users = await userService.query();
             dispatch({ type: 'SET_USERS', users });
-            console.log('load users', users);
-
         } catch (err) {
             console.log('User Actions: err in loaded users', err);
         }

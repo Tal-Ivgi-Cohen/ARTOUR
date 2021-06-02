@@ -1,7 +1,7 @@
 .main-artist{
     margin: 0 7rem 1rem 7rem;
-    p{
-        text-align: center;
+    p{ 
+        text-align: start;
         margin-bottom: 1.5rem;
     }
 }
@@ -11,7 +11,8 @@
 }
 .artist-hiro-title{
     color: $clr6;
-    text-shadow: -3px -3px 3px $clr1;
+    text-shadow: -1px -1px 3px $clr1;
+
     font-family: serif;
     text-transform: uppercase;
     position: absolute;
@@ -21,11 +22,11 @@
         font-family: serif;
         text-align: center;
     }
+   .img-hiro-artist{
+    filter: brightness(0.6);
+    }
     h1{
         font-size: 44px;
-    }
-    p{
-        font-size: 1.25rem;  
     }
 }
 .artist-details{

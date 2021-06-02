@@ -1,7 +1,7 @@
 
 import { storageService } from './user-storage.service';
 
-const STORAGE_KEY = 'user';
+const STORAGE_KEY = 'users';
 export const userService = {
     login,
     logout,
@@ -46,6 +46,7 @@ async function getLoggedInUser() {
 }
 
 async function query() {
+    console.log('service user');
     return await storageService.query(STORAGE_KEY);
 }
 
