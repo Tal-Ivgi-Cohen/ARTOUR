@@ -363,7 +363,8 @@
       "password": "tairking123",
       "isAdmin": false,
       "isArtist": true,
-      "imgUrl": "http://some-img"
+      "imgUrl": "http://some-img",
+      "shoppingCart":[]    
     },
     {
       "_id": "u102",
@@ -372,7 +373,8 @@
       "password": "alonking12",
       "isAdmin": true,
       "isArtist": false,
-      "imgUrl": "http://some-img"
+      "imgUrl": "http://some-img",
+      "shoppingCart":[]    
     },
     {
       "_id": "u103",
@@ -381,7 +383,44 @@
       "password": "bigBoss",
       "isAdmin": false,
       "isArtist": false,
-      "imgUrl": "http://some-img"
+      "imgUrl": "http://some-img",
+      "shoppingCart":[
+
+        {
+          "_id": "a107",
+          "title": "Red butterfly",
+          "price": 1200,
+          "imgUrl": "https://cdn.pixabay.com/photo/2019/09/24/06/10/red-4500348_960_720.jpg",
+          "material": "Canvas",
+          "technique": "Watercolors",
+          "category": "Painting",
+          "style": "Classic",
+          "quantity":1,
+          "color": "Red",
+          "artist": {
+            "_id": "u101",
+            "fullname": "Tair Bitan",
+            "imgUrl": "/img/img2.jpg"
+          }
+        },
+        {
+          "_id": "a107",
+          "title": "Red butterfly",
+          "price": 1200,
+          "imgUrl": "https://cdn.pixabay.com/photo/2019/09/24/06/10/red-4500348_960_720.jpg",
+          "material": "Canvas",
+          "technique": "Watercolors",
+          "category": "Painting",
+          "style": "Classic",
+          "quantity":1,
+          "color": "Red",
+          "artist": {
+            "_id": "u101",
+            "fullname": "Tair Bitan",
+            "imgUrl": "/img/img2.jpg"
+          }
+        }
+      ]    
     }
   ]
 }

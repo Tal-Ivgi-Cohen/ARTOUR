@@ -24,30 +24,36 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export function PurchaseModal({ selectedArt }) {
+export function PurchaseModal({ selectedArt, saveCartItem }) {
     const classes = useStyles();
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
 
     const handleOpen = () => {
         setOpen(true);
+
     };
 
     const handleClose = () => {
         setOpen(false);
     };
 
+    const handlePurchase = () => {
+        setOpen(true)
+        saveCartItem(selectedArt)
+    }
+
     const body = (
         <div style={modalStyle} className={classes.paper}>
             <h2 id="simple-modal-title">JUST ADDED TO YOUR CART</h2>
             <p id="simple-modal-description">
                 Added to cart successfully</p>
-            <img src={selectedArt.imgUrl}  alt={selectedArt.imgUrl}/>
+            <img src={selectedArt.imgUrl} alt={selectedArt.imgUrl} />
             <h2>{selectedArt.title}</h2>
             <p>Artist: {selectedArt.artist?.fullname || ''}</p>
             <p>Price: {selectedArt.price}</p>
 
-            <button ><Link to={`/cart`}>VIEW CART</Link></button>
+            <button><Link to={`/cart`}>VIEW CART</Link></button>
             <Link to={`/art`}> continue shopping</Link>
             <Modal />
         </div>
@@ -55,7 +61,7 @@ export function PurchaseModal({ selectedArt }) {
 
     return (
         <div>
-            <button className="btn-add-to-bag" type="button" onClick={handleOpen}>
+            <button className="btn-add-to-bag" type="button" onClick={handlePurchase}>
                 Add To Bag
       </button>
             <Modal
@@ -63,7 +69,8 @@ export function PurchaseModal({ selectedArt }) {
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
                 onClick={handleClose}>
-                    {body}
+
+                {body}
             </Modal>
         </div>
     );
@@ -86,12 +93,12 @@ export function WishListModal({ selectedArt }) {
         <div style={modalStyle} className={classes.paper}>
             <div id="simple-modal-title-wish">This item has been added to youre Wishlist</div>
             <div id="simple-modal-description flex">
-            <img className="img-wish" src={selectedArt.imgUrl} />
-            <p className="flex column">
-            <span>{selectedArt.title}</span> 
-            <span>${selectedArt.price} </span>   
-            </p>
-           </div>
+                <img className="img-wish" src={selectedArt.imgUrl} alt={selectedArt.imgUrl} />
+                <p className="flex column">
+                    <span>{selectedArt.title}</span>
+                    <span>${selectedArt.price} </span>
+                </p>
+            </div>
             {/* <button ><Link to={`/art/${selectedArt._id}`}> Continue Shopping</Link></button> */}
             <Modal />
         </div>
@@ -100,7 +107,7 @@ export function WishListModal({ selectedArt }) {
     return (
         <div>
             <a className="btn-wish-list" type="button" onClick={handleOpen}>
-            ♡ WISHLIST
+                ♡ WISHLIST
             </a>
             <Modal
                 open={open}
