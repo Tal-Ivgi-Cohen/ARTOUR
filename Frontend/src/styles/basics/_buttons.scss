@@ -1,24 +1,27 @@
-button{
-    // border:none;
-    border: solid 1px  $clr2;
-    color: $clr2;
-    background-color:inherit;
-    margin-bottom: .5rem;
-    margin: 0px 8px 8px 0px;
-    font-style: italic;
-    &:hover{
-        color:$clr4;
-    }
+button {
+  // border:none;
+  border: solid 1px $clr2;
+  color: $clr2;
+  background-color: inherit;
+  margin-bottom: 0.5rem;
+  margin: 0px 8px 8px 0px;
+  font-style: italic;
+  &:hover {
+    color: $clr4;
+  }
 }
-.btn-add-to-bag{
-background-color:$clr1;
-color: $clr6;
-width: 100%;
-padding: 5px;
-font-size: x-small;
+.btn-add-to-bag {
+  background-color: $clr1;
+  color: $clr6;
+  width: 100%;
+  padding: 5px;
+  font-size: x-small;
 }
-.art-add-btn{
-    border:1px solid $clr2;
+.art-add-btn {
+  border: 1px solid $clr2;
 }
-    
 
+.add-art-page button {
+  width: fit-content;
+  padding: 10px;
+}

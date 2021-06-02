@@ -29,7 +29,7 @@ class _ArtEdit extends React.Component {
 function mapStateToProps({ artModule, userModule }) {
   return {
     selectedArt: artModule.selectedArt,
-    user: userModule.user,
+    user: userModule.loggedInUser,
   };
 }
 

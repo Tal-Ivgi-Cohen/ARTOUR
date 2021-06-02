@@ -6,12 +6,13 @@ import { Button } from '@material-ui/core';
 
 export class UserDashboard extends Component {
   render() {
-    const { user, userArts, userOrders, removeArt, logout } = this.props;
+    const { user, userArts, userOrders, removeArt, logout, updateUser } =
+      this.props;
     return (
       <div>
         <h2>Hello, {user.fullname}</h2>
         <Button onClick={() => logout()}>Logout</Button>
-        <UserDetails user={user} />
+        <UserDetails user={user} updateUser={updateUser} />
         {user.isArtist && <UserArts arts={userArts} removeArt={removeArt} />}
         {userOrders && <UserOrders orders={userOrders} />}
       </div>

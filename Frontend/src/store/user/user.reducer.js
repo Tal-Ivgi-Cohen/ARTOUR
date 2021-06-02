@@ -16,8 +16,8 @@ export function userReducer(state = initialState, action = {}) {
             return { ...state, loggedInUser: null };
         case 'SIGNUP':
             return { ...state, loggedInUser: action.user };
-            case 'UPDATE_USER':
-                return { ...state, users: action.users };
+        case 'UPDATE_USER':
+            return { ...state, users: action.users, loggedInUser: action.user };
         default:
             return state;
     }

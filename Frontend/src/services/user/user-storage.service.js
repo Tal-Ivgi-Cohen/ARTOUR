@@ -54,6 +54,7 @@ async function updateUser(updatedUser) {
   const idx = users.findIndex(user => updatedUser._id === user._id);
   users.splice(idx, 1, updatedUser);
   _save('users', users);
+  _saveLocalUser(updatedUser);
   return users;
 }
 

@@ -16,8 +16,7 @@
           "amount": 1,
           "artist": {
             "id": "a101",
-            "fullname": "Tair Bitan",
-            "imgUrl": "url"
+            "fullname": "Tair Bitan"
           }
         }
       ]
@@ -44,10 +43,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -77,10 +75,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -110,10 +107,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -143,10 +139,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -176,10 +171,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -209,10 +203,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -242,10 +235,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -275,10 +267,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -308,10 +299,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -342,10 +332,9 @@
           "id": "madeId",
           "txt": "a great place to dine..",
           "rate": 4,
-          "by": {
+          "author": {
             "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+            "fullname": "user2"
           }
         }
       ],
@@ -385,7 +374,7 @@
       "_id": "u103",
       "fullname": "Yaron Biton",
       "email": "vyaron@fake.com",
-      "password": "bigBoss",
+      "password": "bigBoss1",
       "isAdmin": false,
       "isArtist": false,
       "specializes": "Drawing & Prints",

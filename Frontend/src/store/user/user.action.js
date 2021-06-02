@@ -73,7 +73,7 @@ export function updateUser(user) {
         try {
             const users = await userService.updateUser(user);
             if (users) {
-                dispatch({ type: 'UPDATE_USER', users });
+                dispatch({ type: 'UPDATE_USER', users, user });
             }
         } catch (err) {
             console.log('User Actions: err in updating a user', err);
