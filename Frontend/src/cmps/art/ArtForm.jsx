@@ -249,6 +249,9 @@ export class ArtForm extends React.Component {
               label='Height'
               variant='outlined'
               onChange={this.handleChange}
+              onInput={({ target }) =>
+                (target.value = target.value.replace(/^0+/, ''))
+              }
             />
             <TextField
               required
@@ -259,6 +262,9 @@ export class ArtForm extends React.Component {
               label='Width'
               variant='outlined'
               onChange={this.handleChange}
+              onInput={({ target }) =>
+                (target.value = target.value.replace(/^0+/, ''))
+              }
             />
             <span>cm</span>
           </section>
@@ -271,6 +277,9 @@ export class ArtForm extends React.Component {
             label='Price'
             variant='outlined'
             onChange={this.handleChange}
+            onInput={({ target }) =>
+              (target.value = target.value.replace(/^0+/, ''))
+            }
           />
           <ImgUploadPreview imgUrl={imgUrl} onImgChange={this.onImgChange} />
           <Button variant='outlined' type='submit'>

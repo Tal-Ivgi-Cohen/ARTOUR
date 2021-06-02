@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import { SignUpForm } from './SignUpForm';
+import { Button } from '@material-ui/core';
+import React from 'react';
+import { UserForm } from '../UserForm';
 
-export class SignUp extends Component {
-  render() {
-    return (
-      <>
-        <h3>Create account</h3>
-        <SignUpForm signup={this.props.signup} />;
-      </>
-    );
-  }
+export function SignUp({ signup, goToLogin }) {
+  const cancel = () => goToLogin();
+  return (
+    <>
+      <h3>Create account</h3>
+      <UserForm signup={signup} />
+      <Button onClick={cancel}>Cancel</Button>
+    </>
+  );
 }

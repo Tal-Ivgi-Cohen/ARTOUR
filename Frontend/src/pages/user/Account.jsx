@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { UserDashboard } from '../../cmps/user/dashboard/UserDashboard.jsx';
-import { SignInSignUp } from '../../cmps/user/SignInSignUp.jsx';
+import { LoginSignUp } from '../../cmps/user/LoginSignUp.jsx';
 import {
-  loadUser,
+  loadLoggedInUser,
   login,
   logout,
   signup,
+  updateUser,
 } from '../../store/user/user.action.js';
 import { removeArt, loadArts } from '../../store/art/art.action.js';
 
 class _Account extends Component {
   componentDidMount() {
-    this.props.loadUser();
+    this.props.loadLoggedInUser();
     if (!this.props.arts.length) this.props.loadArts();
     // TODO: load orders
   }
   render() {
-    const { user, removeArt, arts, login, logout, signup } = this.props;
-    if (user) {
+    const { loggedInUser, removeArt, arts, login, logout, signup, updateUser } =
+      this.props;
+    if (loggedInUser) {
       const userArts = arts
-        ? arts.filter((art) => art.artist._id === user._id)
+        ? arts.filter((art) => art.artist._id === loggedInUser._id)
         : [];
       // const ordersByUser = orders.filter(order => order.buyer.id === userId);
       // const ordersToUser = orders.filter(order => order.items.filter(item => item.artist.id === userId));
@@ -29,11 +31,12 @@ class _Account extends Component {
         <>
           <h3>Account</h3>
           <UserDashboard
-            user={user}
+            user={loggedInUser}
             userArts={userArts}
             // userOrders={orders}
             removeArt={removeArt}
             logout={logout}
+            updateUser={updateUser}
           />
         </>
       );
@@ -41,7 +44,7 @@ class _Account extends Component {
       return (
         <>
           <h3>Account</h3>
-          <SignInSignUp login={login} signup={signup} />
+          <LoginSignUp login={login} signup={signup} />
         </>
       );
   }
@@ -49,17 +52,18 @@ class _Account extends Component {
 
 function mapStateToProps({ userModule, artModule }) {
   return {
-    user: userModule.user,
+    loggedInUser: userModule.loggedInUser,
     arts: artModule.arts,
     // orders: orderModule.orders,
   };
 }
 
 const mapDispatchToProps = {
-  loadUser,
+  loadLoggedInUser,
   login,
   signup,
   logout,
+  updateUser,
   removeArt,
   loadArts,
 };

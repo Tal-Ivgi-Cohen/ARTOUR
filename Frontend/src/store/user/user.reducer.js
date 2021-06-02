@@ -1,17 +1,22 @@
 const initialState = {
-    user: null,
+    loggedInUser: null,
+    users: []
 };
 
 export function userReducer(state = initialState, action = {}) {
     switch (action.type) {
+        case 'SET_USERS':
+            return { ...state, users: action.users };
         case 'SET_USER':
-            return { ...state, user: action.user };
+            return { ...state, loggedInUser: action.user };
         case 'LOGIN':
-            return { ...state, user: action.user };
+            return { ...state, loggedInUser: action.user };
         case 'LOGOUT':
-            return { ...state, user: null };
+            return { ...state, loggedInUser: null };
         case 'SIGNUP':
-            return { ...state, user: action.user };
+            return { ...state, loggedInUser: action.user };
+        case 'UPDATE_USER':
+            return { ...state, users: action.users, loggedInUser: action.user };
         default:
             return state;
     }

@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { setArt, loadArts } from "../../store/art/art.action.js";
 import { Loader } from "../../cmps/util/Loader.jsx";
-import { ArtListByArtist } from "../../cmps/art/ArtList.jsx";
+// import { ArtistProfile } from "../../pages/artist/ArtistProfile.jsx";
+
+import { ArtListByArtist} from "../../cmps/art/ArtList.jsx";
 import { PurchaseModal, WishListModal } from "../../cmps/art/Modal.jsx";
 import { saveCartItem } from "../../store/cart/cart.action.js";
 
@@ -39,29 +41,25 @@ class _ArtDetails extends React.Component {
 
     return (
       <div>
+        <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button>
         {selectedArt && (
-          <section className="main-art-details flex">
-            <div className="content-img">
-              <button
-                className="btn-back"
-                onClick={() => this.props.history.push("/art")}
-              >
-                Go Back
-              </button>
-              <div className="container-img">
+        <div className="main">
+        <section className="main-art-details flex">
+          
+        <div className="imgs flex">
+        <div className="content-img">
+
+            <div className="container-img">
                 <img src="https://d3t95n9c6zzriw.cloudfront.net/static/img/view_in_a_room_2019_2b.jpg" className="img1" alt={selectedArt.imgUrl} />
                 <img src={selectedArt.imgUrl} className="img2" alt={selectedArt.imgUrl} />
-              </div>
             </div>
-            <div className="img-details">
-              <img
-                className={`${this.state.frame}`}
-                src={selectedArt.imgUrl}
-                alt={`${selectedArt.title}`}
-              />
-            </div>
-
-            <div className="content-txt">
+        </div>
+              <div className="img-details">
+                <img className={`${this.state.frame}`} src={selectedArt.imgUrl} alt={`${selectedArt.title}`}/> 
+        </div>
+        </div>
+        
+        <div className="content-txt">
               <div className="art-details">
                 <p>{selectedArt.artist?.fullname || ""}</p>
                 <h1>{selectedArt.title}</h1>
@@ -73,51 +71,31 @@ class _ArtDetails extends React.Component {
                 <p> Size {selectedArt.size.height}/{selectedArt.size.width}</p>
               </div>
 
-              <div className="frame">
-                <h5>Frame</h5>
+        <div className="frame">
+            <h5>Frame</h5>
                 <div className="radio-buttons flex column">
                   <div className="unframed-radio flex">
-                    <input
-                      id="unframed"
-                      value="unframed"
-                      name="frame"
-                      type="radio"
-                      onChange={this.handleChange}
-                    />
+                    <input id="unframed" value="unframed" name="frame" type="radio" onChange={this.handleChange}/>
                     <label for="unframed">Unframed</label>
                   </div>
+
                   <div className="bright-radio flex">
-                    <input
-                      id="bright"
-                      value="bright"
-                      name="frame"
-                      type="radio"
-                      onChange={this.handleChange}
-                    />
+                    <input id="bright" value="bright" name="frame" type="radio" onChange={this.handleChange}/>
                     <label for="bright">Bright</label>
                   </div>
+
                   <div className="dark-radio flex">
-                    <input
-                      id="dark"
-                      value="dark"
-                      name="frame"
-                      type="radio"
-                      onChange={this.handleChange}
-                    />
+                    <input id="dark" value="dark" name="frame" type="radio" onChange={this.handleChange}/>
                     <label for="dark">Dark</label>
                   </div>
+
                   <div className="black-radio flex">
-                    <input
-                      id="black"
-                      value="black"
-                      name="frame"
-                      type="radio"
-                      onChange={this.handleChange}
-                    />
+                    <input id="black" value="black" name="frame" type="radio" onChange={this.handleChange}/>
                     <label for="black">Black</label>
                   </div>
                 </div>
               </div>
+
               <div className="details-modals">
                 <PurchaseModal selectedArt={selectedArt} saveCartItem={saveCartItem} loggedInUser={loggedInUser} />
                 <WishListModal selectedArt={selectedArt} />
@@ -126,15 +104,16 @@ class _ArtDetails extends React.Component {
               <p>DESCRIPTION</p>
               <br />
               <p>{selectedArt.description}</p>
-            </div>
-          </section>
-        )}
-        <div className="artist-list-details flex space-between">
-
-          <Link to={`/artist/${selectedArt.artist.id}`}> <button>More work by {selectedArt.artist.fullname}</button></Link>
-          <ArtListByArtist arts={arts} artist={selectedArt.artist.fullname} />
+          </div>
+        </section>
         </div>
-      </div>
+        )
+    }
+    <div className="artist-list-details flex space-between">  
+    <Link to={`/artist/${selectedArt.artist.id}`}> <button>More work by {selectedArt.artist.fullname}</button></Link>
+    <ArtListByArtist arts={arts} artist={selectedArt.artist.fullname}/>  
+    </div>
+    </div>
     );
   }
 }

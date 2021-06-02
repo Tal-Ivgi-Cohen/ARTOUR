@@ -1,6 +1,18 @@
 import { userService } from '../../services/user/user.service.js';
 
-export function loadUser() {
+export function loadUsers() {
+    return async dispatch => {
+        try {
+            const users = await userService.query();
+            dispatch({ type: 'SET_USERS', users });
+            console.log('load users', users);
+
+        } catch (err) {
+            console.log('User Actions: err in loaded users', err);
+        }
+    };
+}
+export function loadLoggedInUser() {
     return async dispatch => {
         try {
             const user = await userService.getLoggedInUser();
@@ -43,12 +55,26 @@ export function logout() {
 export function signup(userInfo) {
     return async dispatch => {
         try {
-            const user = await userService.signUp(userInfo);
+            const user = await userService.signup(userInfo);
             if (user) {
                 dispatch({ type: 'SIGNUP', user });
             }
         } catch (err) {
             console.log('User Actions: err in signUp', err);
+        }
+    };
+}
+
+//UPDATE
+export function updateUser(user) {
+    return async dispatch => {
+        try {
+            const users = await userService.updateUser(user);
+            if (users) {
+                dispatch({ type: 'UPDATE_USER', users, user });
+            }
+        } catch (err) {
+            console.log('User Actions: err in updating a user', err);
         }
     };
 }

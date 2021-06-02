@@ -1,4 +1,4 @@
-* {
+*{
   box-sizing: border-box;
 }
 
@@ -7,7 +7,7 @@
   border: 10px solid rgb(255, 255, 255);
   border-image: none;
 }
-.dark {
+.dark{
   border: 35px solid rgb(255, 255, 255);
   border-image: url("../../assets/svg/1402636079.svg")  18% stretch;
 }
@@ -19,53 +19,53 @@
   border: 35px solid rgb(255, 255, 255);
   border-image:  url("../../assets/svg/vintage.svg")  20% stretch;
 }
-// .room{
-//   border: 18px solid rgba(216, 191, 191, 0.954);
-//   border-image: url("../../assets/svg/OrnatePictureFramePlain.svg")  12% stretch;
-// }
-
 
 //IMG
-.container-img {
+.container-img{
   position:relative;
+  margin-left: .625rem;
 }
 .img1{
   box-shadow: 0 10px 6px -6px #777;
-  width: 21.875rem;
-  height: 470px;
-
+  height: 480px;
+  margin-top: .6875rem;
 }
-.img2 {
+.img2{
   box-shadow: 0 10px 6px -6px #777;
   position: absolute;
-  max-width: 180px;
+  max-width: 250px;
   max-height: 180px;
   left: 35px;
   top: 50px;
 }
 .img-details{
- max-height: 420px ;
- min-width: 20rem;
+ max-height: 420px;
+ margin-left: .625rem;
 }
 
 //LAYOUT
+.main{
+margin-left: 5rem;
+margin-right: 3rem;
+}
 .radio-buttons, .art-details{
 margin-bottom: 1.25rem;
 }
 .content-txt{
 text-align: start;
+max-width: 30%;
 }
 .details-modals{
   text-align: center;
 }
 .content-txt{
-  margin: 3.125rem 1.25rem 0 3.125rem;
+margin: 3.125rem 1.25rem 0 3.125rem;
 }
-.artist-list-details {
+.artist-list-details{
 margin: 3.125rem 0 0 1.25rem;
 }
-.container-img, .img-details{
-  margin: 4.3rem 0 0 1.25rem;
+.btn-back{
+  margin-left: 1.25rem;
 }
 
 //WISHLIST MODAL
