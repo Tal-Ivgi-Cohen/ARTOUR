@@ -61,8 +61,8 @@ class _ArtDetails extends React.Component {
                 <p>{selectedArt.artist?.fullname || ""}</p>
                 <h1>{selectedArt.title}</h1>
                 <p>
-                  {selectedArt.style} , {selectedArt.material} ,{" "}
-                  {selectedArt.technique}
+                  {selectedArt.style} ,{selectedArt.technique} on {selectedArt.material} {" "}
+                 
                 </p>
                 <p>${selectedArt.price}</p>
                 <p> Size {selectedArt.size.height}/{selectedArt.size.width}</p>

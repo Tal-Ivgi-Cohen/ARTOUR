@@ -6,7 +6,8 @@ export const storageService = {
   login,
   logout,
   signup,
-  updateUser
+  updateUser,
+  query
 };
 
 
