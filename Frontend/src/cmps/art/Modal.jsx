@@ -29,10 +29,10 @@ export function PurchaseModal({ selectedArt, saveCartItem }) {
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
 
-    const handleOpen = () => {
+   /* const handleOpen = () => {
         setOpen(true);
 
-    };
+    };*/
 
     const handleClose = () => {
         setOpen(false);
@@ -48,7 +48,7 @@ export function PurchaseModal({ selectedArt, saveCartItem }) {
             <h2 id="simple-modal-title">JUST ADDED TO YOUR CART</h2>
             <p id="simple-modal-description">
                 Added to cart successfully</p>
-            <img src={selectedArt.imgUrl} alt={selectedArt.imgUrl} />
+            <img src={selectedArt.imgUrl} alt={selectedArt.imgUrl} className="purchase-modal-img"/>
             <h2>{selectedArt.title}</h2>
             <p>Artist: {selectedArt.artist?.fullname || ''}</p>
             <p>Price: {selectedArt.price}</p>
