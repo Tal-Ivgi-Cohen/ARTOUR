@@ -1,13 +1,8 @@
-.app-footer {
-    display: flex;
-    flex-direction: column;
-    height: 10vh;
-    align-items: center;
-    justify-content: space-around;
+.app-footer{
+    height: 600px;
     background-color: $clr1;
-    width: 100vw;
-    p {
-        text-align: center;
-        color: blanchedalmond;
-    }
+    color: $clr5;
+    text-align: center;
+    padding: 4rem;
+    margin-top: 6rem;
 }

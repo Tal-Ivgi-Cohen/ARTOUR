@@ -1,14 +1,10 @@
 import { userService } from '../../services/user/user.service.js';
 
 export function loadUsers() {
-    console.log('loaduserrrrrrr');
     return async dispatch => {
         try {
             const users = await userService.query();
-            console.log('users action2',users);
             dispatch({ type: 'SET_USERS', users });
-            console.log('load users', users);
-
         } catch (err) {
             console.log('User Actions: err in loaded users', err);
         }

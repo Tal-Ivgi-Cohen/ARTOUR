@@ -15,14 +15,13 @@ state={
 }
 componentDidMount(){
     console.log('this.props.artist',this.props.artist);
-   ;
     console.log( this.props.loadUsers());
     this.props.loadArts();
 }
-findImgArtist=()=>{
-   const artHiro = this.props.arts.find((art) => art.artist.fullname === this.props.artist.fullname)
-    return artHiro.imgUrl
-}
+// findImgArtist=()=>{
+//    const artHiro = this.props.arts.find((art) => art.artist.fullname === this.props.artist.fullname)
+//     return artHiro.imgUrl
+// }
 
 findArtistUser=()=>{
   console.log(this.props.users);
@@ -40,27 +39,24 @@ findArtistUser=()=>{
         return(
           <Fragment>
           <div className="contianer-hiro">
-             {/* <img src={this.findImgArtist()} alt="" className="img-hiro-artist"/>  */}
+             <img src={userArtist.imgHero} alt="" className="img-hiro-artist"/> 
              <div className="artist-hiro-title">
-               <h1>test</h1>
-               <p> {this.props.users[0].kkk}</p>
-               {/* <p>{userArtist.fullname}</p> */}
-             {/* <p>{artist.specializes}</p>
-             <h1>{artist.fullname}</h1> */}
+            <p>{userArtist.specializes}</p>
+             <h1>{userArtist.fullname}</h1>
              </div>  
           </div>
             <div className="main-artist">
             
             <div className="artist-details flex">
-            {/* <img src={artist.imgUrl} alt={artist.fullname}/> */}
+            <img src={userArtist.imgUrl} alt={artist.fullname}/>
             <div className="text-description flex column align-center">
-            {/* <h4>About {artist.fullname}</h4> */}
-            {/* <p>{artist.description}</p> */}
+            <h4>About {userArtist.fullname}</h4>
+            <p>{userArtist.description}</p>
             <br/>
-            {/* <ArtistInfoModal artistInfo={artist.info} /> */}
+            <ArtistInfoModal artistInfo={userArtist.info} />
             </div>
             </div>
-            {/* <ArtListByArtist arts={this.props.arts} artist={this.props.artist.fullname}/>  */}
+            <ArtListByArtist arts={this.props.arts} artist={this.props.artist.fullname}/> 
             </div>
             </Fragment>
         )

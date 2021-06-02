@@ -27,7 +27,9 @@ export function App() {
             ))}
           </Switch>
         </main>
-        {/* <Footer/> */}
+        <footer>
+        <Footer/>
+        </footer>
       </div>
     </Router>
   );
