@@ -1,7 +1,7 @@
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { routes } from './routes.js';
 import { Header } from './cmps/util/Header.jsx';
-import { Footer } from './cmps/util/Footer.jsx';
+// import { Footer } from './cmps/util/Footer.jsx';
 
 import './styles/styles.scss';
 
@@ -27,9 +27,9 @@ export function App() {
             ))}
           </Switch>
         </main>
-        <footer>
+        {/* <footer>
           <Footer />
-          </footer>
+          </footer> */}
       </div>
     </Router>
   );

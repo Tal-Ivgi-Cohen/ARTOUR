@@ -31,7 +31,7 @@ async function login(credentials) {
   if (users) {
     const user = users.find(user => user.email === email && user.password === password);
     _saveLocalUser(user);
-    _save('shoppingCart', [])
+    _save('shoppingCart', []);
     return user || null;
   }
 }

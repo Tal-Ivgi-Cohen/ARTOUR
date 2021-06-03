@@ -154,6 +154,7 @@ export class ArtForm extends React.Component {
             label='Title'
             variant='outlined'
             onChange={this.handleChange}
+            className='title-input'
           />
           <TextField
             multiline
@@ -163,6 +164,7 @@ export class ArtForm extends React.Component {
             label='Description'
             variant='outlined'
             onChange={this.handleChange}
+            className='desc-input'
           />
           <TextField
             required
@@ -172,6 +174,7 @@ export class ArtForm extends React.Component {
             label='Category'
             variant='outlined'
             onChange={this.handleChange}
+            className='category-input'
           >
             {this.selectOptions.category.map((item, idx) => (
               <MenuItem key={`c${idx}`} value={item}>
@@ -187,6 +190,7 @@ export class ArtForm extends React.Component {
             label='Material'
             variant='outlined'
             onChange={this.handleChange}
+            className='material-input'
           >
             {this.selectOptions.material.map((item, idx) => (
               <MenuItem key={`m${idx}`} value={item}>
@@ -202,6 +206,7 @@ export class ArtForm extends React.Component {
             label='Technique'
             variant='outlined'
             onChange={this.handleChange}
+            className='technique-input'
           >
             {this.selectOptions.technique.map((item, idx) => (
               <MenuItem key={`t${idx}`} value={item}>
@@ -217,6 +222,7 @@ export class ArtForm extends React.Component {
             label='Style'
             variant='outlined'
             onChange={this.handleChange}
+            className='style-input'
           >
             {this.selectOptions.style.map((item, idx) => (
               <MenuItem key={`s${idx}`} value={item}>
@@ -232,6 +238,7 @@ export class ArtForm extends React.Component {
             label='Color'
             variant='outlined'
             onChange={this.handleChange}
+            className='clr-input'
           >
             {this.selectOptions.color.map((item, idx) => (
               <MenuItem key={`clr${idx}`} value={item}>
@@ -239,7 +246,7 @@ export class ArtForm extends React.Component {
               </MenuItem>
             ))}
           </TextField>
-          <section className='art-size'>
+          <section className='size-input'>
             <TextField
               required
               inputProps={{ min: 0 }}
@@ -262,6 +269,7 @@ export class ArtForm extends React.Component {
               label='Width'
               variant='outlined'
               onChange={this.handleChange}
+              className='price-input'
               onInput={({ target }) =>
                 (target.value = target.value.replace(/^0+/, ''))
               }
@@ -281,10 +289,12 @@ export class ArtForm extends React.Component {
               (target.value = target.value.replace(/^0+/, ''))
             }
           />
-          <ImgUploadPreview imgUrl={imgUrl} onImgChange={this.onImgChange} />
-          <Button variant='outlined' type='submit'>
-            Submit
-          </Button>
+          <section className='add-art-left-section'>
+            <ImgUploadPreview imgUrl={imgUrl} onImgChange={this.onImgChange} />
+            <Button variant='outlined' type='submit'>
+              Submit
+            </Button>
+          </section>
         </form>
       </>
     );
