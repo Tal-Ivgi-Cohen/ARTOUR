@@ -1,0 +1,16 @@
+.check-out-container {
+    display: grid;
+    text-align: center;
+    grid-template-columns:
+        minmax(2rem, 1fr)
+        minmax(auto, $normal-breakpoint)
+        minmax(2rem, 1fr);
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+    form {
+        grid-area: 2/2/4/3;
+    }
+    .check-out-title{
+        grid-area: 1/2/2/3;
+        margin-top: 10px;
+    }
+}

@@ -29,6 +29,7 @@ export function login(credentials) {
     return async dispatch => {
         try {
             const user = await userService.login(credentials);
+            console.log('user in reducer', user);
             if (user) {
                 dispatch({ type: 'LOGIN', user });
             }

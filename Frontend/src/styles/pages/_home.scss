@@ -15,6 +15,7 @@
  }
 
  .carousel-container{
+    position:relative;
     margin: auto;
     text-align: center;
     width: 100%;
@@ -28,4 +29,20 @@
 .Carousel-root-1 {
     margin: auto;
     object-fit: cover;
-  }
+}
+.main-hero-content{
+    text-transform: uppercase;
+    text-shadow: -1px -1px 3px $clr1;
+    position: absolute;
+    color: $clr6;
+    z-index: 2;
+    top: 35%;
+    left: 30%;
+    *{
+        font-family: serif;
+        text-align: center;
+    }
+    h1{
+        font-size: 50px;
+    }
+}

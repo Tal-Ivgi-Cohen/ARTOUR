@@ -1,5 +1,4 @@
 import { utilService } from "../utilService";
-const gData = require('../../data/gallery.json');
 
 export const storageService = {
   query,
@@ -10,12 +9,9 @@ export const storageService = {
 };
 
 //READ LIST
-async function query(entityType, user) {
+async function query(entityType) {
   let entities = await JSON.parse(localStorage.getItem(entityType)) || [];
-  if (!entities || !entities.length) {
-    entities = gData[user][entityType];
-    _save(entityType, entities);
-  }
+
   return entities;
 }
 //DETAILS FIND ONE BY ID
@@ -27,7 +23,7 @@ async function get(entityType, entityId) {
 async function post(entityType, newEntity) {
   newEntity._id = utilService.makeId();
   const entities = await query(entityType);
-  entities.push(newEntity);
+  entities.unshift(newEntity);
   _save(entityType, entities);
   return entities;
 }
@@ -46,6 +42,7 @@ async function remove(entityType, entityId) {
   const idx = entities.findIndex(entity => entity._id === entityId);
   entities.splice(idx, 1);
   _save(entityType, entities);
+  return entities;
 }
 //SAVE TO STORAGE
 function _save(entityType, entities) {

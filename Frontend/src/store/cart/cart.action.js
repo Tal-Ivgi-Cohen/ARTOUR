@@ -14,28 +14,27 @@ export function loadCartItems(user) {
 }
 //REMOVE/DELETE
 export function removeCartItem(cartItemId) {
-    return async dispatch => {
+    return async () => {
         try {
             await cartService.remove(cartItemId);
-            dispatch({ type: 'REMOVE_CART_ITEM', cartItemId });
+            //await cartService.remove(cartItemId);
+            // dispatch({ type: 'REMOVE_CART_ITEM', cartItemId });
         } catch (err) {
             console.log('ArtActions: err in removeArt', err);
         }
     };
 }
-export function saveCartItem(cartItem, user) {
-    return async dispatch => {
+export function saveCartItem(cartItem) {
+    return async () => {
         try {
             console.log('saving to cart', cartItem)
             const cartItems = await cartService.add(cartItem);
-            user.shoppingCart.push(cartItems)
-            const updatedUser = await userService.update(user);
-            console.log('user\'s cart after update', user.shoppingCart);
-            const action = {
-                type: 'UPDATE_USER',
-                updatedUser
-            };
-            dispatch(action);
+            console.log('user\'s cart after update', cartItems);
+            // const action = {
+            //     type: 'UPDATE_USER',
+            //     updatedUser
+            // };
+            // dispatch(action);
         } catch (err) {
             console.log('CartActions: err in saveCart', err);
         }

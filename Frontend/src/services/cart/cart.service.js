@@ -19,12 +19,14 @@ async function query() {
     return await storageService.get('arts', artId);
 }*/
 async function remove(itemId) {
-    return await storageService.remove(STORAGE_KEY, itemId);
+   // return await storageService.remove(STORAGE_KEY, itemId);
+   const cart = await storageService.remove(STORAGE_KEY, itemId)
+   return cart
 }
 async function add(item) {
-    console.log('item in service', item);
-    console.log('posting')
-    return await storageService.post(STORAGE_KEY, item);
+    const cart = await storageService.post(STORAGE_KEY, item)
+    return cart
+    // localStorage.setItem('shoppingCart', cart)
 }
 /*async function save(item) {
     console.log('item in service', item);

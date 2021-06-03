@@ -7,6 +7,11 @@ export class Hero extends React.Component {
   render() {
     return (
       <div className="carousel-container">
+        <div className="main-hero-content">
+        <h1>ArTour Marketplace</h1>
+        <h2>Where Artists Meets Collectors</h2>
+        </div>
+      
           <Carousel className="heros-container">
             <img src="//cdn.shopify.com/s/files/1/0941/7736/files/EthanCaflisch-Banner001_2048x.jpg?v=1622560162" alt="EthanCaflisch" />
             <img src="//cdn.shopify.com/s/files/1/0941/7736/files/fn_Banner02_2048x.jpg?v=1622560108" alt="Banner" />

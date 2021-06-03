@@ -5,14 +5,18 @@
         margin-bottom: 1.5rem;
     }
 }
-.contianer-hiro{
+.contianer-hero{
+    img{
+        filter: brightness(0.6);
+        max-height: 40.625rem;
+        object-fit: cover;
+    }
     position:relative;
     margin-bottom: 2rem;
 }
-.artist-hiro-title{
+.artist-hero-title{
     color: $clr6;
     text-shadow: -1px -1px 3px $clr1;
-
     font-family: serif;
     text-transform: uppercase;
     position: absolute;
@@ -21,9 +25,6 @@
     *{
         font-family: serif;
         text-align: center;
-    }
-   .img-hiro-artist{
-    filter: brightness(0.6);
     }
     h1{
         font-size: 44px;
