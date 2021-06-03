@@ -9,9 +9,9 @@ export function ArtPreview({ art }) {
                                         <img src={art.imgUrl} alt="" />
                                 </div>
                                 <div className="content-card flex column">
-                                        <p>Title: {art.title}</p>
-                                        <p>Artist:{art.artist.fullname}</p>
-                                        <p>Price: ${art.price}</p>
+                                        <h5>{art.title}</h5>
+                                        <p>{art.artist.fullname}</p>
+                                        <h5>${art.price}</h5>
                                 </div>
                         </Link>
                 </div>

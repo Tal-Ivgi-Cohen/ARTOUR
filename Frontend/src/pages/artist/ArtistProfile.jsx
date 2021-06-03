@@ -18,11 +18,6 @@ componentDidMount(){
     console.log( this.props.loadUsers());
     this.props.loadArts();
 }
-// findImgArtist=()=>{
-//    const artHiro = this.props.arts.find((art) => art.artist.fullname === this.props.artist.fullname)
-//     return artHiro.imgUrl
-// }
-
 findArtistUser=()=>{
   console.log(this.props.users);
   console.log(this.props.artist._id);
@@ -31,16 +26,15 @@ findArtistUser=()=>{
   return user
 }
 
-
     render(){
         const { artist } = this.props;
         const userArtist = this.findArtistUser()
         
         return(
           <Fragment>
-          <div className="contianer-hiro">
-             <img src={userArtist.imgHero} alt="" className="img-hiro-artist"/> 
-             <div className="artist-hiro-title">
+          <div className="contianer-hero">
+             <img src={userArtist.imgHero} alt="" className="img-hero-artist"/> 
+             <div className="artist-hero-title">
             <p>{userArtist.specializes}</p>
              <h1>{userArtist.fullname}</h1>
              </div>  

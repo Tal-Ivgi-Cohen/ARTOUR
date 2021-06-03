@@ -4,7 +4,7 @@
 
 //FRAMES
 .none-border{
-  border: 10px solid rgb(255, 255, 255);
+  border: none;
   border-image: none;
 }
 .dark{
@@ -21,40 +21,29 @@
 }
 
 //IMG
-// .container-img{
-//   position:relative;
-//   margin-left: .625rem;
-// }
+.imgs{
+  margin-top: 2rem;
+}
+.img-details{
+  margin-left: .625rem;
+  width: 50%;
+ }
+ .content-img{
+   width: 50%;
+ }
 .img1{
   box-shadow: 0 10px 6px -6px #777;
   grid-area: 1/-1/-1/1;
-
-  // height: 480px;
-  // margin-top: .6875rem;
 }
 .img2{
-  box-shadow: 0 10px 6px -6px #777;
-  // position: absolute;
+  box-shadow: -9px 9px 6px -6px #777;
+  object-fit: cover;
   grid-area: 2/2/3/3;
-  // max-width: 250px;
-  // max-height: 180px;
   width: 100%;
   height: 70%;
-  // left: 35px;
-  // top: 50px;
-}
-.img-details{
- max-height: 420px;
- margin-left: .625rem;
 }
 
 //LAYOUT
-// .content-img{
-//   grid-area: 1/1/-1/1;
-//   display: grid;
-//   grid-template-columns: 1fr 5fr 4fr;
-//   grid-template-rows: 1fr 4fr 5fr;
-// }
 .container-img{
   grid-area: 1/1/-1/1;
   display: grid;
@@ -68,15 +57,13 @@ margin-right: 3rem;
 .radio-buttons, .art-details{
 margin-bottom: 1.25rem;
 }
-.content-txt{
-text-align: start;
-max-width: 30%;
-}
 .details-modals{
   text-align: center;
 }
 .content-txt{
 margin: 3.125rem 1.25rem 0 3.125rem;
+text-align: start;
+max-width: 25%;
 }
 .artist-list-details{
 margin: 3.125rem 0 0 1.25rem;
@@ -90,12 +77,3 @@ margin: 3.125rem 0 0 1.25rem;
   width: 5rem;
   height: 5rem;
 }
-
-//INPUT
-// input[type=radio]:checked{
-// background-color: $clr1;
-// }
-// input[type=radio]{
-//   list-style-type: square;
-//   background-color: #ffff;
-// }

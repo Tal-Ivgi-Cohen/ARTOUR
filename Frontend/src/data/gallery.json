@@ -24,19 +24,19 @@
   ],
   "arts": [
     {
-      "_id": "a102",
-      "title": "Backdrop",
-      "price": 1000,
-      "imgUrl": "https://cdn.pixabay.com/photo/2016/11/22/20/02/abstract-1850417_960_720.jpg",
-      "material": "Canvas",
-      "technique": "Oil",
-      "category": "Painting",
-      "style": "Abstract",
-      "color": "Blue",
+      "_id": "a133",
+      "title": "Single Serving",
+      "price": 990,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/single-serving_20_75x16_Croped_720x@2x.jpg?v=1620277864",
+      "material": "paper",
+      "technique": "Digital art",
+      "category": "Print",
+      "style": "Limited Edition Print",
+      "color": "white",
       "artist": {
-        "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc"
+        "_id": "u107",
+        "fullname": "Bella McGoldrick",
+        "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
       },
       "reviews": [
         {
@@ -49,26 +49,58 @@
           }
         }
       ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+      "description":"Driving across the U.S. in a beat up RV, McGoldrick explored pawn shops, antique stores, yard sales and friend’s attics to find artifacts forgotten. Through this continued series of tickets, old packets and mantlepiece finds, the artist draws into their worn days, highlighting a time when they were handled, a place where they were used, and a memory of how they were once important. Her technique in exacting these ‘receipts’ to their life-like form brings new awareness of their handled nature and beauty into the once overlooked. The photorealistic nature of these drawings take up to 60 hours per piece.",
       "size": {
-        "height": 10,
-        "width": 10
+        "height": 40,
+        "width": 40
+      }
+    },
+    {
+      "_id": "a102",
+      "title": "Backdrop",
+      "price": 1000,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/JamieMilner_RashaadNewsome_LE_Crop_1_720x@2x.jpg?v=1620269807g",
+      "material": "Photograph",
+      "technique": "cotton rag paper",
+      "category": "Photograph",
+      "style": "Limited Edition Photograph",
+      "color": "Black",
+      "artist": {
+        "_id": "u105",
+        "fullname": "Jaimie Milner",
+        "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1572298768/artist%20images/m6sns9ctqducgwjhfdon.jpg"
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "a great place to dine..",
+          "rate": 4,
+          "author": {
+            "_id": "u102",
+            "fullname": "user2"
+          }
+        }
+      ],
+      "description": "Archival ink on museum-quality cotton rag paper | 2014 Jaimie Milner’s photographic practice is rooted in a celebration of black culture and identity. Her series ‘Gifted’ depicts men in her life inhabiting a moment that is established by intimacy, so that the viewer sees these men as Milner sees her father and brother, in opposition to media portrayals and stereotypes.",
+      "size": {
+        "height": 24,
+        "width": 17
       }
     },
     {
       "_id": "a101",
-      "title": "Children on bicycle",
-      "price": 1200,
-      "imgUrl": "https://cdn.pixabay.com/photo/2017/12/28/16/18/bicycle-3045580_960_720.jpg",
-      "material": "Canvas",
-      "technique": "Acrylics",
-      "category": "Painting",
-      "style": "Graffiti",
+      "title": "Togetherness",
+      "price": 1600,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/SepidehIlsley_Togetherness_LE_Crop_720x@2x.jpg?v=1620269441",
+      "material": "glass",
+      "technique": "Print",
+      "category": "Print",
+      "style": "Limited Edition Print",
       "color": "Beige",
       "artist": {
-        "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc"
+        "_id": "u106",
+        "fullname": "Sepideh Ilsley",
+        "imgUrl": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
       },
       "reviews": [
         {
@@ -89,18 +121,18 @@
     },
     {
       "_id": "a103",
-      "title": "Mona Lisa",
-      "price": 1050,
-      "imgUrl": "https://cdn.pixabay.com/photo/2013/01/05/21/02/art-74050_960_720.jpg",
-      "material": "Canvas",
-      "technique": "Oil",
-      "category": "Painting",
-      "style": "Classic",
-      "color": "Brown",
+      "title": "Michael McTaggart",
+      "price": 850,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/JamieMilner_MichaelMcTaggart_LE_Crop_1_720x@2x.jpg?v=1620270019",
+      "material": "Photograph",
+      "technique": "cotton rag paper",
+      "category": "Photograph",
+      "style": "Limited Edition Photograph",
+      "color": "Black",
       "artist": {
-        "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc"
+        "_id": "u105",
+        "fullname": "Jaimie Milner",
+        "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1572298768/artist%20images/m6sns9ctqducgwjhfdon.jpg"
       },
       "reviews": [
         {
@@ -113,26 +145,58 @@
           }
         }
       ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+      "description": "Archival ink on museum-quality cotton rag paper | 2010 Jaimie Milner’s photographic practice is rooted in a celebration of black culture and identity. Her series ‘Gifted’ depicts men in her life inhabiting a moment that is established by intimacy, so that the viewer sees these men as Milner sees her father and brother, in opposition to media portrayals and stereotypes.",
       "size": {
         "height": 10,
         "width": 10
+      }
+    },
+    {
+      "_id": "a130",
+      "title": "Lady",
+      "price": 1200,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/lady_16x16_Croped_720x@2x.jpg?v=1620277746",
+      "material": "wood",
+      "technique": "Digital art",
+      "category": "Print",
+      "style": "Limited Edition Print",
+      "color": "white",
+      "artist": {
+        "_id": "u107",
+        "fullname": "Bella McGoldrick",
+        "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "a great place to dine..",
+          "rate": 4,
+          "author": {
+            "_id": "u102",
+            "fullname": "user2"
+          }
+        }
+      ],
+      "description": "Evoking a sensual nature in the relationships of her objects, the titles of these works by McGoldrick suggest to the viewer an age or an owner of the layered items, with a nod on the concept of forbidden fruit throughout. The playfulness of the items when combined together depict behaviours and personalities that want to be tasted and admired. The photorealistic nature of these drawings take up to 60 hours per piece.",
+      "size": {
+        "height": 35,
+        "width": 50
       }
     },
     {
       "_id": "a105",
-      "title": "Gallery of ancestors",
-      "price": 1300,
-      "imgUrl": "https://cdn.pixabay.com/photo/2018/01/28/17/48/gallery-3114279_960_720.jpg",
-      "material": "Wood",
-      "technique": "Oil",
+      "title": "Jesse Boykins",
+      "price": 600,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/JamieMilner_JesseBoykins_LE_Crop_1_720x@2x.jpg?v=1620270018",
+      "material": "Photograph",
+      "technique": "cotton rag paper",
       "category": "Photograph",
-      "style": "Abstract",
-      "color": "Blue",
+      "style": "Limited Edition Photograph",
+      "color": "Black",
       "artist": {
-        "_id": "u102",
-        "fullname": "Alon Dai",
-        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQF_dzAW9tEmVg/profile-displayphoto-shrink_800_800/0/1592643510622?e=1628121600&v=beta&t=9ln4WiV9tmvB6uBEvhpTK7AmDz4k-QM7YOB6TmKE9b4"
+        "_id": "u105",
+        "fullname": "Jaimie Milner",
+        "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1572298768/artist%20images/m6sns9ctqducgwjhfdon.jpg"
       },
       "reviews": [
         {
@@ -145,26 +209,58 @@
           }
         }
       ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+      "description": "Archival ink on museum-quality cotton rag paper | 2014 Jaimie Milner’s photographic practice is rooted in a celebration of black culture and identity. Her series ‘Gifted’ depicts men in her life inhabiting a moment that is established by intimacy, so that the viewer sees these men as Milner sees her father and brother, in opposition to media portrayals and stereotypes.",
       "size": {
-        "height": 10,
-        "width": 10
+        "height": 42,
+        "width": 30
+      }
+    },
+    {
+      "_id": "a131",
+      "title": "Hot, But Not Really",
+      "price": 990,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/Hot_-But-Not-Really-w_-signature---S_16x20_Print-No-Frame_720x@2x.jpg?v=1620281568",
+      "material": "paper",
+      "technique": "Digital art",
+      "category": "Print",
+      "style": "Limited Edition Print",
+      "color": "white",
+      "artist": {
+        "_id": "u107",
+        "fullname": "Bella McGoldrick",
+        "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "a great place to dine..",
+          "rate": 4,
+          "author": {
+            "_id": "u102",
+            "fullname": "user2"
+          }
+        }
+      ],
+      "description":"Visit most dining establishments around Chinatown, Manhattan, and you’ll find the iconic Sriracha chili sauce bottle sitting on the table, waiting for the many spice enthusiasts who revere the condiment to utilize it to their liking. McGoldrick was drawn to the permeation of the sauce, as well as the iconic design of the bottle before she decided to capture its primary color scheme and very much loved condition, a staple to her work of making us rethink found and used objects. “Sriracha is for meals made a mess of, meals shared, and one day soon again, meals with loved ones at our favorite dining establishments.",
+      "size": {
+        "height": 35,
+        "width": 50
       }
     },
     {
       "_id": "a104",
-      "title": "flowers",
-      "price": 1400,
-      "imgUrl": "https://cdn.pixabay.com/photo/2016/08/26/01/41/flowers-1621066_960_720.jpg",
+      "title": "Everglades",
+      "price": 2500,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/Sepideh---Everglades_45-x-67cm_Crop-2_720x@2x.jpg?v=1620276702",
       "material": "Wood",
       "technique": "Oil",
       "category": "Painting",
       "style": "Abstract",
-      "color": "Red",
+      "color": "pink",
       "artist": {
-        "_id": "u102",
-        "fullname": "Alon Dai",
-        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQF_dzAW9tEmVg/profile-displayphoto-shrink_800_800/0/1592643510622?e=1628121600&v=beta&t=9ln4WiV9tmvB6uBEvhpTK7AmDz4k-QM7YOB6TmKE9b4"
+        "_id": "u106",
+        "fullname": "Sepideh Ilsley",
+        "imgUrl": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
       },
       "reviews": [
         {
@@ -177,7 +273,7 @@
           }
         }
       ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+      "description": "Like her digital works, these oil-on-linen paintings feature minimalist compositions that are created through a highly instinctive, organic process. They are first composed digitally, then as they are transferred, the shapes loosen, lines become increasingly softer — an extension of the artist losing herself, being open to imperfections in which her views can find themselves.",
       "size": {
         "height": 10,
         "width": 10
@@ -185,19 +281,19 @@
     },
     {
       "_id": "a106",
-      "title": "Girl/Woman",
-      "price": 2000,
-      "imgUrl": "https://cdn.pixabay.com/photo/2019/05/04/15/24/art-4178302_960_720.jpg",
-      "material": "Paper",
+      "title": "In This Neutral Space",
+      "price": 1070,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/In-this-neutral-space_45x42_Crop-1_720x@2x.jpg?v=1620277702",
+      "material": "Canvas",
       "technique": "Watercolors",
       "category": "Painting",
       "style": "Classic",
-      "color": "Yellow",
-      "artist": {
-        "_id": "u102",
-        "fullname": "Alon Dai",
-        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQF_dzAW9tEmVg/profile-displayphoto-shrink_800_800/0/1592643510622?e=1628121600&v=beta&t=9ln4WiV9tmvB6uBEvhpTK7AmDz4k-QM7YOB6TmKE9b4"
-      },
+      "color": "Black",
+        "artist": {
+          "_id": "u106",
+          "fullname": "Sepideh Ilsley",
+          "imgUrl": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
+        },
       "reviews": [
         {
           "id": "madeId",
@@ -209,10 +305,10 @@
           }
         }
       ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+      "description": "In Ilsley’s “Color Series” the lines and shapes play off one another like sculptural work, creating a dialogue where each inform the other, creating positive and negative spaces. “I want these sculptural compositions to evoke memories, thoughts and emotions, and also give the viewer an opportunity to stop and contemplate.”",
       "size": {
-        "height": 10,
-        "width": 10
+        "height": 80,
+        "width": 90
       }
     },
     {
@@ -242,6 +338,38 @@
         }
       ],
       "description": "Rashid’s works reference colonialism, westward expansion, and mythology through the telling of world history, specifically focusing on the 18th century, while remixing global players – African, European, ancient and indigenous peoples – in a process of storytelling and mythmaking. These works are Rashid’s first foray into prints of his original work, and capture small vignettes into his larger narrative. Rashid integrates and retells the past in a way that envisions a very different future outcome. His work makes the viewer question who is telling the stories of history, and what would we see or believe if it was told from another perspective.",
+      "size": {
+        "height": 40,
+        "width": 40
+      }
+    },
+    {
+      "_id": "a132",
+      "title": "Old Money New Face",
+      "price": 990,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/Old-Money-New-Face_15_71x23_cropped_ebe5c566-8f69-4ad4-bc42-5da4b7a07b5d_720x@2x.jpg?v=1620283007",
+      "material": "paper",
+      "technique": "Digital art",
+      "category": "Print",
+      "style": "Limited Edition Print",
+      "color": "white",
+      "artist": {
+        "_id": "u107",
+        "fullname": "Bella McGoldrick",
+        "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "a great place to dine..",
+          "rate": 4,
+          "author": {
+            "_id": "u102",
+            "fullname": "user2"
+          }
+        }
+      ],
+      "description":"McGoldrick has drawn NYC’s iconic Anthora coffee cup several times in hyperrealistic form, but in this newest release she pairs it with a page ripped from F. Scott Fitzgerald’s “The Great Gatsby,” a classic American novel revolved around a mysterious wealthy man in 1920s New York. The combination is meant to parallel ways the artist perceives New York. “We have old traditions, old literature, new money and some little lady hoping to put all of it to good use...”",
       "size": {
         "height": 40,
         "width": 40
@@ -281,7 +409,7 @@
     },
     {
       "_id": "a107",
-      "title": "Beutifaul Egypt ",
+      "title": "Beutifaul Egypt",
       "price": 1200,
       "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/UmarRashid_Untitled1_LE_Full_1_720x@2x.jpg?v=1620271234",
       "material": "paper",
@@ -313,18 +441,18 @@
     },
     {
       "_id": "a108",
-      "title": "Wild horses",
+      "title": "Egypt my love",
       "price": 1300,
-      "imgUrl": "https://cdn.pixabay.com/photo/2017/10/31/07/49/horses-2904536_960_720.jpg",
-      "material": "Wood",
-      "technique": "Acrylics",
-      "category": "Painting",
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/UmarRashid_Untitled4_LE_Crop_1_720x@2x.jpg?v=1620331887",
+      "material": "glass",
+      "technique": "Print",
+      "category": "Limited Edition Print",
       "style": "Classic",
       "color": "Brown",
       "artist": {
-        "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc"
+        "_id": "u104",
+        "fullname": "Umar Rashid",
+        "imgUrl": "https://cdn.shopify.com/s/files/1/0941/7736/files/UmarRashid_StudiVisit_39_1024x1024.jpg?v=1567714458"
       },
       "reviews": [
         {
@@ -337,7 +465,7 @@
           }
         }
       ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+      "description": "Rashid’s works reference colonialism and westward expansion through the telling of world history, specifically focusing on the 18th century, while remixing global players – African, European, and indigenous peoples – in a process of storytelling and mythmaking. These works are Rashid’s first foray into prints of his original work, and capture small vignettes into his larger narrative. Combing modern cultural references like red and yellow high top fades, pitbulls and grade school typography with colonial soldier attire and antiquified paper, Rashid integrates and retells the past in a way that envisions a very different future outcome. His work makes the viewer question who is telling the stories of history, and what would we see or believe if it was told from another perspective.",
       "size": {
         "height": 10,
         "width": 10
@@ -345,18 +473,18 @@
     },
     {
       "_id": "a109",
-      "title": "Couple",
-      "price": 1000,
-      "imgUrl": "https://cdn.pixabay.com/photo/2014/07/21/03/53/digital-art-398342_960_720.png",
-      "material": "Canvas",
+      "title": "Combination of Events",
+      "price": 1780,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/SepidehIlsley_CombinationofEvents_LE_Crop_720x@2x.jpg?v=1620269276",
+      "material": "wood",
       "technique": "Digital art",
-      "category": "Photograph",
-      "style": "Classic",
-      "color": "Yellow",
+      "category": "Print",
+      "style": "Limited Edition Print",
+      "color": "white",
       "artist": {
-        "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc"
+        "_id": "u106",
+        "fullname": "Sepideh Ilsley",
+        "imgUrl": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
       },
       "reviews": [
         {
@@ -369,27 +497,58 @@
           }
         }
       ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+      "description": "Archival Pigment Print | 2019 These new works by Sepideh Ilsley start out as digital sketches before they are transferred onto linen with paint. Minimal in design and abstract in ethos, these digital works of art move backwards from precise shapes to inorganic and imperfect ones.",
+      "size": {
+        "height": 50,
+        "width": 50
+      }
+    },
+    {
+      "_id": "a110",
+      "title": "Bradford Young",
+      "price": 1200,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/JamieMilner_BradfordYoung_LE_Crop_1_720x@2x.jpg?v=1620848176",
+      "material": "Photograph",
+      "technique": "cotton rag paper",
+      "category": "Photograph",
+      "style": "Limited Edition Photograph",
+      "color": "Black",
+      "artist": {
+        "_id": "u105",
+        "fullname": "Jaimie Milner",
+        "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1572298768/artist%20images/m6sns9ctqducgwjhfdon.jpg"
+      },
+      "reviews": [
+        {
+          "id": "madeId",
+          "txt": "a great place to dine..",
+          "rate": 4,
+          "author": {
+            "_id": "u102",
+            "fullname": "user2"
+          }
+        }
+      ],
+      "description": "Archival ink on museum-quality cotton rag paper | 2015 Jaimie Milner’s photographic practice is rooted in a celebration of black culture and identity. Her series ‘Gifted’ depicts men in her life inhabiting a moment that is established by intimacy, so that the viewer sees these men as Milner sees her father and brother, in opposition to media portrayals and stereotypes.",
       "size": {
         "height": 10,
         "width": 10
       }
     },
     {
-      "_id": "a110",
-      "title": "Drops",
-      "price": 120,
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/05/17/20/34/concept-5183469_960_720.jpg",
-      "material": "Canvas",
-      "technique": "Oil",
-      "category": "Painting",
-      "style": "Abstract",
-      "color": "Gray",
+      "_id": "a137",
+      "title": "Lucky 7'$",
+      "price": 680,
+      "imgUrl": "//cdn.shopify.com/s/files/1/0941/7736/products/Lucky-7__14-x-11_38_Print-No-Frame_720x@2x.jpg?v=1620280646",
+      "material": "paper",
+      "technique": "Digital art",
+      "category": "Print",
+      "style": "Limited Edition Print",
+      "color": "white",
       "artist": {
-        "_id": "u101",
-        "fullname": "Tair Bitan",
-        "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
+        "_id": "u107",
+        "fullname": "Bella McGoldrick",
+        "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
       },
       "reviews": [
         {
@@ -402,10 +561,10 @@
           }
         }
       ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
+      "description":"McGoldrick’s photorealistic still life drawings capture the intimacy and life of the objects we wear, eat, and handle on a daily basis. These used, pre-adored, and often discarded objects are instilled with a sense of curiosity and sentimentality towards the people that once utilized these now forgotten artifacts of daily life. McGoldrick’s depiction of lotto scratch-offs, found crumpled on the streets of New York City, conveys how these forlorn objects, once ripe with potential of delivering the American dream, are now memorialized, with every crease and crevice filled with the possibility of what could have been.",
       "size": {
-        "height": 10,
-        "width": 10
+        "height": 40,
+        "width": 40
       }
     }
   ],
@@ -416,8 +575,8 @@
       "email": "tairos@fake.com",
       "password": "tairking123",
       "isAdmin": false,
-      "isArtist": true,
-      "imgUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
+      "isArtist": true,  
+      "imgUrl":"https://media-exp1.licdn.com/dms/image/C4E03AQElPmC9mH9COA/profile-displayphoto-shrink_800_800/0/1601555632531?e=1628121600&v=beta&t=thshGaohbC97LJZNAZnVv_1zdAY86dkVVObHuW3N0Jc",
       "specializes": "Drawing & Prints",
       "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil."
@@ -428,7 +587,7 @@
       "email": "AlonD@fake.com",
       "password": "alonking12",
       "isAdmin": true,
-      "isArtist": false,
+      "isArtist": false, 
       "specializes": "Drawing & Prints",
       "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQF_dzAW9tEmVg/profile-displayphoto-shrink_800_800/0/1592643510622?e=1628121600&v=beta&t=9ln4WiV9tmvB6uBEvhpTK7AmDz4k-QM7YOB6TmKE9b4",
@@ -440,43 +599,7 @@
       "email": "vyaron@fake.com",
       "password": "bigBoss1",
       "isAdmin": false,
-      "isArtist": false,
-      "shoppingCart": [
-        {
-          "_id": "a107",
-          "title": "Red butterfly",
-          "price": 1200,
-          "imgUrl": "https://cdn.pixabay.com/photo/2019/09/24/06/10/red-4500348_960_720.jpg",
-          "material": "Canvas",
-          "technique": "Watercolors",
-          "category": "Painting",
-          "style": "Classic",
-          "quantity": 1,
-          "color": "Red",
-          "artist": {
-            "_id": "u101",
-            "fullname": "Tair Bitan",
-            "imgUrl": "/img/img2.jpg"
-          }
-        },
-        {
-          "_id": "a107",
-          "title": "Red butterfly",
-          "price": 1200,
-          "imgUrl": "https://cdn.pixabay.com/photo/2019/09/24/06/10/red-4500348_960_720.jpg",
-          "material": "Canvas",
-          "technique": "Watercolors",
-          "category": "Painting",
-          "style": "Classic",
-          "quantity": 1,
-          "color": "Red",
-          "artist": {
-            "_id": "u101",
-            "fullname": "Tair Bitan",
-            "imgUrl": "/img/img2.jpg"
-          }
-        }
-      ],
+      "isArtist": false,    
       "specializes": "Drawing & Prints",
       "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum eaque voluptate! Non labore voluptas esse suscipit, culpa expedita, quam recusandae modi corrupti neque animi. Id alias delectus officia nihil.",
       "imgUrl": "https://media-exp1.licdn.com/dms/image/C4D03AQGe4gVfWRDFmQ/profile-displayphoto-shrink_800_800/0/1530218338581?e=1628121600&v=beta&t=Uba3rZCG0ZVGxdlQQmYDi3TM5Q0WrOQhTx1ZpfGTnVM",
@@ -494,6 +617,45 @@
       "imgUrl": "https://cdn.shopify.com/s/files/1/0941/7736/files/UmarRashid_StudiVisit_39_1024x1024.jpg?v=1567714458",
       "imgHero": "//cdn.shopify.com/s/files/1/0941/7736/collections/39252712a546e58f930c163f5aae56f2_2048x2048.jpg?v=1620254239",
       "description": "Los Angeles-based artist, storyteller, history buff, musician, and poet Umar Rashid (Frohawk Two Feathers) was born in 1976 in Chicago. He earned a BA at Southern Illinois University in 2000 and has exhibited widely nationally and internationally. His work has been presented at numerous institutions including the Hudson River Museum, the Wadsworth Atheneum Museum of Art, the Nevada Museum of Art, the Visual Arts Center of New Jersey, the Ruth and Elmer Wellin Museum of Art at Hamilton College, the Museum of Contemporary Art, Denver, The Armory Center for the Arts, the Contemporary Arts Center, Cincinnati, the Kentucky Museum of Art and Craft, the Torrance Art Museum, and the Santa Barbara Museum of Art. Additionally, he has participated in solo and group gallery exhibitions at New Image Art Gallery, Galerie Cokkie Snoei, Morgan Lehman Gallery, Narwhal Projects, Heiner Contemporary, Stevenson Gallery, Johannes Vogt Gallery, Subliminal Projects, and Avenue 50 Studio."
+    },
+    {
+      "_id": "u105",
+      "fullname": "Jaimie Milner",
+      "email": "jaimie@fake.com",
+      "password": "jaimie123",
+      "isAdmin": false,
+      "isArtist": true,
+      "specializes": "Photography",
+      "info":"Through my work, I aspire to capture, empower and inspire the spirit of the people of the African diaspora. I’m a graduate of the University of Southern California, and I use portrait photography as my primary medium through which to capture the essence of a people and their individual characteristics. In my most recent collection, Gifted, I photograph creative and ingenious Black men in their most natural, unadulterated states and environments. The men photographed are a range of artists, musicians, actors, businessmen, filmmakers, etc, who have garnered recognition and accolades for their work. Most importantly, these men have transcended and combated through their craft, the negative stereotypes and skewed representations of Black men that circulate in society as a result of a very befouled, calamitous and tainted history of African people in the Americas. The purpose of this collection is to honor the creative genius and profound contribution that these men have made to their communities and society as a whole. I firmly believe the visual documentation and exposure of these artists is a display of the strength and beauty of Black men to create and inspire tremendous work despite a period in history of emasculation and social denigration. Gifted, is dedicated to my father, who continues to be the driving influence for my work. His prominent role as a strong, loving and dedicated father helped to shape my perspective of Black men from an early age. Through his example, I came to realize the strength, ingenuity, elegance, and excellence inherent in these men and it is through this lens I efficaciously reveal a very shrouded but profound truth. BA Communications, USC EDUCATION 2010 BA Communications, USC",
+      "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1572298768/artist%20images/m6sns9ctqducgwjhfdon.jpg",
+      "imgHero":"//cdn.shopify.com/s/files/1/0941/7736/products/JamieMilner_JesseBoykins_LE_Crop_1_720x@2x.jpg?v=1620270018",
+      "description": "Jaimie Milner is a photographer based in Los Angeles who brings contemporary black life into focus by photographing men unguarded in moments of their life. Built on the want to create a change in perception of the men around her, she has spent the past eight years capturing their lively and talented souls, combining the practice of social commentary and visual art."
+    },
+    {
+      "_id": "u106",
+      "fullname": "Sepideh Ilsley",
+      "email": "sepideh@fake.com",
+      "password": "sepideh123",
+      "isAdmin": false,
+      "isArtist": true,
+      "specializes": "Digital & Painting",
+      "info":"“My work is a pure expression of my being, my thoughts, ideas, feelings, memories, experiences, past and future. All stages of the process, from making to naming, are equally important. There’s a different story for each stage though I’m driven by values of simplicity and imperfection. I work mainly with abstractions, digitally drawn or painted by hand on the floor. I paint from all sides and angles and inhabit the space of the painting. I go where the painting and brush takes me. It is such a meditative state, and once I immerse myself in my work, I lose myself to it and let go. My digital and painted works are linked together as the pieces often start as digital sketches and then get painted on linen. It is like working backwards, going from something simple and precise to something organic and imperfect.” - Sepideh Ilsley EDUCATION 2013, Umeå University, Stockholm, Sweden, Digital Images 2008, Berghs school of communication, Stockholm, Sweden, Art Direction 2001-2004, Södertörns University, Stockholm, Sweden, Media and communication 2000-2001, Berghs school of communication, Stockholm, Sweden, Graphic design and Illustration",
+      "imgUrl": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779",
+      "imgHero":"//cdn.shopify.com/s/files/1/0941/7736/products/SepidehIlsley_CombinationofEvents_LE_Crop_720x@2x.jpg?v=1620269276",
+      "description":"Sepideh Ilsley was born in Shiraz, Iran, grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic shapes"
+    },
+    {
+      "_id": "u107",
+      "fullname": "Bella McGoldrick",
+      "email": "bella@fake.com",
+      "password": "bella123",
+      "isAdmin": false,
+      "isArtist": true,
+      "specializes": "Drawing & Prints",
+      "info":"“I’m attracted to the way objects reflect or hold light, their texture and their ability to create contrast within themselves.”EDUCATION 2016, Bachelor of (Fashion) Design, RMIT University. Melbourne, Australia EXHIBITIONS/SHOWS 2019, 15th Annual Thanksgiving Collective; What Have We Done?, South Hampton, NY 2016, MSFW Graduate Showcase, Australia 2014, Arts et Métier, Le Pave D’Orsay, Paris France ARTICLES & FEATURES 2021, Affordable Art You Can Buy Online To Decorate Your Bare Walls, Coveteur 2020, Hyper-Realistic Drawings By Bella McGoldrick, Design you Truest 2019, Bella McGoldrick Hyper-realistic Drawings, Trendland",
+      "imgUrl": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg",
+      "imgHero":"//cdn.shopify.com/s/files/1/0941/7736/products/Old-Money-New-Face_15_71x23_cropped_ebe5c566-8f69-4ad4-bc42-5da4b7a07b5d_720x@2x.jpg?v=1620283007",
+      "description":"Bella McGoldrick is an Australian artist, currently living in New York City. Her realism works on paper are made up of dynamic and curated subject matter, usually floating in the white space, reflecting used and pre-adored objects. She uses color pencils to create these works, often taking the artist 60 hours per piece, that can at first appear photographic. By playing with scale and composition, these items to which McGoldrick finnesses over enable her subjects to breath on the walls to which they’re hung. A depth is created where there was just white space, and the stories of these previously loved and handled objects leave the viewer to question “Whom did they belong to?”"
     }
   ]
 }
