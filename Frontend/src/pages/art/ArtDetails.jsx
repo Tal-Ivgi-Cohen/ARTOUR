@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { setArt, loadArts } from "../../store/art/art.action.js";
 import { Loader } from "../../cmps/util/Loader.jsx";
-// import { ArtistProfile } from "../../pages/artist/ArtistProfile.jsx";
 
 import { ArtListByArtist} from "../../cmps/art/ArtList.jsx";
 import { PurchaseModal, WishListModal } from "../../cmps/art/Modal.jsx";
@@ -41,9 +40,9 @@ class _ArtDetails extends React.Component {
 
     return (
       <div>
-        <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button>
         {selectedArt && (
-        <div className="main">
+          <div className="main">
+          <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button>
         <section className="main-art-details flex">
           
         <div className="imgs flex">
@@ -51,7 +50,7 @@ class _ArtDetails extends React.Component {
 
             <div className="container-img">
                 <img src="https://d3t95n9c6zzriw.cloudfront.net/static/img/view_in_a_room_2019_2b.jpg" className="img1" alt={selectedArt.imgUrl} />
-                <img src={selectedArt.imgUrl} className="img2" alt={selectedArt.imgUrl} />
+                <img src={selectedArt.imgUrl} className={`img2 ${this.state.frame}`} alt={selectedArt.imgUrl} />
             </div>
         </div>
               <div className="img-details">
