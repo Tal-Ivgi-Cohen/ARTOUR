@@ -9,6 +9,8 @@ function getModalStyle() {
     return {
         top: 0,
         right: 0,
+        
+
         //transform: `translate(-${top}%, -${left}%)`,
     };
 }
@@ -111,7 +113,7 @@ export function WishListModal({ selectedArt }) {
             </a>
             <Modal
                 open={open}
-                onClose={handleClose}
+                onClick={handleClose}
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
             >

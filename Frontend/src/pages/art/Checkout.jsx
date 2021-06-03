@@ -46,99 +46,105 @@ export class Checkout extends React.Component {
             phoneNumber,
         } = buyer;
         return (
-            <form>
-                <TextField
-                    required
-                    value={firstName}
-                    name='firstName'
-                    label='First name'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                >
-                </TextField>
-                <TextField
-                    required
-                    value={lastName}
-                    name='lastName'
-                    label='Last name'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                >
-                </TextField>
-                <TextField
-                    required
-                    value={company}
-                    name='company'
-                    label='Company (optional)'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                >
-                </TextField>
-                <TextField
-                    required
-                    value={address}
-                    name='address'
-                    label='Address'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                >
-                </TextField>
-                <TextField
-                    required
-                    value={apartment}
-                    name='apartment'
-                    label='Apartment'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                >
-                </TextField>
-                <TextField
-                    required
-                    value={postalCode}
-                    name='postalCode'
-                    label='Postal Code'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                >
-                </TextField>
-                <TextField
-                    required
-                    value={city}
-                    name='city'
-                    label='City'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                >
-                </TextField>
+            <div className="check-out-container">
+                <div className="check-out-title">
+                <h1>Contact information</h1>
+                </div>
+                
+                <form>
+                    <TextField
+                        required
+                        value={firstName}
+                        name='firstName'
+                        label='First name'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    >
+                    </TextField>
+                    <TextField
+                        required
+                        value={lastName}
+                        name='lastName'
+                        label='Last name'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    >
+                    </TextField>
+                    <TextField
+                        required
+                        value={company}
+                        name='company'
+                        label='Company (optional)'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    >
+                    </TextField>
+                    <TextField
+                        required
+                        value={address}
+                        name='address'
+                        label='Address'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    >
+                    </TextField>
+                    <TextField
+                        required
+                        value={apartment}
+                        name='apartment'
+                        label='Apartment'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    >
+                    </TextField>
+                    <TextField
+                        required
+                        value={postalCode}
+                        name='postalCode'
+                        label='Postal Code'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    >
+                    </TextField>
+                    <TextField
+                        required
+                        value={city}
+                        name='city'
+                        label='City'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    >
+                    </TextField>
 
-                <TextField
-                    required
-                    value={country}
-                    name='country'
-                    label='Country'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                />
-                <TextField
-                    required
-                    value={country}
-                    name='country'
-                    label='Country'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                />
-                <TextField
-                    required
-                    value={phoneNumber}
-                    name='phoneNumber'
-                    label='Phone number'
-                    variant='outlined'
-                    onChange={this.handleChange}
-                />
-                <Button variant='outlined' type='submit'>
-                    Continue to shipping
+                    <TextField
+                        required
+                        value={country}
+                        name='country'
+                        label='Country'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    />
+                    <TextField
+                        required
+                        value={country}
+                        name='country'
+                        label='Country'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    />
+                    <TextField
+                        required
+                        value={phoneNumber}
+                        name='phoneNumber'
+                        label='Phone number'
+                        variant='outlined'
+                        onChange={this.handleChange}
+                    />
+                    <Button variant='outlined' type='submit'>
+                        Continue to shipping
                 </Button>
-            </form >
+                </form >
+            </div>
         );
     }
 }
