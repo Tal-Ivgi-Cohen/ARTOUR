@@ -6,7 +6,7 @@ import { saveArt } from '../../store/art/art.action.js';
 function _ArtAdd({ history, user, saveArt }) {
   return (
     <section className='add-art-page'>
-      <ArtForm history={history} saveArt={saveArt} user={user} />;
+      <ArtForm history={history} saveArt={saveArt} user={user} />
     </section>
   );
 }

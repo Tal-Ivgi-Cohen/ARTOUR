@@ -68,6 +68,7 @@ export function updateUser(user) {
     return async dispatch => {
         try {
             const users = await userService.updateUser(user);
+            // art service - updateArtistById
             if (users) {
                 dispatch({ type: 'UPDATE_USER', users, user });
             }
