@@ -121,7 +121,7 @@ export class ArtForm extends React.Component {
     const { art } = this.state;
     await this.props.saveArt(art);
     // go to explore page
-    this.props.history.push(`/account`);
+    this.props.history.push(`/account/arts`);
   };
 
   render() {
@@ -141,162 +141,176 @@ export class ArtForm extends React.Component {
     } = this.state.art;
     const { isEditMode } = this.state;
     return (
-      <>
-        <span className='page-hierarchy-links'>
+      <div className='art-form'>
+        <span className='breadcrumbs'>
           <Link to='/account'>/ Account</Link>
           <span>{isEditMode ? ' / Edit' : ' / Add'}</span>
         </span>
         <form onSubmit={this.onSubmit}>
-          <TextField
-            required
-            value={title}
-            name='title'
-            label='Title'
-            variant='outlined'
-            onChange={this.handleChange}
-            className='title-input'
-          />
-          <TextField
-            multiline
-            value={description}
-            name='description'
-            rowsMax='2'
-            label='Description'
-            variant='outlined'
-            onChange={this.handleChange}
-            className='desc-input'
-          />
-          <TextField
-            required
-            value={category}
-            name='category'
-            select
-            label='Category'
-            variant='outlined'
-            onChange={this.handleChange}
-            className='category-input'
-          >
-            {this.selectOptions.category.map((item, idx) => (
-              <MenuItem key={`c${idx}`} value={item}>
-                {item}
-              </MenuItem>
-            ))}
-          </TextField>
-          <TextField
-            required
-            value={material}
-            name='material'
-            select
-            label='Material'
-            variant='outlined'
-            onChange={this.handleChange}
-            className='material-input'
-          >
-            {this.selectOptions.material.map((item, idx) => (
-              <MenuItem key={`m${idx}`} value={item}>
-                {item}
-              </MenuItem>
-            ))}
-          </TextField>
-          <TextField
-            required
-            value={technique}
-            name='technique'
-            select
-            label='Technique'
-            variant='outlined'
-            onChange={this.handleChange}
-            className='technique-input'
-          >
-            {this.selectOptions.technique.map((item, idx) => (
-              <MenuItem key={`t${idx}`} value={item}>
-                {item}
-              </MenuItem>
-            ))}
-          </TextField>
-          <TextField
-            required
-            value={style}
-            name='style'
-            select
-            label='Style'
-            variant='outlined'
-            onChange={this.handleChange}
-            className='style-input'
-          >
-            {this.selectOptions.style.map((item, idx) => (
-              <MenuItem key={`s${idx}`} value={item}>
-                {item}
-              </MenuItem>
-            ))}
-          </TextField>
-          <TextField
-            required
-            value={color}
-            name='color'
-            select
-            label='Color'
-            variant='outlined'
-            onChange={this.handleChange}
-            className='clr-input'
-          >
-            {this.selectOptions.color.map((item, idx) => (
-              <MenuItem key={`clr${idx}`} value={item}>
-                {item}
-              </MenuItem>
-            ))}
-          </TextField>
-          <section className='size-input'>
+          <section className='art-form-right'>
             <TextField
               required
+              value={title}
+              name='title'
+              label='Title'
+              variant='outlined'
+              onChange={this.handleChange}
+              className='title-input'
+            />
+            <TextField
+              multiline
+              value={description}
+              name='description'
+              rowsMax='2'
+              label='Description'
+              variant='outlined'
+              onChange={this.handleChange}
+              className='desc-input'
+            />
+            <TextField
+              required
+              value={category}
+              name='category'
+              select
+              label='Category'
+              variant='outlined'
+              onChange={this.handleChange}
+              className='category-input'
+            >
+              {this.selectOptions.category.map((item, idx) => (
+                <MenuItem key={`c${idx}`} value={item}>
+                  {item}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              required
+              value={material}
+              name='material'
+              select
+              label='Material'
+              variant='outlined'
+              onChange={this.handleChange}
+              className='material-input'
+            >
+              {this.selectOptions.material.map((item, idx) => (
+                <MenuItem key={`m${idx}`} value={item}>
+                  {item}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              required
+              value={technique}
+              name='technique'
+              select
+              label='Technique'
+              variant='outlined'
+              onChange={this.handleChange}
+              className='technique-input'
+            >
+              {this.selectOptions.technique.map((item, idx) => (
+                <MenuItem key={`t${idx}`} value={item}>
+                  {item}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              required
+              value={style}
+              name='style'
+              select
+              label='Style'
+              variant='outlined'
+              onChange={this.handleChange}
+              className='style-input'
+            >
+              {this.selectOptions.style.map((item, idx) => (
+                <MenuItem key={`s${idx}`} value={item}>
+                  {item}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              required
+              value={color}
+              name='color'
+              select
+              label='Color'
+              variant='outlined'
+              onChange={this.handleChange}
+              className='clr-input'
+            >
+              {this.selectOptions.color.map((item, idx) => (
+                <MenuItem key={`clr${idx}`} value={item}>
+                  {item}
+                </MenuItem>
+              ))}
+            </TextField>
+            <section className='size-input'>
+              <TextField
+                required
+                inputProps={{ min: 0 }}
+                value={size.height}
+                name='height'
+                type='number'
+                label='Height'
+                variant='outlined'
+                onChange={this.handleChange}
+                onInput={({ target }) =>
+                  (target.value = target.value.replace(/^0+/, ''))
+                }
+              />
+              <TextField
+                required
+                inputProps={{ min: 0 }}
+                value={size.width}
+                name='width'
+                type='number'
+                label='Width'
+                variant='outlined'
+                onChange={this.handleChange}
+                className='price-input'
+                onInput={({ target }) =>
+                  (target.value = target.value.replace(/^0+/, ''))
+                }
+              />
+              <span>cm</span>
+            </section>
+            <TextField
+              value={price}
+              required
               inputProps={{ min: 0 }}
-              value={size.height}
-              name='height'
+              name='price'
               type='number'
-              label='Height'
+              label='Price'
               variant='outlined'
               onChange={this.handleChange}
               onInput={({ target }) =>
                 (target.value = target.value.replace(/^0+/, ''))
               }
             />
-            <TextField
-              required
-              inputProps={{ min: 0 }}
-              value={size.width}
-              name='width'
-              type='number'
-              label='Width'
-              variant='outlined'
-              onChange={this.handleChange}
-              className='price-input'
-              onInput={({ target }) =>
-                (target.value = target.value.replace(/^0+/, ''))
-              }
-            />
-            <span>cm</span>
           </section>
-          <TextField
-            value={price}
-            required
-            inputProps={{ min: 0 }}
-            name='price'
-            type='number'
-            label='Price'
-            variant='outlined'
-            onChange={this.handleChange}
-            onInput={({ target }) =>
-              (target.value = target.value.replace(/^0+/, ''))
-            }
-          />
-          <section className='add-art-left-section'>
+          <section className='art-form-left'>
             <ImgUploadPreview imgUrl={imgUrl} onImgChange={this.onImgChange} />
-            <Button variant='outlined' type='submit'>
-              Submit
-            </Button>
+            <section className='form-btns'>
+              <Button
+                variant='outlined'
+                onClick={() => this.props.history.push('/account/arts')}
+              >
+                Cancel
+              </Button>
+              <Button
+                variant='outlined'
+                type='submit'
+                disabled={!price || !size.height || !size.width || !imgUrl}
+              >
+                Submit
+              </Button>
+            </section>
           </section>
         </form>
-      </>
+      </div>
     );
   }
 }

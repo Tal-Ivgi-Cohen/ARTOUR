@@ -38,7 +38,7 @@ class _ArtDetails extends React.Component {
       <div>
         {selectedArt && (
           <div className="main">
-          <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button>
+          {/* <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button> */}
             <section className="main-art-details flex">
 
               <div className="imgs flex">

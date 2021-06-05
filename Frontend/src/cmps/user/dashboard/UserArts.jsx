@@ -14,11 +14,15 @@ import { EmptyState } from '../../util/EmptyState';
 
 export function UserArts({ arts, removeArt }) {
   return (
-    <section className='user-artworks'>
-      <h3>Artworks</h3>
-      <Link to={'/art/add'}>
-        <Button className='art-add-btn'>Add</Button>
-      </Link>
+    <section className='user-arts'>
+      <section>
+        <h3>Artworks</h3>
+        <Link to={'/art/add'}>
+          <Button className='art-add-btn' variant='outlined'>
+            Add
+          </Button>
+        </Link>
+      </section>
       {arts.length ? (
         <Table>
           <TableHead>

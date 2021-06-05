@@ -1,4 +1,3 @@
-
 //SETUP
 @import './setup/variables.scss';
 @import './setup/typography.scss';
@@ -17,12 +16,19 @@
 @import './cmps/header.scss';
 @import './cmps/modal.scss';
 @import './cmps/footer.scss';
+@import './cmps/avatar.scss';
+@import './cmps/user-dashboard.scss';
+@import './cmps/user-details.scss';
+@import './cmps/art-form.scss';
+@import './cmps/user-form.scss';
+@import './cmps/user-arts.scss';
+@import './cmps/login.scss';
+@import './cmps/reset-password.scss';
 
 //PAGES
 @import './pages/details.scss';
 @import './pages/home.scss';
 @import './pages/art-cart.scss';
-@import './pages/addArt.scss';
 @import './pages/artist.scss';
 @import './pages/checkout.scss';
-
+@import './pages/account-page.scss';

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, TextField, Tooltip } from '@material-ui/core';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import { Link } from 'react-router-dom';
 
 export class LoginForm extends Component {
   state = {
@@ -41,7 +42,7 @@ export class LoginForm extends Component {
     const { email, password, isValidInput } = this.state;
 
     return (
-      <section className='login'>
+      <section className='login-form'>
         <form onSubmit={this.login}>
           <TextField
             label='Email'
@@ -51,27 +52,37 @@ export class LoginForm extends Component {
             onChange={this.handleChange}
             required
           />
-          <TextField
-            label='Password'
-            variant='outlined'
-            name='password'
-            value={password}
-            onChange={this.handleChange}
-            required
-          />
-          <Tooltip
-            title={
-              <p>
-                Minimum eight characters, at least one letter and one number.
-              </p>
-            }
-          >
-            <InfoOutlinedIcon />
-          </Tooltip>
-          <span to='/reset-password'>Forgot your password?</span>
-          <Button variant='outlined' type='submit' disabled={!isValidInput}>
-            Login
-          </Button>
+          <section>
+            <TextField
+              label='Password'
+              variant='outlined'
+              name='password'
+              value={password}
+              onChange={this.handleChange}
+              required
+            />
+            <Tooltip
+              title={
+                <p
+                  style={{
+                    fontSize: '10px',
+                    width: '120px',
+                    fontFamily: 'neuzeit',
+                  }}
+                >
+                  Minimum eight characters, at least one letter and one number.
+                </p>
+              }
+            >
+              <InfoOutlinedIcon />
+            </Tooltip>
+          </section>
+          <Link to='/account/reset'>Forgot your password?</Link>
+          <section className='form-btns'>
+            <Button variant='outlined' type='submit' disabled={!isValidInput}>
+              Login
+            </Button>
+          </section>
         </form>
       </section>
     );

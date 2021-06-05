@@ -4,10 +4,26 @@ import {
   TextField,
   FormControlLabel,
   Switch,
-  Avatar,
   Tooltip,
 } from '@material-ui/core';
+import { red } from '@material-ui/core/colors';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import { ImgUploadPreview } from '../util/ImgUploadPreview';
+import { withStyles } from '@material-ui/styles';
+
+const ArtistSwitch = withStyles({
+  switchBase: {
+    color: red[300],
+    '&$checked': {
+      color: red[400],
+    },
+    '&$checked + $track': {
+      backgroundColor: red[400],
+    },
+  },
+  checked: {},
+  track: {},
+})(Switch);
 
 export class UserForm extends Component {
   state = {
@@ -16,18 +32,20 @@ export class UserForm extends Component {
     password: '',
     isArtist: false,
     isValidInput: false,
+    imgUrl: '',
   };
 
   componentDidMount() {
     if (this.props.user) {
       // Edit mode
-      const { email, fullname, password, isArtist } = this.props.user;
+      const { email, fullname, password, isArtist, imgUrl } = this.props.user;
       this.setState({
         email,
         fullname,
         password,
         isArtist,
         isValidInput: true,
+        imgUrl,
       });
     }
   }
@@ -43,15 +61,20 @@ export class UserForm extends Component {
     });
   };
 
+  onImgChange = (url) => {
+    this.setState({ imgUrl: url });
+  };
+
   onSubmit = (ev) => {
     ev.preventDefault();
-    const { email, fullname, password, isArtist } = this.state;
+    const { email, fullname, password, isArtist, imgUrl } = this.state;
     // TODO: validate email & password
     const userInfo = {
       email,
       fullname,
       password,
       isArtist,
+      imgUrl,
     };
     if (this.props.user) {
       // Edit mode
@@ -77,59 +100,86 @@ export class UserForm extends Component {
   };
 
   render() {
-    const { email, fullname, password, isArtist, isValidInput } = this.state;
+    const { email, fullname, password, isArtist, isValidInput, imgUrl } =
+      this.state;
+      const {cancel,editModeOff} = this.props;
     return (
-      <section className='sign-up'>
+      <section className='user-form'>
         <form onSubmit={this.onSubmit}>
-          <TextField
-            label='Email'
-            variant='outlined'
-            name='email'
-            value={email}
-            onChange={this.handleChange}
-            required
-          />
-          <TextField
-            label='Full name'
-            variant='outlined'
-            name='fullname'
-            value={fullname}
-            onChange={this.handleChange}
-            required
-          />
-          <TextField
-            label='Password'
-            variant='outlined'
-            name='password'
-            value={password}
-            onChange={this.handleChange}
-            required
-          />
-          <Tooltip
-            title={
-              <p>
-                Minimum eight characters, at least one letter and one number.
-              </p>
-            }
-          >
-            <InfoOutlinedIcon />
-          </Tooltip>
-          <Avatar src='/img' alt={fullname} />
-          <FormControlLabel
-            control={
-              <Switch
-                checked={isArtist}
+          <section className='user-form-right'>
+            <TextField
+              label='Email'
+              variant='outlined'
+              name='email'
+              value={email}
+              onChange={this.handleChange}
+              required
+            />
+            <TextField
+              label='Full name'
+              variant='outlined'
+              name='fullname'
+              value={fullname}
+              onChange={this.handleChange}
+              required
+            />
+            <section>
+              <TextField
+                label='Password'
+                variant='outlined'
+                name='password'
+                value={password}
                 onChange={this.handleChange}
-                name='isArtist'
+                required
               />
-            }
-            label="I'm an artist"
-          />
-          <Button variant='outlined' type='submit' disabled={!isValidInput}>
-            Submit
-          </Button>
+              <Tooltip
+                title={
+                  <p
+                    style={{
+                      fontSize: '10px',
+                      width: '120px',
+                      fontFamily: 'neuzeit',
+                    }}
+                  >
+                    Minimum eight characters, at least one letter and one
+                    number.
+                  </p>
+                }
+              >
+                <InfoOutlinedIcon />
+              </Tooltip>
+            </section>
+          </section>
+          <section className='user-form-left'>
+            <ImgUploadPreview
+              imgUrl={imgUrl}
+              onImgChange={this.onImgChange}
+              showAvatar={true}
+              fullname={fullname}
+            />
+            <FormControlLabel
+              control={
+                <ArtistSwitch
+                  checked={isArtist}
+                  onChange={this.handleChange}
+                  name='isArtist'
+                />
+              }
+              label="I'm an artist"
+            />
+            <section className='form-btns'>
+              <Button variant='outlined' onClick={editModeOff || cancel}>
+                Cancel
+              </Button>
+              <Button variant='outlined' type='submit' disabled={!isValidInput}>
+                Submit
+              </Button>
+            </section>
+          </section>
         </form>
       </section>
     );
   }
 }
+
+// export const UserForm = withStyles(styles)(_UserForm);
