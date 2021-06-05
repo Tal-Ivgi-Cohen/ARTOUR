@@ -1,10 +1,10 @@
 import { artService } from '../../services/art/art.service.js';
 
-export function loadArts() {
+export function loadArts(filterBy) {
     return async dispatch => {
         try {
             // loadArts
-            const arts = await artService.loadArts();
+            const arts = await artService.loadArts(filterBy);
             dispatch({ type: 'SET_ARTS', arts });
             console.log('load arts', arts);
 

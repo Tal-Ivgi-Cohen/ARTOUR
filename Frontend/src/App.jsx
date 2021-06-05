@@ -9,7 +9,7 @@ import './styles/styles.scss';
 export function App() {
   return (
     <Router>
-      <div className='App'>
+      <div className='App flex column'>
         <header>
           <Header />
         </header>

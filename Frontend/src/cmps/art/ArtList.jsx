@@ -14,13 +14,11 @@ export function ArtList({ arts }) {
     )
 }
 
-
-export function ArtListByArtist({ arts, artist }) {
-
-    const filteredArts = arts.filter(art => art.artist.fullname === artist)
+export function ArtListByArtist({ arts }) {
+    // const filteredArts = arts.filter(art => art.artist.fullname === artist)
     return (
         <section className="art-list">
-            {filteredArts.map(art => <ArtPreview art={art} key={art._id} />)}
+            {arts.map(art => <ArtPreview art={art} key={art._id} />)}
         </section>
     )
 }

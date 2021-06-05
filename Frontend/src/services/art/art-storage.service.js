@@ -7,13 +7,12 @@ export const storageService = {
   post,
   put,
   remove,
-  loadArts
+  loadArtsWithArtists
 };
 
 
 //LOAD ARTS WITH ARTISTS
-async function loadArts(entityType) {
-  const arts = await query(entityType);
+async function loadArtsWithArtists(arts) {
   const users = await query('users');
   const artsWithArtists = arts.map(art => {
     const artist = users.find(user => user._id === art.artist._id);
