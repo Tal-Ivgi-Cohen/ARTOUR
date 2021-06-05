@@ -1,6 +1,6 @@
 const initialState = {
     loggedInUser: null,
-    users:[]
+    users: []
 };
 
 export function userReducer(state = initialState, action = {}) {
@@ -17,6 +17,8 @@ export function userReducer(state = initialState, action = {}) {
             return { ...state, loggedInUser: action.user };
         case 'UPDATE_USER':
             return { ...state, users: action.users, loggedInUser: action.user };
+        case 'RESET_PASSWORD':
+            return { ...state, users: action.users };
         default:
             return state;
     }

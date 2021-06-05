@@ -8,6 +8,7 @@ import {
   logout,
   signup,
   updateUser,
+  resetPassword,
 } from '../../store/user/user.action.js';
 import { removeArt, loadArts } from '../../store/art/art.action.js';
 
@@ -18,8 +19,16 @@ class _Account extends Component {
     // TODO: load orders
   }
   render() {
-    const { loggedInUser, removeArt, arts, login, logout, signup, updateUser } =
-      this.props;
+    const {
+      loggedInUser,
+      removeArt,
+      arts,
+      login,
+      logout,
+      signup,
+      updateUser,
+      resetPassword,
+    } = this.props;
     if (loggedInUser) {
       const userArts = arts
         ? arts.filter((art) => art.artist._id === loggedInUser._id)
@@ -51,6 +60,7 @@ class _Account extends Component {
             signup={signup}
             history={this.props.history}
             tab={this.props.match.params.tab}
+            resetPassword={resetPassword}
           />
         </div>
       );
@@ -71,6 +81,7 @@ const mapDispatchToProps = {
   signup,
   logout,
   updateUser,
+  resetPassword,
   removeArt,
   loadArts,
 };

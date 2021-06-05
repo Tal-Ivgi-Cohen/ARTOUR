@@ -9,6 +9,7 @@ export const userService = {
     getLoggedInUser,
     query,
     updateUser,
+    resetPassword,
     // remove,
     // update,
     // increaseScore
@@ -48,6 +49,10 @@ async function getLoggedInUser() {
 async function query() {
     console.log('service user');
     return await storageService.query(STORAGE_KEY);
+}
+
+async function resetPassword(email, password) {
+    return await storageService.resetPassword(email, password);
 }
 
 

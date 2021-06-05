@@ -7,7 +7,8 @@ export const storageService = {
   logout,
   signup,
   updateUser,
-  query
+  query,
+  resetPassword
 };
 
 
@@ -57,6 +58,15 @@ async function updateUser(updatedUser) {
   users.splice(idx, 1, updatedUser);
   _save('users', users);
   _saveLocalUser(updatedUser);
+  return users;
+}
+
+//RESET PASSWORD
+async function resetPassword(email, password) {
+  const users = await query('users');
+  const idx = users.findIndex(user => user.email === email);
+  users[idx].password = password;
+  _save('users', users);
   return users;
 }
 

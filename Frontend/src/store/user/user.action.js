@@ -69,12 +69,26 @@ export function updateUser(user) {
     return async dispatch => {
         try {
             const users = await userService.updateUser(user);
-            // art service - updateArtistById
             if (users) {
                 dispatch({ type: 'UPDATE_USER', users, user });
             }
         } catch (err) {
             console.log('User Actions: err in updating a user', err);
+        }
+    };
+}
+
+
+//RESET PASSWORD
+export function resetPassword(email, password) {
+    return async dispatch => {
+        try {
+            const users = await userService.resetPassword(email, password);
+            if (users) {
+                dispatch({ type: 'RESET_PASSWORD', users });
+            }
+        } catch (err) {
+            console.log('User Actions: err in resetting user password', err);
         }
     };
 }

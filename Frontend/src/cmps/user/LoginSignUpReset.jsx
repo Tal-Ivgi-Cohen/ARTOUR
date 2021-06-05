@@ -28,7 +28,7 @@ export class LoginSignUpReset extends Component {
 
   getCurrTab = () => {
     const { currTab } = this.state;
-    const { login, signup, history } = this.props;
+    const { login, signup, resetPassword, history } = this.props;
 
     switch (currTab) {
       case 'login':
@@ -36,7 +36,9 @@ export class LoginSignUpReset extends Component {
       case 'signup':
         return <SignUp signup={signup} history={history} />;
       case 'reset':
-        return <ResetPassword history={history} />;
+        return (
+          <ResetPassword history={history} resetPassword={resetPassword} />
+        );
       default:
         return <Login login={login} history={history} />;
     }
