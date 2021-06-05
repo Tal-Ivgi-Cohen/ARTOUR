@@ -4,7 +4,7 @@ export function loadArts() {
     return async dispatch => {
         try {
             // loadArts
-            const arts = await artService.query();
+            const arts = await artService.loadArts();
             dispatch({ type: 'SET_ARTS', arts });
             console.log('load arts', arts);
 

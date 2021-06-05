@@ -3,15 +3,16 @@ import { storageService } from './art-storage.service.js';
 const STORAGE_KEY = 'arts';
 
 export const artService = {
-    query,
+    // query,
     getById,
     save,
     remove,
+    loadArts
 
 };
 
-async function query() {
-    return await storageService.query(STORAGE_KEY);
+async function loadArts() {
+    return await storageService.loadArts(STORAGE_KEY);
 }
 async function getById(artId) {
     return await storageService.get('arts', artId);
