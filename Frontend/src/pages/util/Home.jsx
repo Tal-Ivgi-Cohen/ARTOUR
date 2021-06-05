@@ -18,7 +18,7 @@ export class Home extends React.Component {
                 </div>
                <ArtApp />
                 <div className="btn">
-                <button><Link to={`/art`}> Shop All Art</Link></button>            
+               {/* <button><Link to={`/art`}> Shop All Art</Link></button>            */}
                 </div>
                 </section>
         )
