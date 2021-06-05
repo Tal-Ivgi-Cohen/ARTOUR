@@ -19,7 +19,9 @@ import { EmptyState } from '../../cmps/util/EmptyState.jsx';
 class _ArtCart extends React.Component {
 
   state = {
-    cart: []
+    cart: [],
+    note: '',
+    quantity: 1
   }
 
   async componentDidMount() {
@@ -27,27 +29,34 @@ class _ArtCart extends React.Component {
     this.setState({ cart }, console.log('cart in artcart', this.state.cart))
   }
 
-  /*onRemoveItem() {
-      const cart = cartService.query()
-          .then(() => {
-              this.setState({ cart: cart })
-          })
+  onRemoveItem = async (itemId) => {
+    let { cart } = this.state
+    cart = await cartService.remove(itemId)
+    this.setState({ cart })
   }
 
-  onRemoveItem = (itemId) => {
-      removeCartItem(itemId)
-          .then(() => {
-              console.log('Deleted Succesfully!');
-              let { cart} = this.state
-              cart = cart.filter(item => item._id !== itemId)
-              this.setState({cart })
-          })
-  }*/
+  handleChange = ({ target }) => {
+    const value = target.value
+    const field = target.name
+    this.setState({ note: value })
+  }
 
+  onDecrease = () => {
+    let { quantity } = this.state
+    if (quantity <= 1) return
+    quantity--
+    this.setState({ quantity })
+  }
+
+  onIncrease = () => {
+    let { quantity } = this.state
+    quantity++
+    this.setState({ quantity })
+  }
 
   render() {
-    const { cart } = this.state;
-    const { user, removeCartItem } = this.props;
+    const { cart, note, quantity } = this.state;
+    const { user } = this.props;
 
     return (
       <section className="shoppingCart">
@@ -57,34 +66,43 @@ class _ArtCart extends React.Component {
         {user ? (
           <div className="cart-list">
 
-          <Table>
-            <TableHead className="list-head">
-              <TableRow>
-                <TableCell>Product</TableCell>
-                <TableCell>Price</TableCell>
-                <TableCell>Total</TableCell>
-                <TableCell></TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {cart.map((item, idx) => (
-                <TableRow key={`a${idx}`}>
-                  <TableCell>
-                  <img src={item.imgUrl} alt={item.title} className="cart-item-img"/ >
-                  {item.title}
-                  </TableCell>
-                  <TableCell>${item.price} </TableCell>
-                  <TableCell>${item.price} </TableCell>
-                  <TableCell>
-                    <Button onClick={() => removeCartItem(item._id)}>
-                      <DeleteIcon />
-                    </Button>
-                  </TableCell>
+            <Table>
+              <TableHead className="list-head">
+                <TableRow>
+                  <TableCell colSpan="2">Product</TableCell>
+                  <TableCell>Price</TableCell>
+                  <TableCell>Quantity</TableCell>
+                  <TableCell>Total</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-              </div>
+              </TableHead>
+              <TableBody>
+                {cart.map((item, idx) => (
+                  <TableRow key={`a${idx}`}>
+                    <TableCell>
+                      <img src={item.imgUrl} alt={item.title} className="cart-item-img" />
+                    </TableCell>
+                    <TableCell className="item-details">
+                      <span className="item-title
+                    ">{item.title}</span>
+                      <span className="item-style">{item.style}</span>
+                      <span>Size: {item.size.width}X{item.size.height}</span>
+                      <button onClick={() => this.onRemoveItem(item._id)} className="remove-btn"> Remove </button>
+                    </TableCell>
+                    <TableCell>${item.price} </TableCell>
+                    <TableCell>
+                      <button className="dec-btn" onClick={this.onDecrease}>-</button>
+                      <span className="quantity" >{quantity}</span>
+                      <button className="inc-btn" onClick={this.onIncrease}>+</button>
+                    </TableCell>
+                    <TableCell>${item.price * quantity} </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+            <div className="subtotal-order">
+              Subtotal:
+            </div>
+          </div>
         ) : (
           <EmptyState className="empty-state" txt="Your bag is currently empty" />
         )}
@@ -94,12 +112,11 @@ class _ArtCart extends React.Component {
           <div className="cart-note">
             <form>
               <h3>Add a Note:</h3>
-              <textarea className="add-note:" placeholder="" value="" ></textarea>
+              <textarea className="add-note" value={note} name="note" onChange={this.handleChange}></textarea>
             </form>
           </div>
           <div className="btn">
             <button><Link to={`/art`}> Continue shopping</Link></button>
-            <button>Update</button>
             <button><Link to={`/checkout`}> Check out</Link></button>
           </div>
         </div>
