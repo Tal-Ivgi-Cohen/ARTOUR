@@ -67,6 +67,7 @@ async function resetPassword(email, password) {
 // }
 
 async function updateUser(user) {
+    console.log('user in service', user);
     return storageService.updateUser(user);
 }
 

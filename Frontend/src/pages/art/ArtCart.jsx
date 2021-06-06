@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
-//import { Loader } from "../../cmps/util/Loader.jsx";
-//import { Cart } from '../../cmps/art/Cart.jsx'
 import { cartService } from '../../services/cart/cart.service.js'
 import { removeCartItem } from '../../store/cart/cart.action.js'
 import {
@@ -13,6 +11,7 @@ import {
   TableBody,
 } from '@material-ui/core';
 import { EmptyState } from '../../cmps/util/EmptyState.jsx';
+import { updateUser } from '../../store/user/user.action.js';
 
 class _ArtCart extends React.Component {
 
@@ -54,27 +53,23 @@ class _ArtCart extends React.Component {
     this.setState({ quantity })
   }
 
-  /*subTotal = () => {
-    //await let {cart} = this.state
-    var cart = [{
-      title: 'tal',
-      price: 1000
-    }, {
-      title: 'dana',
-      price: 1000
-    }]
-    console.log('subtotal', cart);
-    var subtotal = cart.reduce(function (acc, item) {
-      // console.log('Called with ', acc, vote);
-      if (!acc[item.price]) acc[item.price] = 0;
-     // acc[item.price]++
-     acc +=item.price
-      console.log('ACC', acc);
-      return acc;
-    }, {})
-    console.log('subtotal', subtotal);
-    return subtotal;
-  }*/
+  onCheckOut = () => {
+    const { cart } = this.state
+    const { user, users, updateUser } = this.props;
+    const artistId = cart[0].artist._id
+    const artist = users.find(user => user._id === artistId);
+    const artId = cart[0]._id
+    const buyerId = user._id
+    artist.orders.push({
+      buyerId,
+      artId
+    })
+    console.log('artist.orders', artist.orders);
+    updateUser(artist)
+    localStorage.setItem('shoppingCart', [])
+  };
+
+
 
 
   render() {
@@ -122,10 +117,6 @@ class _ArtCart extends React.Component {
                 ))}
               </TableBody>
             </Table>
-            <div className="subtotal-order">
-              Subtotal: 
-             { /*{this.subTotal()}*/}
-            </div>
           </div>
         ) : (
           <EmptyState className="empty-state" txt="Your bag is currently empty" />
@@ -141,7 +132,7 @@ class _ArtCart extends React.Component {
           </div>
           <div className="btn">
             <button><Link to={`/art`}> Continue shopping</Link></button>
-            <button><Link to={`/checkout`}> Check out</Link></button>
+            <button onClick={this.onCheckOut}> Check out</button>
           </div>
         </div>
       </section>
@@ -154,11 +145,13 @@ class _ArtCart extends React.Component {
 function mapStateToProps({ userModule }) {
   return {
     user: userModule.loggedInUser,
+    users: userModule.users
   };
 }
 
 const mapDispatchToProps = {
-  removeCartItem
+  removeCartItem,
+  updateUser
 };
 
 export const ArtCart = connect(mapStateToProps, mapDispatchToProps)(_ArtCart);

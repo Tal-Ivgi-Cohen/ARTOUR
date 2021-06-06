@@ -35,13 +35,14 @@ class _Account extends Component {
       // const ordersByUser = orders.filter(order => order.buyer.id === userId);
       // const ordersToUser = orders.filter(order => order.items.filter(item => item.artist.id === userId));
       // const userOrders = {ordersByUser,ordersToUser}
+      const userOrders = loggedInUser.orders
       return (
         <div className='account-page'>
           <h3>Account</h3>
           <UserDashboard
             user={loggedInUser}
             userArts={userArts}
-            // userOrders={orders}
+            userOrders={userOrders}
             removeArt={removeArt}
             logout={logout}
             updateUser={updateUser}
