@@ -8,7 +8,7 @@ export class Header extends React.Component {
     return (
       <header className='app-header'>
         <Link to='/home'>
-          <h2>ArTour Marketplace</h2>
+          <h2>ArTour</h2>
         </Link>
         <nav>
           <NavLink to='/home' className='nav-link'>

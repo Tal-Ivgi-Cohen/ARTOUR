@@ -21,9 +21,9 @@ async function query(filterBy){
         console.log('filterBy service bk',criteria);
         // const criteria = filterBy
         const collection = await dbService.getCollection('art')
-        // console.log('criteria service before filter',criteria);
+        console.log('criteria service before filter',criteria);
         const arts = await collection.find(criteria).toArray()
-        // console.log('arts',arts);
+        console.log('arts',arts);
         return arts
     } catch (err) {
         // logger.error('cannot find toys', err)
@@ -77,7 +77,7 @@ async function query(filterBy){
 function _buildCriteria(filterBy) {
 
     const criteria = {}
-    const _id = (filterBy._id) ? filterBy._id : 'all'
+    const _id = (filterBy._id) ? filterBy._id : ''
     const artistId = (filterBy.artistId) ? filterBy.artistId : ''
 
     criteria.$or = [

@@ -17,13 +17,12 @@
 .artist-hero-title{
     color: $clr6;
     text-shadow: -1px -1px 3px $clr1;
-    font-family: serif;
     text-transform: uppercase;
     position: absolute;
     top: 35%;
     left: 40%;
     *{
-        font-family: serif;
+        font-family: Arial, Helvetica, sans-serif;
         text-align: center;
     }
     h1{
@@ -35,6 +34,7 @@
         max-width: 40%;
         max-height: 21.875rem;
         margin: 0 3.125rem 0 1.25rem;
+        object-fit: cover;
     }
     .text-description{
         margin-top: 1.5rem;

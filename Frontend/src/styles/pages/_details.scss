@@ -22,7 +22,8 @@
 
 //IMG
 .imgs{
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: -50px;
 }
 .img-details{
   margin-left: .625rem;
@@ -51,8 +52,7 @@
   grid-template-rows: 1fr 4fr 5fr;
 }
 .main{
-margin-left: 5rem;
-margin-right: 3rem;
+margin: 0 5rem 3rem;
 }
 .radio-buttons, .art-details{
 margin-bottom: 1.25rem;
@@ -64,6 +64,9 @@ margin-bottom: 1.25rem;
 margin: 3.125rem 1.25rem 0 3.125rem;
 text-align: start;
 max-width: 25%;
+p{
+  margin-bottom: .8rem;
+}
 }
 .artist-list-details{
 margin: 3.125rem 0 0 1.25rem;
@@ -71,13 +74,17 @@ margin: 3.125rem 0 0 1.25rem;
 .btn-back{
   margin-left: 1.25rem;
 }
-
+.btn-more-work{
+  padding: 10px;
+ margin-left: 30rem;
+ height: 4rem;
+}
 //WISHLIST MODAL
 .img-wish{
   width: 5rem;
   height: 5rem;
 }
-
+//RADIO BTNS
 input[type='radio']:after {
   width: 15px;
   height: 15px;
