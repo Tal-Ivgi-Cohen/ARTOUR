@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux";
 
 import { ArtList } from "../../cmps/art/ArtList.jsx";
-import { ArtistInfoModal } from "../../cmps/art/Modal.jsx";
+import { LongTxt } from "../../cmps/util/LongTxt.jsx"
 
 import { loadArts } from "../../store/art/art.action.js";
 import { loadUsers } from "../../store/user/user.action.js";
@@ -54,9 +54,8 @@ findArtistUser=()=>{
             <img src={userArtist.imgUrl} alt={artist.fullname}/>
             <div className="text-description flex column align-center">
             <h4>About {userArtist.fullname}</h4>
-            <p>{userArtist.description}</p>
+            <p><LongTxt description={userArtist.description} /></p>
             <br/>
-            <ArtistInfoModal artistInfo={userArtist.info} />
             </div>
             </div>
             <ArtList arts={this.props.arts} artist={this.props.artist.fullname}/> 

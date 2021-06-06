@@ -20,8 +20,8 @@ async function loadArts(filterBy) {
 }
 
 async function getById(artId) {
-    // return await storageService.get('arts', artId);
-    const art = httpService.get(`art/${artId}`);
+    //return await storageService.get('arts', artId);
+    const art = await httpService.get(`art/${artId}`);
     console.log('art', art);
     return art;
 }
@@ -34,7 +34,6 @@ async function save(art) {
     if (art._id) {
         return await storageService.put('arts', art);
         //  return await httpService.put('art/',`${art_id}`, art)
-
     } else {
         return await storageService.post('arts', art);
         // return httpService.post('art/', art)

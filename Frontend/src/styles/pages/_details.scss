@@ -45,6 +45,31 @@
 }
 
 //LAYOUT
+@media(max-width:$medium-breakpoint) {
+  .imgs{
+    margin-bottom: 0.8rem;
+    flex-direction: column;
+    .img-details, .content-img{
+      width: 75%;
+      height: 50%;
+      margin-right: 0px;
+
+    }
+    .content-txt{
+      margin-left: 0px;
+    }
+  }
+}
+@media(max-width:$normal-breakpoint) {
+.main-art-details{
+  text-align: center;
+  flex-direction: column;
+  .content-txt{
+    max-width: none;
+  }
+}
+}
+
 .container-img{
   grid-area: 1/1/-1/1;
   display: grid;

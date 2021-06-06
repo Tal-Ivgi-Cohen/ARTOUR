@@ -30,11 +30,6 @@ export function saveCartItem(cartItem) {
             console.log('saving to cart', cartItem)
             const cartItems = await cartService.add(cartItem);
             console.log('user\'s cart after update', cartItems);
-            // const action = {
-            //     type: 'UPDATE_USER',
-            //     updatedUser
-            // };
-            // dispatch(action);
         } catch (err) {
             console.log('CartActions: err in saveCart', err);
         }

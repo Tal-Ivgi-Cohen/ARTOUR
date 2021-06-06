@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { setArt, loadArts } from "../../store/art/art.action.js";
 import { Loader } from "../../cmps/util/Loader.jsx";
 import { ArtList } from "../../cmps/art/ArtList.jsx";
-import { PurchaseModal, WishListModal } from "../../cmps/art/Modal.jsx";
+import { PurchaseModal } from "../../cmps/art/PurchaseModal.jsx";
+import { WishListModal } from "../../cmps/art/WishlistModal.jsx"
 import { saveCartItem } from "../../store/cart/cart.action.js";
 
 // test url :
@@ -156,12 +157,13 @@ class _ArtDetails extends React.Component {
             </section>
          
         
-           <Link to={`/artist/${selectedArt.artist.id}`}>
+         
+        <div className="artist-list-details flex  column space-between">
+        <Link to={`/artist/${selectedArt.artist.id}`}>
            <button className="btn-more-work">More work by {selectedArt.artist.fullname}
             </button>
              {" "} 
           </Link>
-        <div className="artist-list-details flex space-between">
           <ArtList arts={arts} artist={selectedArt.artist.fullname} />
         </div>
         </div>
