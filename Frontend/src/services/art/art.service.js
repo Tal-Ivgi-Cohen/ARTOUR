@@ -13,16 +13,15 @@ export const artService = {
 };
 
 async function loadArts(filterBy) {
-    // TODO: Arts loaded from BE when DB connection is up
-    const arts = await httpService.get('art', filterBy);
-    //const arts = await storageService.query(STORAGE_KEY); // instead of this line
+ const arts = await httpService.get('art', filterBy);
+    // const arts = await storageService.query(STORAGE_KEY); // instead of this line
     // return await storageService.loadArtsWithArtists(arts);
     return arts
 }
 
 async function getById(artId) {
     //return await storageService.get('arts', artId);
-    const art = httpService.get(`art/${artId}`);
+    const art = await httpService.get(`art/${artId}`);
     console.log('art', art);
     return art;
 }

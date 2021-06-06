@@ -16,7 +16,6 @@ class _Account extends Component {
   componentDidMount() {
     this.props.loadLoggedInUser();
     if (!this.props.arts.length) this.props.loadArts();
-    // TODO: load orders
   }
   render() {
     const {

@@ -8,7 +8,7 @@ export class Hero extends React.Component {
     return (
       <div className="carousel-container">
         <div className="main-hero-content">
-        <h1>ArTour Marketplace</h1>
+        <h1>ArTour</h1>
         <h2>Where Artists Meets Collectors</h2>
         </div>
       

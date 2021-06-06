@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { setArt, loadArts } from "../../store/art/art.action.js";
 import { Loader } from "../../cmps/util/Loader.jsx";
-import { ArtListByArtist } from "../../cmps/art/ArtList.jsx";
+import { ArtList } from "../../cmps/art/ArtList.jsx";
 import { PurchaseModal } from "../../cmps/art/PurchaseModal.jsx";
 import { WishListModal } from "../../cmps/art/WishlistModal.jsx"
 import { saveCartItem } from "../../store/cart/cart.action.js";
@@ -155,15 +155,19 @@ class _ArtDetails extends React.Component {
                 <p>{selectedArt.description}</p>
               </div>
             </section>
-          </div>
-        )}
-        <div className="artist-list-details flex space-between">
-          <Link to={`/artist/${selectedArt.artist.id}`}>
-            {" "}
-            <button>More work by {selectedArt.artist.fullname}</button>
+         
+        
+         
+        <div className="artist-list-details flex  column space-between">
+        <Link to={`/artist/${selectedArt.artist.id}`}>
+           <button className="btn-more-work">More work by {selectedArt.artist.fullname}
+            </button>
+             {" "} 
           </Link>
-          <ArtListByArtist arts={arts} artist={selectedArt.artist.fullname} />
+          <ArtList arts={arts} artist={selectedArt.artist.fullname} />
         </div>
+        </div>
+        )}
       </div>
     );
   }

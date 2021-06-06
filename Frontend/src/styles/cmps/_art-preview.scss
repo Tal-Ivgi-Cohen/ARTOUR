@@ -1,11 +1,20 @@
 .art-preview {
     padding: .625rem;
-    height: 18rem;
+    height: 22rem;
     background-color: $clr5;
     justify-content: space-around;
     img {
+        margin-top: .625rem;
         object-fit: contain;
         width: 80%;
+    }
+    .content-card{
+        margin-left: 1.6rem;
+        margin-top: .625rem;
+        text-align: start;
+        h5{
+            text-align: end;
+        }
     }
 }
 

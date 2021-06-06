@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 
-import { ArtListByArtist} from "../../cmps/art/ArtList.jsx";
+import { ArtList } from "../../cmps/art/ArtList.jsx";
 import { LongTxt } from "../../cmps/util/LongTxt.jsx"
 
 import { loadArts } from "../../store/art/art.action.js";
@@ -11,16 +11,25 @@ import { loadUsers } from "../../store/user/user.action.js";
  export class _ArtistProfile extends React.Component {
 
 state={
-    currArtist:{}
+    currArtist:{},
+    filterBy: {
+      artistId: "",
+    }
 }
-componentDidMount(){
-    console.log('this.props.artist',this.props.artist);
-    console.log( this.props.loadUsers());
-    this.props.loadArts();
+ componentDidMount(){
+    const { loadArts } = this.props;
+    const { selectedArt } = this.props;
+    const { _id, artist } = selectedArt;
+    const filterBy = {
+      _id,
+      artistId: artist._id,
+    };
+    this.setState({ filterBy }, () => {
+      console.log("this.state.filterBy", this.state.filterBy);
+      loadArts(this.state.filterBy);
+    });
 }
 findArtistUser=()=>{
-  console.log(this.props.users);
-  console.log(this.props.artist._id);
   const user = this.props.users.find((user)=> user._id === this.props.artist._id)
   console.log(('user',user));
   return user
@@ -49,7 +58,7 @@ findArtistUser=()=>{
             <br/>
             </div>
             </div>
-            <ArtListByArtist arts={this.props.arts} artist={this.props.artist.fullname}/> 
+            <ArtList arts={this.props.arts} artist={this.props.artist.fullname}/> 
             </div>
             </Fragment>
         )
@@ -59,6 +68,7 @@ findArtistUser=()=>{
 
 const mapStateToProps = (state) => {
     return {
+      selectedArt: state.artModule.selectedArt,
       arts: state.artModule.arts,
       artist: state.artModule.selectedArt.artist,
       users: state.userModule.users
