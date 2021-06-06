@@ -1,28 +1,30 @@
-import { httpService } from '../http.service.js'
+import { httpService } from '../http.service.js';
 import { storageService } from './art-storage.service.js';
 
 const STORAGE_KEY = 'arts';
 
 export const artService = {
-    query,
+    // query,
     getById,
     save,
     remove,
-    // filter
+    loadArts
+
+};
+
+async function loadArts(filterBy) {
+ const arts = await httpService.get('art', filterBy);
+    // const arts = await storageService.query(STORAGE_KEY); // instead of this line
+    // return await storageService.loadArtsWithArtists(arts);
+    return arts
 }
 
-async function query(filterBy) {
-    // return await storageService.query(STORAGE_KEY);
-    const res =  httpService.get('art', filterBy)
-    return res
-    // return httpService.get('art/', { params: filterBy })
-}
 async function getById(artId) {
     // return await storageService.get('arts', artId);
-    const art = httpService.get(`art/${artId}`)
+    const art = httpService.get(`art/${artId}`);
     console.log('art', art);
-    return art
-} 
+    return art;
+}
 async function remove(artId) {
     return await storageService.remove('arts', artId);
     // return httpService.delete(`art/${artId}`)
@@ -45,7 +47,7 @@ async function save(art) {
 //             //  return axios.get(BASE_URL).then(toys=>
 //             // toys.data.filter(toy => toy.inStock === filterBy || toy.type === filterBy || toy.name.includes(filterBy)))
 //         return httpService.get('toy/', filterBy)    
-        
+
 //     }else{
 //        return query()
 //         }

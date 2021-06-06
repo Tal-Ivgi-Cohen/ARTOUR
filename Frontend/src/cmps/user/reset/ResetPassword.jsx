@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, TextField, Tooltip } from '@material-ui/core';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import { Link } from 'react-router-dom';
 
-export class LoginForm extends Component {
+export class ResetPassword extends Component {
   state = {
     email: '',
     password: '',
@@ -21,29 +21,30 @@ export class LoginForm extends Component {
     });
   };
 
-  login = (ev) => {
-    ev.preventDefault();
-    const { email, password } = this.state;
-    this.props.login({ email, password });
-  };
-
   validateEmail(email) {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
-
   validatePassword = (password) => {
     const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     return re.test(String(password).toLowerCase());
   };
 
+  reset = (ev) => {
+    ev.preventDefault();
+    const { email, password } = this.state;
+    const { history, resetPassword } = this.props;
+    resetPassword(email, password);
+    history.push('/account/login');
+  };
+
   render() {
     const { email, password, isValidInput } = this.state;
-
     return (
-      <section className='login-form'>
-        <form onSubmit={this.login}>
+      <div className='reset-password'>
+        <h3>Reset Password</h3>
+        <form onSubmit={this.reset}>
           <TextField
             label='Email'
             variant='outlined'
@@ -63,13 +64,7 @@ export class LoginForm extends Component {
             />
             <Tooltip
               title={
-                <p
-                  style={{
-                    fontSize: '10px',
-                    width: '120px',
-                    fontFamily: 'neuzeit',
-                  }}
-                >
+                <p>
                   Minimum eight characters, at least one letter and one number.
                 </p>
               }
@@ -77,14 +72,16 @@ export class LoginForm extends Component {
               <InfoOutlinedIcon />
             </Tooltip>
           </section>
-          <Link to='/account/reset'>Forgot your password?</Link>
           <section className='form-btns'>
+            <Link to='/account/login'>
+              <Button variant='outlined'>Cancel</Button>
+            </Link>
             <Button variant='outlined' type='submit' disabled={!isValidInput}>
-              Login
+              Submit
             </Button>
           </section>
         </form>
-      </section>
+      </div>
     );
   }
 }

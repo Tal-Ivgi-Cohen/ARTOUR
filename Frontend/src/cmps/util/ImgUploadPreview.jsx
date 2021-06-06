@@ -1,7 +1,13 @@
 import React from 'react';
+import { Avatar } from './Avatar';
 import { UploadImg } from './UploadImg';
 
-export function ImgUploadPreview({ imgUrl, onImgChange }) {
+export function ImgUploadPreview({
+  imgUrl,
+  onImgChange,
+  showAvatar,
+  fullname,
+}) {
   const handleImgChange = (url) => {
     onImgChange(url);
   };
@@ -9,7 +15,11 @@ export function ImgUploadPreview({ imgUrl, onImgChange }) {
     <section className='img-upload-preview'>
       <div className='img-preview'>
         {imgUrl ? (
-          <img src={imgUrl} alt='' />
+          showAvatar ? (
+            <Avatar imgUrl={imgUrl} fullname={fullname} />
+          ) : (
+            <img src={imgUrl} alt='' />
+          )
         ) : (
           <div className='empty-img'>Upload an Image</div>
         )}

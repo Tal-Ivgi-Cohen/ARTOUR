@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { UserDashboard } from '../../cmps/user/dashboard/UserDashboard.jsx';
-import { LoginSignUp } from '../../cmps/user/LoginSignUp.jsx';
+import { LoginSignUpReset } from '../../cmps/user/LoginSignUpReset.jsx';
 import {
   loadLoggedInUser,
   login,
   logout,
   signup,
   updateUser,
+  resetPassword,
 } from '../../store/user/user.action.js';
 import { removeArt, loadArts } from '../../store/art/art.action.js';
 
@@ -18,8 +19,16 @@ class _Account extends Component {
     // TODO: load orders
   }
   render() {
-    const { loggedInUser, removeArt, arts, login, logout, signup, updateUser } =
-      this.props;
+    const {
+      loggedInUser,
+      removeArt,
+      arts,
+      login,
+      logout,
+      signup,
+      updateUser,
+      resetPassword,
+    } = this.props;
     if (loggedInUser) {
       const userArts = arts
         ? arts.filter((art) => art.artist._id === loggedInUser._id)
@@ -28,7 +37,7 @@ class _Account extends Component {
       // const ordersToUser = orders.filter(order => order.items.filter(item => item.artist.id === userId));
       // const userOrders = {ordersByUser,ordersToUser}
       return (
-        <>
+        <div className='account-page'>
           <h3>Account</h3>
           <UserDashboard
             user={loggedInUser}
@@ -37,15 +46,23 @@ class _Account extends Component {
             removeArt={removeArt}
             logout={logout}
             updateUser={updateUser}
+            tab={this.props.match.params.tab}
+            history={this.props.history}
           />
-        </>
+        </div>
       );
     } else
       return (
-        <>
+        <div className='account-page'>
           <h3>Account</h3>
-          <LoginSignUp login={login} signup={signup} />
-        </>
+          <LoginSignUpReset
+            login={login}
+            signup={signup}
+            history={this.props.history}
+            tab={this.props.match.params.tab}
+            resetPassword={resetPassword}
+          />
+        </div>
       );
   }
 }
@@ -64,6 +81,7 @@ const mapDispatchToProps = {
   signup,
   logout,
   updateUser,
+  resetPassword,
   removeArt,
   loadArts,
 };

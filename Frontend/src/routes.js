@@ -26,7 +26,7 @@ export const routes = [
     },
     {
         path: '/artist/:artistId',
-        component: ArtistProfile, 
+        component: ArtistProfile,
     },
     {
         path: '/art/add',
@@ -49,7 +49,7 @@ export const routes = [
         component: Checkout,
     },
     {
-        path: '/account',
+        path: '/account/:tab?',
         component: Account
     }
 ];

@@ -21,42 +21,45 @@ export function UploadImg({ handleImgChange }) {
   const handleImgUpload = async ({ target }) => {
     const file = target.files[0];
     if (file) {
-      const url = await URL.createObjectURL(file);
-      handleImgChange(url);
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => handleImgChange(reader.result);
     }
   };
 
   return (
-    <div className={classes.root}>
-      <input
-        accept='image/*'
-        className={classes.input}
-        id='contained-button-file'
-        multiple
-        type='file'
-        onChange={handleImgUpload}
-      />
-      <label htmlFor='contained-button-file'>
-        <Button variant='contained' color='primary' component='span'>
-          Upload
-        </Button>
-      </label>
-      <input
-        accept='image/*'
-        className={classes.input}
-        id='icon-button-file'
-        type='file'
-        onChange={handleImgUpload}
-      />
-      <label htmlFor='icon-button-file'>
-        <IconButton
-          color='primary'
-          aria-label='upload picture'
-          component='span'
-        >
-          <PhotoCamera />
-        </IconButton>
-      </label>
+    <div className='img-upload'>
+      <div className={classes.root}>
+        <input
+          accept='image/*'
+          className={classes.input}
+          id='contained-button-file'
+          multiple
+          type='file'
+          onChange={handleImgUpload}
+        />
+        <label htmlFor='contained-button-file'>
+          <Button variant='outlined' component='span'>
+            Upload
+          </Button>
+        </label>
+        <input
+          accept='image/*'
+          className={classes.input}
+          id='icon-button-file'
+          type='file'
+          onChange={handleImgUpload}
+        />
+        <label htmlFor='icon-button-file'>
+          <IconButton
+            variant='outlined'
+            aria-label='upload picture'
+            component='span'
+          >
+            <PhotoCamera />
+          </IconButton>
+        </label>
+      </div>
     </div>
   );
 }

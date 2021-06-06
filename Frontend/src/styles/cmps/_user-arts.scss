@@ -1,0 +1,17 @@
+.user-arts {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.user-arts section {
+  display: grid;
+  width: 100%;
+  height: fit-content;
+  grid-template-columns: 1fr 1fr;
+  padding-right: 20px;
+}
+
+.user-arts section > a {
+  justify-self: right;
+}

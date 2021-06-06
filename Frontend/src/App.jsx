@@ -1,10 +1,14 @@
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 import { routes } from './routes.js';
-import { Header } from './cmps/util/Header.jsx';
+import { Header } from './cmps/util/header/Header.jsx';
 // import { Footer } from './cmps/util/Footer.jsx';
 
 import './styles/styles.scss';
-
 
 export function App() {
   return (
@@ -15,8 +19,11 @@ export function App() {
         </header>
         <main>
           <Switch>
-            <Route exact path="/" render={() => (<Redirect to="/home" />)}>
-            </Route>
+            <Route
+              exact
+              path='/'
+              render={() => <Redirect to='/home' />}
+            ></Route>
             {routes.map((route) => (
               <Route
                 key={route.path}
