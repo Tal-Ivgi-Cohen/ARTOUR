@@ -28,7 +28,6 @@ async function getById(artId) {
 async function remove(artId) {
     return await storageService.remove('arts', artId);
     // return httpService.delete(`art/${artId}`)
-
 }
 async function save(art) {
     if (art._id) {
