@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { setArt, loadArts } from "../../store/art/art.action.js";
 import { Loader } from "../../cmps/util/Loader.jsx";
 import { ArtListByArtist } from "../../cmps/art/ArtList.jsx";
-import { PurchaseModal, WishListModal } from "../../cmps/art/Modal.jsx";
+import { PurchaseModal } from "../../cmps/art/PurchaseModal.jsx";
+import { WishListModal } from "../../cmps/art/WishlistModal.jsx"
 import { saveCartItem } from "../../store/cart/cart.action.js";
 
 // test url :

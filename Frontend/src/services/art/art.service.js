@@ -14,13 +14,14 @@ export const artService = {
 
 async function loadArts(filterBy) {
     // TODO: Arts loaded from BE when DB connection is up
-    // Use this line -----> const arts = await httpService.get('art', filterBy);
-    const arts = await storageService.query(STORAGE_KEY); // instead of this line
-    return await storageService.loadArtsWithArtists(arts);
+    const arts = await httpService.get('art', filterBy);
+    //const arts = await storageService.query(STORAGE_KEY); // instead of this line
+    // return await storageService.loadArtsWithArtists(arts);
+    return arts
 }
 
 async function getById(artId) {
-    // return await storageService.get('arts', artId);
+    //return await storageService.get('arts', artId);
     const art = httpService.get(`art/${artId}`);
     console.log('art', art);
     return art;
@@ -34,7 +35,6 @@ async function save(art) {
     if (art._id) {
         return await storageService.put('arts', art);
         //  return await httpService.put('art/',`${art_id}`, art)
-
     } else {
         return await storageService.post('arts', art);
         // return httpService.post('art/', art)

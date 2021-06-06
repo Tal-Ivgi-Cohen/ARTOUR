@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 //import { Cart } from '../../cmps/art/Cart.jsx'
 import { cartService } from '../../services/cart/cart.service.js'
 import { removeCartItem } from '../../store/cart/cart.action.js'
-import { Button } from '@material-ui/core';
 import {
   Table,
   TableRow,
@@ -13,7 +12,6 @@ import {
   TableCell,
   TableBody,
 } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
 import { EmptyState } from '../../cmps/util/EmptyState.jsx';
 
 class _ArtCart extends React.Component {
@@ -41,18 +39,43 @@ class _ArtCart extends React.Component {
     this.setState({ note: value })
   }
 
-  onDecrease = () => {
+  onDecrease = (ev) => {
+    ev.preventDefault()
     let { quantity } = this.state
     if (quantity <= 1) return
     quantity--
     this.setState({ quantity })
   }
 
-  onIncrease = () => {
+  onIncrease = (ev) => {
+    ev.preventDefault()
     let { quantity } = this.state
     quantity++
     this.setState({ quantity })
   }
+
+  /*subTotal = () => {
+    //await let {cart} = this.state
+    var cart = [{
+      title: 'tal',
+      price: 1000
+    }, {
+      title: 'dana',
+      price: 1000
+    }]
+    console.log('subtotal', cart);
+    var subtotal = cart.reduce(function (acc, item) {
+      // console.log('Called with ', acc, vote);
+      if (!acc[item.price]) acc[item.price] = 0;
+     // acc[item.price]++
+     acc +=item.price
+      console.log('ACC', acc);
+      return acc;
+    }, {})
+    console.log('subtotal', subtotal);
+    return subtotal;
+  }*/
+
 
   render() {
     const { cart, note, quantity } = this.state;
@@ -100,7 +123,8 @@ class _ArtCart extends React.Component {
               </TableBody>
             </Table>
             <div className="subtotal-order">
-              Subtotal:
+              Subtotal: 
+             { /*{this.subTotal()}*/}
             </div>
           </div>
         ) : (
@@ -139,54 +163,3 @@ const mapDispatchToProps = {
 
 export const ArtCart = connect(mapStateToProps, mapDispatchToProps)(_ArtCart);
 
-/*render() {
-
-    const { cart } = this.state;
-    const { user, removeCartItem } = this.props;
-    return(
-    <section>
-    <div className='user-cart'>
-    <h3>Shopping Cart</h3>
-
-    {user && (
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell colSpan="2">Product</TableCell>
-            <TableCell>Price</TableCell>
-            <TableCell colSpan="2">Total</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {cart.map((item, idx) => (
-            <TableRow key={`a${idx}`}>
-              <TableCell>{item.title} </TableCell>
-              <TableCell>{item.price} </TableCell>
-              <TableCell>{item.price} </TableCell>
-              <TableCell>
-                <Button onClick={() => removeCartItem(item._id)}>
-                  <DeleteIcon />
-                </Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    )}
-    </div>
-    <div className="cart-actions">
-                <div className="cart-note">
-                    <form>
-                        <h3>Add a Note:</h3>
-                        <textarea className="add-note:" placeholder="" value="" ></textarea>
-                    </form>
-                </div>
-                <div className="btn">
-                    <button><Link to={`/art`}> Continue shopping</Link></button>
-                    <button>Update</button>
-                    <button><Link to={`/checkout`}> Check out</Link></button>
-                </div>
-            </div>
-  </section>
-    )
-}*/
