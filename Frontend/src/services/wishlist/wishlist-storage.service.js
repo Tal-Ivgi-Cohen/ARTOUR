@@ -21,7 +21,6 @@ async function get(entityType, entityId) {
 }
 //ADD
 async function post(entityType, newEntity) {
-  // console.log('Idddddddddd')
   newEntity._id = utilService.makeId();
   const entities = await query(entityType);
   entities.unshift(newEntity);

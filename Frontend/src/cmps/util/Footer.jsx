@@ -4,7 +4,8 @@ export class Footer extends React.Component {
     render() {
         return (
             <footer className="app-footer">
-                <p>☕ coffeerights GTD- Gal&Tal&Dana &copy; ☕</p>
+                <p>coffeerights ArTour Marketplace &copy; </p>
+                <p>By Dana Sandman & Gal Golikov & Tal Ivgi </p>
             </footer>
         )
     }

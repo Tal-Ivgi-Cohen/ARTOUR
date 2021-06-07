@@ -1,0 +1,20 @@
+.user-orders {
+    display: grid;
+    width: 80%;
+    height: 100%;
+  }
+  
+  .user-orders section {
+    display: grid;
+    width: 80%;
+    height: fit-content;
+    grid-template-columns: 1fr 1fr;
+    padding-right: 20px;
+    
+  }
+
+.order-item-img{
+    max-width: rem(200px);
+    max-height: rem(100px);
+    object-fit: contain;
+}

@@ -13,7 +13,7 @@ export const artService = {
 };
 
 async function loadArts(filterBy) {
- const arts = await httpService.get('art', filterBy);
+    const arts = await httpService.get('art', filterBy);
     // const arts = await storageService.query(STORAGE_KEY); // instead of this line
     // return await storageService.loadArtsWithArtists(arts);
     return arts
@@ -22,7 +22,7 @@ async function loadArts(filterBy) {
 async function getById(artId) {
     //return await storageService.get('arts', artId);
     const art = await httpService.get(`art/${artId}`);
-    console.log('art', art);
+    // console.log('art', art);
     return art;
 }
 async function remove(artId) {

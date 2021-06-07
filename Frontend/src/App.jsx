@@ -6,14 +6,14 @@ import {
 } from 'react-router-dom';
 import { routes } from './routes.js';
 import { Header } from './cmps/util/header/Header.jsx';
-// import { Footer } from './cmps/util/Footer.jsx';
+import { Footer } from './cmps/util/Footer.jsx';
 
 import './styles/styles.scss';
 
 export function App() {
   return (
     <Router>
-      <div className='App flex column'>
+      <div className='app'>
         <header>
           <Header />
         </header>
@@ -34,9 +34,9 @@ export function App() {
             ))}
           </Switch>
         </main>
-        {/* <footer>
+         <footer>
           <Footer />
-          </footer> */}
+          </footer> 
       </div>
     </Router>
   );

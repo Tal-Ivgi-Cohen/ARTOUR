@@ -2,17 +2,29 @@ import React, { Component } from 'react';
 import { UserArts } from './UserArts.jsx';
 import { UserOrders } from './UserOrders.jsx';
 import { UserDetails } from './UserDetails.jsx';
+import { artService } from '../../../services/art/art.service.js'
 
 export class UserDashboard extends Component {
   state = {
     currTab: 'details',
+    arts: []
   };
 
-  componentDidMount() {
-    const { tab} = this.props;
+  async componentDidMount() {
+    const { tab } = this.props;
     if (tab) {
       this.setState({ currTab: tab });
     }
+    await this.setArts()
+  }
+
+  setArts = async () => {
+    const arts = []
+    await this.props.userOrders.forEach(async order => {
+      const art = await artService.getById(order.artId)
+      arts.push(art)
+    })
+    this.setState({ arts })
   }
 
   setCurrTab = (tab) => {
@@ -20,7 +32,7 @@ export class UserDashboard extends Component {
     this.props.history.push(`/account/${tab}`);
   };
   getCurrTab = () => {
-    const { currTab } = this.state;
+    const { currTab, arts } = this.state;
     const { user, userArts, userOrders, removeArt, updateUser } = this.props;
     switch (currTab) {
       case 'details':
@@ -28,11 +40,15 @@ export class UserDashboard extends Component {
       case 'arts':
         return <UserArts arts={userArts} removeArt={removeArt} />;
       case 'orders':
-        return <UserOrders orders={userOrders} />;
+        return <UserOrders arts={arts} />;
       default:
-        return <UserDetails user={user} updateUser={updateUser}/>;
+        return <UserDetails user={user} updateUser={updateUser} />;
     }
   };
+
+
+
+
   render() {
     const { user, logout } = this.props;
     const { currTab } = this.state;
