@@ -23,13 +23,18 @@ async function loadArtsWithArtists(arts) {
 }
 
 //READ LIST
-async function query(entityType) {
+async function query(entityType,filterBy) {
   let entities = await JSON.parse(localStorage.getItem(entityType)) || [];
   if (!entities || !entities.length) {
-    console.log('set to storage');
     entities = gData[entityType];
+    console.log('entities',entities);
     _save(entityType, entities);
   }
+  if (filterBy){
+  entities = entities.filter(art => (art.artist._id === filterBy.artistId));
+  console.log('filterBy.artistId',filterBy.artistId);
+  }
+  console.log('entities',entities);
   return entities;
 }
 //DETAILS FIND ONE BY ID

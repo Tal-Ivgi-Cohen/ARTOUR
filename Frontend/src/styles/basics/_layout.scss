@@ -1,4 +1,3 @@
-// .main-container , .main-deshboard, .main-about ,.main-header, .main-toy-details{
 .main-container{
     display: grid;
     font-size: small;
@@ -8,10 +7,8 @@
         minmax(2rem, 1fr)
         minmax(auto, $normal-breakpoint)
         minmax(2rem, 1fr);
-
     > * {
         grid-column: 2;
-
         &.full {
             grid-column: 1 / -1;
         }
@@ -46,4 +43,6 @@
     flex-direction: column;
 }
 
-  
+main{
+    margin-bottom: 6rem;
+}

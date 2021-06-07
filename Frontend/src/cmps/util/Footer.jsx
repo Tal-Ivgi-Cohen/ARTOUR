@@ -1,11 +1,12 @@
 import React from 'react'
+import { Fragment } from 'react'
 export class Footer extends React.Component {
 
     render() {
         return (
-            <footer className="app-footer">
+            <div className="app-footer">
                 <p>☕ coffeerights GTD- Gal&Tal&Dana &copy; ☕</p>
-            </footer>
+            </div>
         )
     }
 }

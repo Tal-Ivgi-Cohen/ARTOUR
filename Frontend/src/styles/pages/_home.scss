@@ -1,6 +1,5 @@
 .home-section {
      width: 100%;
-     margin-bottom: 20px;
      z-index: 1 ;
      align-items: center;
      justify-content: center;
@@ -38,11 +37,32 @@
     z-index: 2;
     top: 35%;
     left: 40%;
+
     *{
         font-family: neuzeit;
         text-align: center;
     }
     h1{
         font-size: 60px;
+    }
+}
+
+@media(max-width:$normal-breakpoint){
+    .main-hero-content,.artist-hero-title{
+        top: 35%;
+        left: 35%;
+        text-align: center;
+    }
+}
+@media(max-width:$narrow-breakpoint){
+    .main-hero-content,.artist-hero-title{
+        top: 30%;
+        left: 20%; 
+    }
+}
+@media(max-width:$mobile-breakpoint){
+    .main-hero-content,.artist-hero-title{
+        top: 20%;
+        left: 3%;
     }
 }

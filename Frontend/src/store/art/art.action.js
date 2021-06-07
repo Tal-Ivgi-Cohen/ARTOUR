@@ -5,8 +5,8 @@ export function loadArts(filterBy) {
         try {
             // loadArts
             const arts = await artService.loadArts(filterBy);
+        console.log(arts);
             dispatch({ type: 'SET_ARTS', arts });
-            console.log('load arts', arts);
 
         } catch (err) {
             console.log('Art Actions: err in loaded Arts', err);

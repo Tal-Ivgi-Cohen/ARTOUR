@@ -32,7 +32,7 @@ class _ArtDetails extends React.Component {
     };
     this.setState({ filterBy }, () => {
       console.log("this.state.filterBy", this.state.filterBy);
-      loadArts(this.state.filterBy);
+     loadArts(this.state.filterBy);
     });
     saveCartItem();
   }
