@@ -1,7 +1,6 @@
 .main-container{
     display: grid;
     font-size: small;
-    height: 70vh;
     text-align: center;
     grid-template-columns:
         minmax(2rem, 1fr)
@@ -12,7 +11,17 @@
         &.full {
             grid-column: 1 / -1;
         }
-}
+        .app-footer{
+            grid-area: 3/1/4/4;
+            height: 35rem;
+            background-color: $clr1;
+            color: $clr5;
+            text-align: center;
+            padding: 4rem;
+            margin-top: 6rem;
+        }
+        
+    }
     @include for-mobile-layout {
         grid-template-columns:
             minmax(2rem, 1fr)
@@ -38,7 +47,7 @@
             minmax(2rem, 1fr);
     }
 }
-.App {
+/*{
     display: flex;
     flex-direction: column;
 }
@@ -46,3 +55,4 @@
 main{
     margin-bottom: 6rem;
 }
+}*/

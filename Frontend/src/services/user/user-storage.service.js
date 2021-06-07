@@ -40,6 +40,7 @@ async function login(credentials) {
 function logout(key) {
   sessionStorage.clear(key);
   localStorage.removeItem('shoppingCart');
+  localStorage.removeItem('wishlist');
 }
 
 async function signup(newUser) {

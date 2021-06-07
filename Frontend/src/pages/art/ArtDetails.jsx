@@ -7,7 +7,7 @@ import { ArtList } from "../../cmps/art/ArtList.jsx";
 import { PurchaseModal } from "../../cmps/art/PurchaseModal.jsx";
 import { WishListModal } from "../../cmps/art/WishlistModal.jsx"
 import { saveCartItem } from "../../store/cart/cart.action.js";
-
+import { saveWishItem } from "../../store/wishlist/wishlist.action.js"
 // test url :
 // http://localhost:3000/#/art/a101
 
@@ -22,7 +22,7 @@ class _ArtDetails extends React.Component {
 
   async componentDidMount() {
     const { artId } = this.props.match.params;
-    const { setArt, loadArts, saveCartItem } = this.props;
+    const { setArt, loadArts, saveCartItem,saveWishItem } = this.props;
     await setArt(artId);
     const { selectedArt } = this.props;
     const { _id, artist } = selectedArt;
@@ -35,6 +35,7 @@ class _ArtDetails extends React.Component {
      loadArts(this.state.filterBy);
     });
     saveCartItem();
+    saveWishItem();
   }
 
   handleChange = (ev) => {
@@ -43,7 +44,7 @@ class _ArtDetails extends React.Component {
   };
 
   render() {
-    const { selectedArt, saveCartItem, loggedInUser } = this.props;
+    const { selectedArt, saveCartItem, loggedInUser, saveWishItem } = this.props;
     if (!selectedArt) return <Loader />;
     const { arts } = this.props;
     return (
@@ -147,7 +148,10 @@ class _ArtDetails extends React.Component {
                     saveCartItem={saveCartItem}
                     loggedInUser={loggedInUser}
                   />
-                  <WishListModal selectedArt={selectedArt} />
+                  <WishListModal 
+                  selectedArt={selectedArt}
+                  saveWishItem={saveWishItem}
+                   />
                 </div>
                 <br />
                 <p>DESCRIPTION</p>
@@ -179,6 +183,7 @@ const mapStateToProps = (state) => {
     arts: state.artModule.arts,
     loggedInUser: state.userModule.loggedInUser,
     cartItem: state.userModule.cartItem,
+    wishItem: state.userModule.wishItem,
   };
 };
 
@@ -186,6 +191,7 @@ const mapDispatchToProps = {
   setArt,
   loadArts,
   saveCartItem,
+  saveWishItem,
 };
 export const ArtDetails = connect(
   mapStateToProps,

@@ -12,6 +12,7 @@ import {
 } from '@material-ui/core';
 import { EmptyState } from '../../cmps/util/EmptyState.jsx';
 import { updateUser } from '../../store/user/user.action.js';
+import { CheckoutModal } from '../../cmps/art/CheckoutModal.jsx';
 
 class _ArtCart extends React.Component {
 
@@ -67,6 +68,7 @@ class _ArtCart extends React.Component {
     console.log('artist.orders', artist.orders);
     updateUser(artist)
     localStorage.setItem('shoppingCart', [])
+    //localStorage.removeItem('shoppingCart');
   };
 
 
@@ -130,9 +132,12 @@ class _ArtCart extends React.Component {
               <textarea className="add-note" value={note} name="note" onChange={this.handleChange}></textarea>
             </form>
           </div>
-          <div className="btn">
+          <div className="btn flex">
             <button><Link to={`/art`}> Continue shopping</Link></button>
-            <button onClick={this.onCheckOut}> Check out</button>
+            <CheckoutModal 
+                  onCheckOut={this.onCheckOut}
+                   />
+           {/* <button onClick={this.onCheckOut}> Check out</button>*/}
           </div>
         </div>
       </section>

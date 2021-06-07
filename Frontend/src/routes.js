@@ -8,6 +8,8 @@ import { Account } from './pages/user/Account.jsx';
 import { ArtCart } from './pages/art/ArtCart.jsx';
 import { Checkout } from './pages/art/Checkout.jsx';
 import { ArtistProfile } from './pages/artist/ArtistProfile.jsx';
+import { Wishlist } from './pages/art/Wishlist.jsx';
+
 
 
 
@@ -51,5 +53,9 @@ export const routes = [
     {
         path: '/account/:tab?',
         component: Account
+    },
+    {
+        path: '/wishlist',
+        component: Wishlist
     }
 ];

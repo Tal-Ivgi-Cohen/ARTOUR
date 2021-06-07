@@ -665,7 +665,11 @@
       "orders": [
         {
           "buyerId": "u107",
-          "artId": "a137"
+          "artId": "a132"
+        },
+        {
+          "buyerId": "u107",
+          "artId": "a133"
         }
       ]
     }
