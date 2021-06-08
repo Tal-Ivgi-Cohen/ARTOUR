@@ -26,7 +26,6 @@ export function UserOrders({ arts }) {
               <TableCell colspan="2">Title</TableCell>
               <TableCell>Material</TableCell>
               <TableCell>Price</TableCell>
-            {/*  <TableCell>Size</TableCell>*/}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -38,7 +37,6 @@ export function UserOrders({ arts }) {
                 <TableCell>{art.title} </TableCell>
                 <TableCell>{art.material} </TableCell>
                 <TableCell>{art.price} </TableCell>
-               {/* <TableCell>{art.size.height}x{art.size.width} </TableCell>*/}
               </TableRow>
       ))}
           </TableBody>

@@ -5,6 +5,7 @@
 .imgs{
   margin-top: 4rem;
   margin-bottom: -50px;
+  justify-content: space-between;
 }
 .img-details{
   margin-left: .625rem;
@@ -24,6 +25,12 @@
   grid-area: 2/2/3/3;
   height: 170px;
 }
+
+.imgd{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 
 //FRAMES
 .none-border,.none-border2{
@@ -65,9 +72,6 @@
 
 //LAYOUT
 
-main{
-  width: 100vw;
-}
 .main-art-details{
 margin-left: 0;
 
@@ -98,7 +102,7 @@ margin-bottom: 1.25rem;
   text-align: center;
 }
 .content-txt{
-margin: 3.125rem 1.25rem 0 3.125rem;
+margin: 4rem 1.25rem 0 3.125rem;
 text-align: start;
 max-width: 25%;
 p{
@@ -173,6 +177,7 @@ img{
     margin-bottom: 0.8rem;
     flex-direction: column;
     align-items: start;
+    justify-content: space-around;
     .img-details{
     margin-top: 1rem;
     }

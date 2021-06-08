@@ -3,6 +3,7 @@
     width: 100%;
     gap: 0.625rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    
 }
 .art-list-title{
     margin-top: 10px;
@@ -13,3 +14,4 @@
     object-fit: contain;
     border: 0.5px solid $clr4;
 }
+
