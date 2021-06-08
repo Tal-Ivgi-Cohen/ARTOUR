@@ -51,11 +51,11 @@ class _ArtDetails extends React.Component {
       <div>
         {selectedArt && (
           <div className="main">
-          {/* <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button> */}
-            {/* <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button> */}
             <section className="main-art-details flex">
               <div className="imgs flex">
+
                 <div className="content-img">
+
                   <div className="container-img">
                     <img
                       src="https://d3t95n9c6zzriw.cloudfront.net/static/img/view_in_a_room_2019_2b.jpg"
@@ -64,18 +64,22 @@ class _ArtDetails extends React.Component {
                     />
                     <img
                       src={selectedArt.imgUrl}
-                      className={`img2 ${this.state.frame}`}
+                      className={`img2 ${this.state.frame+'2'}`}
                       alt={selectedArt.imgUrl}
                     />
                   </div>
                 </div>
+                
                 <div className="img-details">
-                  <img
-                    className={`${this.state.frame}`}
+                <div className="container-img-details">
+                  <img 
+                    className={`${this.state.frame} imgd`}
                     src={selectedArt.imgUrl}
                     alt={`${selectedArt.title}`}
                   />
+                  </div>
                 </div>
+
               </div>
 
               <div className="content-txt">
@@ -106,7 +110,6 @@ class _ArtDetails extends React.Component {
                       />
                       <label for="unframed">Unframed</label>
                     </div>
-
                     <div className="bright-radio flex">
                       <input
                         id="bright"
@@ -117,7 +120,6 @@ class _ArtDetails extends React.Component {
                       />
                       <label for="bright">Bright</label>
                     </div>
-
                     <div className="dark-radio flex">
                       <input
                         id="dark"

@@ -1,5 +1,13 @@
+.content-img-card{
+    img{
+        margin-top: .625rem;
+        object-fit: contain;
+        height: 208px;
+        max-width: 280px;
+    }
+}
 .art-preview {
-    padding: 1rem;
+    padding: 1.3rem;
     background-color: $clr5;
     justify-content: space-around;
     width: 25rem
@@ -9,28 +17,27 @@
         width: 80%;
     }
     .content-card{
-        margin-left: 1.6rem;
         margin-top: .625rem;
         text-align: start;
         font-size: 17px;
         h5{
             text-align: end;
+            margin: 0px;
         }
     }
 }
-
-.content-img-card:hover, .content-card:hover, .art-preview:hover{
+.content-img-card:hover{
     img{
-    margin-top: 45px;
-    width: 80%;
-    transition: all 0.6s ease;
-    transform: scale(1.3);
-    box-shadow: 0 10px 6px -6px #777;
+    margin-top: 1.875rem;
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+    box-shadow: 4px 8px 5px -6px #777;
     }
 }  
 .art-preview:hover{
+    background-color: $clr6;
     .content-card{
-        display: none;
+    display: none;
     }
 }
 
