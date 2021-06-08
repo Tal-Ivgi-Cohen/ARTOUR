@@ -27,6 +27,7 @@ export function UserArts({ arts, removeArt }) {
         <Table>
           <TableHead>
             <TableRow>
+             <TableCell>IMG</TableCell>
               <TableCell>Title</TableCell>
               <TableCell>Description</TableCell>
               <TableCell>Category</TableCell>
@@ -42,6 +43,7 @@ export function UserArts({ arts, removeArt }) {
           <TableBody>
             {arts.map((art, idx) => (
               <TableRow key={`a${idx}`}>
+                <TableCell><img className="artworks-img" src={art.imgUrl}/></TableCell>
                 <TableCell>{art.title} </TableCell>
                 <TableCell>{art.description} </TableCell>
                 <TableCell>{art.category} </TableCell>
