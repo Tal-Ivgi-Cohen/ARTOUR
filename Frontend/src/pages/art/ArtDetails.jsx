@@ -51,8 +51,6 @@ class _ArtDetails extends React.Component {
       <div>
         {selectedArt && (
           <div className="main">
-          {/* <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button> */}
-            {/* <button className="btn-back" onClick={() => this.props.history.push("/art")}>Go Back</button> */}
             <section className="main-art-details flex">
               <div className="imgs flex">
                 <div className="content-img">
@@ -106,7 +104,6 @@ class _ArtDetails extends React.Component {
                       />
                       <label for="unframed">Unframed</label>
                     </div>
-
                     <div className="bright-radio flex">
                       <input
                         id="bright"
@@ -117,7 +114,6 @@ class _ArtDetails extends React.Component {
                       />
                       <label for="bright">Bright</label>
                     </div>
-
                     <div className="dark-radio flex">
                       <input
                         id="dark"
