@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 function getModalStyle() {
 
     return {
-        top: 50,
-        right: 50,
+        top: 150,
+        right: 800,
 
 
         //transform: `translate(-${top}%, -${left}%)`,
@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
         padding: '10px',
+        marginTop:'50px',
+        textAlign:'center',
+        justifyContent:'center',
     },
 }));
 
@@ -43,7 +46,7 @@ export function CheckoutModal({ onCheckOut }) {
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
-            <h3 id="simple-modal-description">
+            <h3 id="simple-modal-description" >
                 Your order has been sent to the artist</h3>
         </div>
     );
