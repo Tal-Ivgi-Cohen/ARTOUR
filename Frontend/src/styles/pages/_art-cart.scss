@@ -51,8 +51,11 @@ textarea {
     display: flex;
     margin-top: rem(20px);
     grid-area: 4/2/4/3;
-    align-items: center;
+    align-items: flex-end;    
     justify-content: space-between;
+    button{
+        height: 50px;
+    }
 }
 .empty-state {
     grid-area: 2/2/3/3;

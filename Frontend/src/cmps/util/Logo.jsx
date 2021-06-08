@@ -1,5 +1,5 @@
 import React from 'react';
 
 export function Logo() {
-  return <h1 className='logo'>ArTour</h1>;
+  return <h1 className='logo'>ARTOUR</h1>;
 }

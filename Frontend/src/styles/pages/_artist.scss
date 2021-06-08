@@ -26,7 +26,7 @@
         text-align: center;
     }
     h1{
-        font-size: 60px;
+        font-size: 55px;
     }
 
 }
@@ -43,4 +43,41 @@
         margin-top: 1.5rem;
     }
  
+}
+
+@media (min-width: $mobile-breakpoint) {
+    .artist-hero-title {
+        top: 30%;
+        left: 20%;
+        h1 {
+            font-size: 36px;
+        }
+        p{
+            font-size: 20px;
+        }
+    }
+}
+
+@media (min-width: $narrow-breakpoint) {
+    .artist-hero-title {
+        h1 {
+            font-size: 45px;
+        }
+        p{
+            font-size: 28px;
+        }
+    }
+}
+
+@media (min-width: $normal-breakpoint) {
+    .artist-hero-title {
+        top: 30%;
+        left: 35%;
+        h1 {
+            font-size: 55px;
+        }
+        p{
+            font-size: 36px;
+        }
+    }
 }

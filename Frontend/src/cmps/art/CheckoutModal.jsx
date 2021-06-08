@@ -17,16 +17,14 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        position: 'absolute',
-        width: 400,
+        position: 'fixed',
+        width: 500,
         height:200,
         backgroundColor: 'white',
-        border: '2px solid #000',
+        border: '1px solid #3d4246',        
         boxShadow: theme.shadows[5],
-        padding: '10px',
-        marginTop:'50px',
+        padding: '20px',
         textAlign:'center',
-        justifyContent:'center',
     },
 }));
 
@@ -46,14 +44,14 @@ export function CheckoutModal({ onCheckOut }) {
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
-            <h3 id="simple-modal-description" >
-                Your order has been sent to the artist</h3>
+            <h3 id="simple-modal-description">
+                Order has been sent to the artist</h3>
         </div>
     );
 
     return (
         <div>
-            <button type="button" onClick={handleCheckout}>
+            <button type="button" onClick={handleCheckout} className="btn-add-to-bag">
             Check out
       </button>
             <Modal

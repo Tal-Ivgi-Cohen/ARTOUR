@@ -19,17 +19,21 @@
     margin: auto;
     text-align: center;
     width: 100%;
+    height: 80vh;
 }
-
-.heros-container{
+.heros-container img {
+    height: 100%;
     width: 100%;
-    object-fit: fill;
-}
-
-.Carousel-root-1 {
-    margin: auto;
     object-fit: cover;
-}
+  }
+
+  .heros-container,
+  .CarouselItem,
+  .CarouselItem div {
+    width: 100%;
+    height: 100%;
+  }
+
 .main-hero-content{
     text-transform: uppercase;
     text-shadow: -1px -1px 3px $clr1;
@@ -37,33 +41,44 @@
     color: $clr6;
     z-index: 2;
     top: 35%;
-    left: 40%;
+    left: 20%;
+    margin: 0 auto;
 
     *{
         font-family: neuzeit;
         text-align: center;
     }
     h1{
-        font-size: 60px;
+        font-size: 55px;
     }
 }
 
 @media(max-width:$normal-breakpoint){
     .main-hero-content,.artist-hero-title{
         top: 35%;
-        left: 27%;
-        text-align: center;
+        left: 15%;
+        h1{
+        font-size: 36px;
+
+        }
     }
 }
 @media(max-width:$narrow-breakpoint){
     .main-hero-content,.artist-hero-title{
-        top: 30%;
-        left: 20%; 
+        top: 35%;
+        left: 10%; 
+        h1{
+            font-size: 25px;
+ 
+        }
     }
 }
 @media(max-width:$mobile-breakpoint){
     .main-hero-content,.artist-hero-title{
-        top: 20%;
-        left: 3%;
+        top: 35%;
+        left: 2%;
+        h1{
+            font-size: 20px;
+        }
     }
 }

@@ -17,12 +17,13 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        position: 'absolute',
-        width: 400,
+        position: 'fixed',
+        width: 500,
         backgroundColor: 'white',
-        border: '2px solid #000',
+        border: '1px solid #3d4246',
         boxShadow: theme.shadows[5],
         padding: '10px',
+        textAlign:'center'
     },
 }));
 
@@ -42,7 +43,7 @@ export function PurchaseModal({ selectedArt, saveCartItem }) {
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
-            <h2 id="simple-modal-title">JUST ADDED TO YOUR CART</h2>
+            <h4 id="simple-modal-title">JUST ADDED TO YOUR CART</h4>
             <p id="simple-modal-description">
                 Added to cart successfully</p>
             <img src={selectedArt.imgUrl} alt={selectedArt.imgUrl} className="purchase-modal-img"/>
