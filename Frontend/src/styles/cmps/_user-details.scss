@@ -45,7 +45,13 @@
   grid-area: avatar;
 }
 
-@media (max-width: $mobile-breakpoint) {
+@media (max-width: 990px) {
+  .user-details:not(.edit-mode) {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 900px) {
   .user-details:not(.edit-mode) {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
