@@ -14,7 +14,7 @@ export function userReducer(state = initialState, action = {}) {
         case 'LOGOUT':
             return { ...state, loggedInUser: null };
         case 'SIGNUP':
-            return { ...state, loggedInUser: action.user };
+            return { ...state, loggedInUser: action.user, users: action.users };
         case 'UPDATE_USER':
             return { ...state, users: action.users, loggedInUser: action.user };
         case 'RESET_PASSWORD':

@@ -49,7 +49,7 @@ async function signup(newUser) {
   users.push(newUser);
   _save("users", users);
   _saveLocalUser(newUser);
-  return newUser;
+  return { users, user: newUser };
 }
 
 //UPDATE

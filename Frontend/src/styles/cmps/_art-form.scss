@@ -9,8 +9,7 @@
 
 .art-form form {
   display: grid;
-  grid-auto-flow: column;
-  grid-template-areas: 'left right';
+  grid-template-areas: 'fimg finputs' 'fbtns finputs';
   grid-gap: 20px;
   width: 100%;
   height: 100%;
@@ -21,18 +20,18 @@
   padding: inherit;
 }
 
-.art-form-right {
+.art-form .form-inputs {
   display: grid;
-  grid-area: right;
+  grid-area: finputs;
   grid-gap: 10px;
   width: 100%;
   max-width: 400px;
   grid-template-areas: 'ti' 'di' 'ci' 'mi' 'tqi' 'si' 'cli' 'szi' 'pri';
 }
 
-.art-form-left {
+.art-form .form-img {
   display: grid;
-  grid-area: left;
+  grid-area: fimg;
   grid-template-rows: 1fr auto;
   align-items: center;
   justify-items: center;
@@ -76,6 +75,7 @@
 
 .art-form .form-btns {
   display: grid;
+  grid-area: fbtns;
   grid-auto-flow: column;
   width: 100%;
   height: fit-content;

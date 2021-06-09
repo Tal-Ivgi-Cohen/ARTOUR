@@ -33,12 +33,15 @@ export class UserForm extends Component {
     isArtist: false,
     isValidInput: false,
     imgUrl: '',
+    orders: [],
+    isTooltipOpen: false,
   };
 
   componentDidMount() {
     if (this.props.user) {
       // Edit mode
-      const { email, fullname, password, isArtist, imgUrl } = this.props.user;
+      const { email, fullname, password, isArtist, imgUrl, orders } =
+        this.props.user;
       this.setState({
         email,
         fullname,
@@ -46,6 +49,7 @@ export class UserForm extends Component {
         isArtist,
         isValidInput: true,
         imgUrl,
+        orders,
       });
     }
   }
@@ -67,7 +71,7 @@ export class UserForm extends Component {
 
   onSubmit = (ev) => {
     ev.preventDefault();
-    const { email, fullname, password, isArtist, imgUrl } = this.state;
+    const { email, fullname, password, isArtist, imgUrl, orders } = this.state;
     // TODO: validate email & password
     const userInfo = {
       email,
@@ -75,6 +79,7 @@ export class UserForm extends Component {
       password,
       isArtist,
       imgUrl,
+      orders,
     };
     if (this.props.user) {
       // Edit mode
@@ -99,14 +104,24 @@ export class UserForm extends Component {
     return re.test(String(password).toLowerCase());
   };
 
+  openTooltip = () => this.setState({ isTooltipOpen: true });
+  closeTooltip = () => this.setState({ isTooltipOpen: false });
+
   render() {
-    const { email, fullname, password, isArtist, isValidInput, imgUrl } =
-      this.state;
-      const {cancel,editModeOff} = this.props;
+    const {
+      email,
+      fullname,
+      password,
+      isArtist,
+      isValidInput,
+      imgUrl,
+      isTooltipOpen,
+    } = this.state;
+    const { cancel, editModeOff } = this.props;
     return (
       <section className='user-form'>
         <form onSubmit={this.onSubmit}>
-          <section className='user-form-right'>
+          <section className='form-inputs'>
             <TextField
               label='Email'
               variant='outlined'
@@ -133,6 +148,11 @@ export class UserForm extends Component {
                 required
               />
               <Tooltip
+                open={isTooltipOpen}
+                onClick={this.openTooltip}
+                onOpen={this.openTooltip}
+                onClose={this.closeTooltip}
+                placement={'left-start'}
                 title={
                   <p
                     style={{
@@ -150,7 +170,7 @@ export class UserForm extends Component {
               </Tooltip>
             </section>
           </section>
-          <section className='user-form-left'>
+          <section className='form-img'>
             <ImgUploadPreview
               imgUrl={imgUrl}
               onImgChange={this.onImgChange}
@@ -167,14 +187,14 @@ export class UserForm extends Component {
               }
               label="I'm an artist"
             />
-            <section className='form-btns'>
-              <Button variant='outlined' onClick={editModeOff || cancel}>
-                Cancel
-              </Button>
-              <Button variant='outlined' type='submit' disabled={!isValidInput}>
-                Submit
-              </Button>
-            </section>
+          </section>
+          <section className='form-btns'>
+            <Button variant='outlined' onClick={editModeOff || cancel}>
+              Cancel
+            </Button>
+            <Button variant='outlined' type='submit' disabled={!isValidInput}>
+              Submit
+            </Button>
           </section>
         </form>
       </section>

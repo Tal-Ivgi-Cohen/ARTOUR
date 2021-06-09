@@ -9,7 +9,7 @@
 
 html {
   font-family: neuzeit;
-  font-size: 13px;
+  font-size: 20px;
   letter-spacing: 1.5px;
   color: $clr6;
   line-height: 1.6;
@@ -19,6 +19,7 @@ body {
   margin: 0;
   background-color: $clr6;
   color: $clr2;
+  overflow-x: hidden;
 }
 
 main {
@@ -36,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: caveat, sans-serif;
+  font-family: neuzeit;
   font-weight: bold;
   line-height: 1;
   margin: 0 0 0.6em;

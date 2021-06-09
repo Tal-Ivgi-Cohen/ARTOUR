@@ -16,6 +16,9 @@ class _Account extends Component {
   componentDidMount() {
     this.props.loadLoggedInUser();
     if (!this.props.arts.length) this.props.loadArts();
+    const { tab } = this.props.match.params;
+    console.log(tab);
+    if (!tab || tab === 'undefined') this.props.history.push('/account/login');
   }
   render() {
     const {
@@ -35,7 +38,7 @@ class _Account extends Component {
       // const ordersByUser = orders.filter(order => order.buyer.id === userId);
       // const ordersToUser = orders.filter(order => order.items.filter(item => item.artist.id === userId));
       // const userOrders = {ordersByUser,ordersToUser}
-      const userOrders = loggedInUser.orders
+      const userOrders = loggedInUser.orders;
       return (
         <div className='account-page'>
           <h3>Account</h3>

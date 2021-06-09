@@ -1,21 +1,90 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
-import {
-  Table,
-  TableRow,
-  TableHead,
-  TableCell,
-  TableBody,
-} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
-import { EmptyState } from '../../util/EmptyState';
+import ImageIcon from '@material-ui/icons/Image';
+import { MobileTable } from './tables/MobileTable';
+import { DesktopTable } from './tables/DesktopTable';
 
-export function UserArts({ arts, removeArt }) {
+export function UserArts({ arts, removeArt, isMobileView }) {
+  const getDesktopTable = () => {
+    const columns = [
+      'Title',
+      'Description',
+      'Category',
+      'Material',
+      'Technique',
+      'Style',
+      'Size',
+      'Color',
+      'Price',
+      'Edit',
+      'Delete',
+    ];
+    const data = arts.map((art) => {
+      return {
+        details: [
+          art.title,
+          art.description,
+          art.category,
+          art.material,
+          art.technique,
+          art.style,
+          `${art.size.height}x${art.size.width} cm`,
+          art.color,
+          `${art.price} $`,
+          <Link to={`/art/edit/${art._id}`}>
+            <EditIcon />
+          </Link>,
+          <Button onClick={() => removeArt(art._id)}>
+            <DeleteIcon />
+          </Button>,
+        ],
+      };
+    });
+    return { columns, data };
+  };
+  const getMobileTable = () => {
+    const columns = [
+      'Title',
+      'Description',
+      'Category',
+      'Material',
+      'Technique',
+      'Style',
+      'Size',
+      'Color',
+      'Price',
+    ];
+    const data = arts.map((art) => {
+      const details = [
+        art.title,
+        art.description,
+        art.category,
+        art.material,
+        art.technique,
+        art.style,
+        `${art.size.height}x${art.size.width} cm`,
+        art.color,
+        `${art.price} $`,
+      ];
+      const btns = [
+        <Link to={`/art/edit/${art._id}`}>
+          <EditIcon />
+        </Link>,
+        <Button onClick={() => removeArt(art._id)}>
+          <DeleteIcon />
+        </Button>,
+      ];
+      return { details, btns };
+    });
+    return { columns, data };
+  };
+
   return (
     <section className='user-arts'>
-      <section>
+      <section className='header'>
         <h3>Artworks</h3>
         <Link to={'/art/add'}>
           <Button className='art-add-btn' variant='outlined'>
@@ -23,50 +92,19 @@ export function UserArts({ arts, removeArt }) {
           </Button>
         </Link>
       </section>
-      {arts.length ? (
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Title</TableCell>
-              <TableCell>Description</TableCell>
-              <TableCell>Category</TableCell>
-              <TableCell>Material</TableCell>
-              <TableCell>Style</TableCell>
-              <TableCell>Technique</TableCell>
-              <TableCell>Price</TableCell>
-              <TableCell>Size</TableCell>
-              <TableCell>Edit</TableCell>
-              <TableCell>Delete</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {arts.map((art, idx) => (
-              <TableRow key={`a${idx}`}>
-                <TableCell>{art.title} </TableCell>
-                <TableCell>{art.description} </TableCell>
-                <TableCell>{art.category} </TableCell>
-                <TableCell>{art.material} </TableCell>
-                <TableCell>{art.style} </TableCell>
-                <TableCell>{art.technique} </TableCell>
-                <TableCell>{art.price} </TableCell>
-                <TableCell>{`${art.size.height}x${art.size.width}`} </TableCell>
-                <TableCell>
-                  <Link to={`/art/edit/${art._id}`}>
-                    <EditIcon />
-                  </Link>
-                </TableCell>
-                <TableCell>
-                  <Button onClick={() => removeArt(art._id)}>
-                    <DeleteIcon />
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      ) : (
-        <EmptyState txt="You don't have any artworks yet. You can add through the 'Add' button above." />
-      )}
+      <section className='content'>
+        {isMobileView ? (
+          <MobileTable
+            table={getMobileTable()}
+            emptyTxt="You don't have any artworks yet. You can add through the 'Add' button above."
+          />
+        ) : (
+          <DesktopTable
+            table={getDesktopTable()}
+            emptyTxt="You don't have any artworks yet. You can add through the 'Add' button above."
+          />
+        )}
+      </section>
     </section>
   );
 }

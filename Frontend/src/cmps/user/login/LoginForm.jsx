@@ -8,6 +8,7 @@ export class LoginForm extends Component {
     email: '',
     password: '',
     isValidInput: false,
+    isTooltipOpen: false,
   };
 
   handleChange = ({ target }) => {
@@ -38,9 +39,11 @@ export class LoginForm extends Component {
     return re.test(String(password).toLowerCase());
   };
 
-  render() {
-    const { email, password, isValidInput } = this.state;
+  openTooltip = () => this.setState({ isTooltipOpen: true });
+  closeTooltip = () => this.setState({ isTooltipOpen: false });
 
+  render() {
+    const { email, password, isValidInput, isTooltipOpen } = this.state;
     return (
       <section className='login-form'>
         <form onSubmit={this.login}>
@@ -62,6 +65,11 @@ export class LoginForm extends Component {
               required
             />
             <Tooltip
+              open={isTooltipOpen}
+              onClick={this.openTooltip}
+              onOpen={this.openTooltip}
+              onClose={this.closeTooltip}
+              placement={'left-start'}
               title={
                 <p
                   style={{

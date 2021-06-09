@@ -3,7 +3,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
-  withStyles,
   IconButton,
   Link,
   MenuItem,
@@ -14,18 +13,11 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
+import CloseIcon from '@material-ui/icons/Close';
 import { Logo } from '../Logo';
 import { SearchModal } from '../SearchModal';
 
-const styles = () => ({
-  appBar: {
-    backgroundColor: 'white',
-    color: 'black',
-    boxShadow: 'none',
-  },
-});
-
-class _DesktopNav extends Component {
+export class DesktopNav extends Component {
   state = { isDrawerOpen: false, isSearchOpen: false };
   openDrawer = () => this.setState({ isDrawerOpen: true });
   closeDrawer = () => this.setState({ isDrawerOpen: false });
@@ -83,11 +75,10 @@ class _DesktopNav extends Component {
   ];
 
   render() {
-    const { classes } = this.props;
     const { isDrawerOpen, isSearchOpen } = this.state;
     return (
       <div className='desktop-nav'>
-        <AppBar className={classes.appBar}>
+        <AppBar className='app-header'>
           <Toolbar>
             <IconButton
               {...{
@@ -102,11 +93,18 @@ class _DesktopNav extends Component {
             </IconButton>
             <Drawer
               {...{
-                anchor: 'top',
+                anchor: 'left',
                 open: isDrawerOpen,
                 onClose: this.closeDrawer,
+                PaperProps: { className: 'drawer-content' },
               }}
             >
+              <IconButton
+                onClick={this.closeDrawer}
+                className='close-menu-modal-btn'
+              >
+                <CloseIcon />
+              </IconButton>
               <div>
                 {this.getDrawerData().map(({ label, href }, idx) => {
                   return (
@@ -149,5 +147,3 @@ class _DesktopNav extends Component {
     );
   }
 }
-
-export const DesktopNav = withStyles(styles)(_DesktopNav);

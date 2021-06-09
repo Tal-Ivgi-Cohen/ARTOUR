@@ -6,24 +6,16 @@ import {
   Drawer,
   Link,
   MenuItem,
-  withStyles,
 } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
+import CloseIcon from '@material-ui/icons/Close';
 import { Logo } from '../Logo';
 import { SearchModal } from '../SearchModal';
 
-const styles = () => ({
-  appBar: {
-    backgroundColor: 'white',
-    color: 'black',
-    boxShadow: 'none',
-  },
-});
-
-class _MobileNav extends Component {
+export class MobileNav extends Component {
   state = { isDrawerOpen: false, isSearchOpen: false };
   openDrawer = () => this.setState({ isDrawerOpen: true });
   closeDrawer = () => this.setState({ isDrawerOpen: false });
@@ -70,11 +62,10 @@ class _MobileNav extends Component {
   ];
 
   render() {
-    const { classes } = this.props;
     const { isDrawerOpen, isSearchOpen } = this.state;
     return (
-      <div className="mobile-nav">
-        <AppBar className={classes.appBar}>
+      <div className='mobile-nav'>
+        <AppBar className='app-header'>
           <Toolbar>
             <IconButton
               {...{
@@ -89,11 +80,18 @@ class _MobileNav extends Component {
             </IconButton>
             <Drawer
               {...{
-                anchor: 'top',
+                anchor: 'left',
                 open: isDrawerOpen,
                 onClose: this.closeDrawer,
+                PaperProps: { className: 'drawer-content' },
               }}
             >
+              <IconButton
+                onClick={this.closeDrawer}
+                className='close-menu-modal-btn'
+              >
+                <CloseIcon />
+              </IconButton>
               <div>
                 {this.getDrawerData().map(({ label, href }, idx) => {
                   return (
@@ -131,10 +129,8 @@ class _MobileNav extends Component {
             </nav>
             <SearchModal isOpen={isSearchOpen} closeSearch={this.closeSearch} />
           </Toolbar>
-        </AppBar>{' '}
+        </AppBar>
       </div>
     );
   }
 }
-
-export const MobileNav = withStyles(styles)(_MobileNav);

@@ -147,7 +147,7 @@ export class ArtForm extends React.Component {
           <span>{isEditMode ? ' / Edit' : ' / Add'}</span>
         </span>
         <form onSubmit={this.onSubmit}>
-          <section className='art-form-right'>
+          <section className='form-inputs'>
             <TextField
               required
               value={title}
@@ -291,23 +291,23 @@ export class ArtForm extends React.Component {
               }
             />
           </section>
-          <section className='art-form-left'>
+          <section className='form-img'>
             <ImgUploadPreview imgUrl={imgUrl} onImgChange={this.onImgChange} />
-            <section className='form-btns'>
-              <Button
-                variant='outlined'
-                onClick={() => this.props.history.push('/account/arts')}
-              >
-                Cancel
-              </Button>
-              <Button
-                variant='outlined'
-                type='submit'
-                disabled={!price || !size.height || !size.width || !imgUrl}
-              >
-                Submit
-              </Button>
-            </section>
+          </section>
+          <section className='form-btns'>
+            <Button
+              variant='outlined'
+              onClick={() => this.props.history.push('/account/arts')}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant='outlined'
+              type='submit'
+              disabled={!price || !size.height || !size.width || !imgUrl}
+            >
+              Submit
+            </Button>
           </section>
         </form>
       </div>
