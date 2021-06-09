@@ -14,9 +14,7 @@ export function App() {
   return (
     <Router>
       <div className='app'>
-        <header>
-          <Header />
-        </header>
+        <Header />
         <main>
           <Switch>
             <Route
@@ -34,9 +32,9 @@ export function App() {
             ))}
           </Switch>
         </main>
-         <footer>
+        <footer>
           <Footer />
-          </footer> 
+        </footer>
       </div>
     </Router>
   );

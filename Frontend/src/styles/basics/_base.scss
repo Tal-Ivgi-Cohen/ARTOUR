@@ -20,6 +20,7 @@ body {
   margin: 0;
   background-color: $clr6;
   color: $clr2;
+  overflow-x: hidden;
 }
 
 main {
@@ -33,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: caveat, sans-serif;
+  font-family: neuzeit;
   font-weight: bold;
   line-height: 1;
   margin: 0 0 0.6em;

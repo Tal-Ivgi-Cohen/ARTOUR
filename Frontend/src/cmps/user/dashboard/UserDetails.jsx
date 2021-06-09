@@ -13,7 +13,7 @@ export class UserDetails extends Component {
     const { email, password, fullname, imgUrl } = this.props.user;
     const { isEditing } = this.state;
     return (
-      <section className={`user-details ${isEditing && 'edit-mode'}`}>
+      <section className={`user-details ${isEditing ? 'edit-mode' : ''}`}>
         {isEditing ? (
           <UserForm
             user={this.props.user}

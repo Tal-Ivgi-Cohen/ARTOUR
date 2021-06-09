@@ -26,8 +26,7 @@ async function login(credentials) {
 
 async function signup(userInfo) {
     try {
-        const user = await storageService.signup(userInfo);
-        return user;
+        return await storageService.signup(userInfo);
     } catch (err) {
         throw err;
     }

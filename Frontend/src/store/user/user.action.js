@@ -49,21 +49,20 @@ export function logout() {
         }
     };
 }
-
 //SIGNUP
 export function signup(userInfo) {
     return async dispatch => {
         try {
-            const user = await userService.signup(userInfo);
-            if (user) {
-                dispatch({ type: 'SIGNUP', user });
+            const data = await userService.signup(userInfo);
+            const { user, users } = data;
+            if (data) {
+                dispatch({ type: 'SIGNUP', user, users });
             }
         } catch (err) {
             console.log('User Actions: err in signUp', err);
         }
     };
 }
-
 //UPDATE
 export function updateUser(user) {
     return async dispatch => {
@@ -77,8 +76,6 @@ export function updateUser(user) {
         }
     };
 }
-
-
 //RESET PASSWORD
 export function resetPassword(email, password) {
     return async dispatch => {
