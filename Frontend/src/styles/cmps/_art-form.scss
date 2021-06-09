@@ -48,8 +48,8 @@
 }
 
 .art-form .img-preview {
-  height: 500px;
-  width: 550px;
+  max-height: 500px;
+  max-width: 550px;
 }
 
 .art-form .empty-img {
@@ -63,8 +63,10 @@
 }
 
 .art-form .img-preview img {
+  height: 100%;
   width: 100%;
-  height: auto;
+  min-width: 150px;
+  object-fit: contain;
   border: 2px black dotted;
 }
 
@@ -78,9 +80,10 @@
   grid-area: fbtns;
   grid-auto-flow: column;
   width: 100%;
-  height: fit-content;
   justify-content: right;
   grid-gap: 10px;
+  height: 100%;
+  align-items: end;
 }
 
 .title-input {
@@ -128,4 +131,17 @@
 
 .price-input {
   grid-area: pri;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .art-form form {
+    grid-template-areas: 'fimg' 'finputs' 'fbtns';
+    width: 90vw;
+  }
+  .art-form .img-upload-preview {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 10px;
+  }
 }

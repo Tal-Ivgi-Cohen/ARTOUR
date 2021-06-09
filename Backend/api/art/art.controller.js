@@ -5,7 +5,7 @@ const artService = require('./art.service')
 
 module.exports = {
     getArts,
-    // deleteToy,
+    deleteArt,
     // addToy,
     getArt
 }
@@ -44,18 +44,18 @@ async function getArts(req, res) {
 
 
 
-// async function deleteToy(req, res) {
-//     console.log('req.params.id', req.params.id);
-//     try {
-//         console.log('toycontroller',req.params.id);
+async function deleteArt(req, res) {
+    console.log('req.params.id', req.params.id);
+    try {
+        console.log('artcontroller',req.params.id);
 
-//         await toyService.remove(req.params.id)
-//         res.send({ msg: 'Deleted successfully' })
-//     } catch (err) {
-//         // logger.error('Failed to delete toy', err)
-//         res.status(500).send({ err: 'Failed to delete toy' })
-//     }
-// }
+        await artService.remove(req.params.id)
+        res.send({ msg: 'Deleted successfully' })
+    } catch (err) {
+        // logger.error('Failed to delete toy', err)
+        res.status(500).send({ err: 'Failed to delete art' })
+    }
+}
 
 // async function addToy(req, res) {
 //     try {

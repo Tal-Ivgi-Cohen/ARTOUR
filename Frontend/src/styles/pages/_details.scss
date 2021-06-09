@@ -1,9 +1,35 @@
 *{
   box-sizing: border-box;
 }
+//IMG
+.imgs{
+  margin-top: 4rem;
+  margin-bottom: -50px;
+  justify-content: space-between;
+}
+.img-details{
+  margin-left: .625rem;
+  width: 50%;
+}
+.content-img{
+  width: 50%;
+}
+.imgd, .img1{
+  object-fit: contain;
+  box-shadow: 0 10px 6px -6px #777;
+  grid-area: 1/-1/-1/1;
+  height: 480px;
+}
+.img2{
+  box-shadow: -9px 9px 6px -6px #777;
+  grid-area: 2/2/3/3;
+  height: 170px;
+}
+
+
 
 //FRAMES
-.none-border{
+.none-border,.none-border2{
   border: none;
   border-image: none;
 }
@@ -14,67 +40,54 @@
 .black{
   border: 30px solid rgb(243, 243, 245);
   border-image:  url("../../assets/svg/Black-Frame.svg")  18% stretch;
+  box-shadow: none;
 }
 .bright{
   border: 35px solid rgb(255, 255, 255);
   border-image:  url("../../assets/svg/vintage.svg")  20% stretch;
 }
+//FRAMES IMG2
+.dark2{
+  border: 20px solid rgb(255, 255, 255);
+  border-image: url("../../assets/svg/1402636079.svg")  18% stretch;
+}
+.black2{
+  border: 20px solid rgb(243, 243, 245);
+  border-image:  url("../../assets/svg/Black-Frame.svg")  18% stretch;
+  box-shadow: none;
+}
+.bright2{
+  border: 20px solid rgb(255, 255, 255);
+  border-image:  url("../../assets/svg/vintage.svg")  20% stretch;
+}
 
-//IMG
-.imgs{
-  margin-top: 4rem;
-  margin-bottom: -50px;
-}
-.img-details{
-  margin-left: .625rem;
-  width: 50%;
- }
- .content-img{
-   width: 50%;
- }
-.img1{
-  box-shadow: 0 10px 6px -6px #777;
-  grid-area: 1/-1/-1/1;
-}
-.img2{
-  box-shadow: -9px 9px 6px -6px #777;
-  object-fit: cover;
-  grid-area: 2/2/3/3;
-  width: 100%;
-  height: 70%;
+.btn-more-work{
+  padding: 10px;
+   margin-left: 30rem;
+   height: 4rem;
 }
 
 //LAYOUT
-@media(max-width:$medium-breakpoint) {
-  .imgs{
-    margin-bottom: 0.8rem;
-    flex-direction: column;
-    .img-details, .content-img{
-      width: 75%;
-      height: 50%;
-      margin-right: 0px;
 
-    }
-    .content-txt{
-      margin-left: 0px;
-    }
-  }
-}
-@media(max-width:$normal-breakpoint) {
 .main-art-details{
-  text-align: center;
-  flex-direction: column;
-  .content-txt{
-    max-width: none;
-  }
-}
-}
+margin-left: 0;
 
+.btn-more-work{
+  margin: auto;
+}
+}
 .container-img{
   grid-area: 1/1/-1/1;
   display: grid;
-  grid-template-columns: 1fr 5fr 4fr;
-  grid-template-rows: 1fr 4fr 5fr;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 0.5fr 3fr 2fr;
+}
+.container-img-details{
+  grid-area: 1/1/-1/1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 0.5fr 3fr 2fr;
+  margin-left: .3125rem;
 }
 .main{
 margin: 0 5rem 3rem;
@@ -86,7 +99,7 @@ margin-bottom: 1.25rem;
   text-align: center;
 }
 .content-txt{
-margin: 3.125rem 1.25rem 0 3.125rem;
+margin: 4rem 1.25rem 0 3.125rem;
 text-align: start;
 max-width: 25%;
 p{
@@ -95,14 +108,12 @@ p{
 }
 .artist-list-details{
 margin: 3.125rem 0 0 1.25rem;
+a{
+  margin-bottom: 20px;
 }
-.btn-back{
-  margin-left: 1.25rem;
 }
-.btn-more-work{
-  padding: 10px;
- margin-left: 30rem;
- height: 4rem;
+.main-art-details{
+ align-items: none;
 }
 //WISHLIST MODAL
 .img-wish{
@@ -139,3 +150,66 @@ input[type='radio']:checked:after {
 label{
   margin-left: .625rem;
 }
+.btn-more-work{
+  margin-left: auto;
+}
+//RESPONSIVE
+
+@media(max-width:1555px){
+  .art-details{
+    margin-top: 1.875rem;
+  }
+.main-art-details{
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  .content-txt{
+    max-width: none;
+    align-items: center;
+    }
+  }
+}
+@media(max-width:$medium-breakpoint){
+  .main-art-details{
+    align-items: center;
+  }
+  .imgs{
+    margin-bottom: 0.8rem;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    .imgd{
+      margin: 0px;
+    }
+    .img-details, .content-img{
+      margin: 1rem 0 0 ;
+      width: 75%;
+      height: 50%;
+    }
+    .content-txt{
+      margin-left: 0px;
+    }
+  }
+}
+@media(max-width:$mobile-breakpoint){
+  .content-txt{
+    margin-left: 1rem;
+  }
+  .main{
+    margin: 0px;
+  }
+  .imgs{
+    margin: 0px;
+  }
+  .img1, .imgd{
+    object-fit: fill;
+    margin-left: 0;
+    box-shadow: none;
+    width: 100vw;
+  }
+  .img2{
+   margin-top: 20%;
+    margin-left: 2rem
+  }
+}
+

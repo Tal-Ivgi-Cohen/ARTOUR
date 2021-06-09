@@ -135,8 +135,7 @@ class _ArtCart extends React.Component {
           <div className="btn flex">
             <button><Link to={`/art`}> Continue shopping</Link></button>
             <CheckoutModal 
-                  onCheckOut={this.onCheckOut}
-                   />
+                  onCheckOut={this.onCheckOut}/>
            {/* <button onClick={this.onCheckOut}> Check out</button>*/}
           </div>
         </div>

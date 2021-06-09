@@ -3,30 +3,15 @@
     width: 100%;
     gap: 0.625rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    
 }
 .art-list-title{
     margin-top: 10px;
 }
-
-/*.art-list-container{
-    display: grid;
-    text-align: center;
-    grid-template-columns:
-        minmax(2rem, 1fr)
-        minmax(auto, $normal-breakpoint)
-        minmax(2rem, 1fr);
-        .art-list-title{
-            margin-top: 10px;
-            grid-area:  1/2/2/3;
-        }
+.artworks-img{
+    width: 7rem;
+    height: 7rem;
+    object-fit: contain;
+    border: 0.5px solid $clr4;
 }
 
-.art-list {
-    display: grid;
-    grid-area:  2/2/3/3;
-    width: 100%;
-    gap: 0.625rem;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: 200px 1fr 200px;
-
-}*/

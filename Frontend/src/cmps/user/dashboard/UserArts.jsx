@@ -10,6 +10,7 @@ import { DesktopTable } from './tables/DesktopTable';
 export function UserArts({ arts, removeArt, isMobileView }) {
   const getDesktopTable = () => {
     const columns = [
+      'Thumbnail',
       'Title',
       'Description',
       'Category',
@@ -25,6 +26,7 @@ export function UserArts({ arts, removeArt, isMobileView }) {
     const data = arts.map((art) => {
       return {
         details: [
+          <img className='art-img' src={art.imgUrl} />,
           art.title,
           art.description,
           art.category,
@@ -48,6 +50,7 @@ export function UserArts({ arts, removeArt, isMobileView }) {
   const getMobileTable = () => {
     const columns = [
       'Title',
+      'Thumbnail',
       'Description',
       'Category',
       'Material',
@@ -60,6 +63,7 @@ export function UserArts({ arts, removeArt, isMobileView }) {
     const data = arts.map((art) => {
       const details = [
         art.title,
+        <img className='art-img' src={art.imgUrl} />,
         art.description,
         art.category,
         art.material,
