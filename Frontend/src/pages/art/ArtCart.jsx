@@ -24,7 +24,7 @@ class _ArtCart extends React.Component {
 
   async componentDidMount() {
     const cart = await cartService.query()
-    this.setState({ cart }, console.log('cart in artcart', this.state.cart))
+    this.setState({ cart })
   }
 
   onRemoveItem = async (itemId) => {
@@ -35,7 +35,6 @@ class _ArtCart extends React.Component {
 
   handleChange = ({ target }) => {
     const value = target.value
-    const field = target.name
     this.setState({ note: value })
   }
 
@@ -68,7 +67,6 @@ class _ArtCart extends React.Component {
     console.log('artist.orders', artist.orders);
     updateUser(artist)
     localStorage.setItem('shoppingCart', [])
-    //localStorage.removeItem('shoppingCart');
   };
 
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
-import ImageIcon from '@material-ui/icons/Image';
+//import ImageIcon from '@material-ui/icons/Image';
 import { MobileTable } from './tables/MobileTable';
 import { DesktopTable } from './tables/DesktopTable';
 
@@ -26,7 +26,7 @@ export function UserArts({ arts, removeArt, isMobileView }) {
     const data = arts.map((art) => {
       return {
         details: [
-          <img className='art-img' src={art.imgUrl} />,
+          <img className='art-img' src={art.imgUrl} alt={art.imgUrl} />,
           art.title,
           art.description,
           art.category,
@@ -63,7 +63,7 @@ export function UserArts({ arts, removeArt, isMobileView }) {
     const data = arts.map((art) => {
       const details = [
         art.title,
-        <img className='art-img' src={art.imgUrl} />,
+        <img className='art-img' src={art.imgUrl} alt={art.imgUrl} />,
         art.description,
         art.category,
         art.material,

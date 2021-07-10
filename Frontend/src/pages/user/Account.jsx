@@ -14,10 +14,10 @@ import { removeArt, loadArts } from '../../store/art/art.action.js';
 
 class _Account extends Component {
   componentDidMount() {
+   if (this.props.loggedInUser === null) return
     this.props.loadLoggedInUser();
     if (!this.props.arts.length) this.props.loadArts();
     const { tab } = this.props.match.params;
-    console.log(tab);
     if (!tab || tab === 'undefined') this.props.history.push('/account/login');
   }
   render() {
@@ -35,6 +35,7 @@ class _Account extends Component {
       const userArts = arts
         ? arts.filter((art) => art.artist._id === loggedInUser._id)
         : [];
+        //console.log('arts in account', art)
       // const ordersByUser = orders.filter(order => order.buyer.id === userId);
       // const ordersToUser = orders.filter(order => order.items.filter(item => item.artist.id === userId));
       // const userOrders = {ordersByUser,ordersToUser}

@@ -9,7 +9,7 @@ import {
 import { EmptyState } from '../../util/EmptyState';
 
 export function UserOrders({ arts }) {
-  console.log('arts', arts);
+  //console.log('arts', arts);
 
   return (
     <section className='user-orders'>

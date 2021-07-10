@@ -16,7 +16,7 @@ export function loadLoggedInUser() {
             const user = await userService.getLoggedInUser();
             if (user) {
                 dispatch({ type: 'SET_USER', user });
-                console.log('load user', user._id);
+               // console.log('load user', user._id);
             }
 
         } catch (err) {
@@ -29,7 +29,7 @@ export function login(credentials) {
     return async dispatch => {
         try {
             const user = await userService.login(credentials);
-            console.log('user in reducer', user);
+          //  console.log('user in reducer', user);
             if (user) {
                 dispatch({ type: 'LOGIN', user });
             }

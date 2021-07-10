@@ -49,8 +49,8 @@ export class ArtForm extends React.Component {
   }
 
   selectOptions = {
-    category: ['Painting', 'Photograph', 'Digital art', 'Other'],
-    technique: ['Oil', 'Acrylics', 'Watercolors', 'Chalk', 'Pencil', 'Other'],
+    category: ['Painting', 'Photograph', 'Digital art', 'Other', 'Print'],
+    technique: ['Oil', 'Acrylics', 'Watercolors', 'Chalk', 'Pencil', 'Other', 'Digital art'],
     style: [
       'Abstract',
       'Classic',
@@ -62,10 +62,12 @@ export class ArtForm extends React.Component {
       'Street art',
       'Graffiti',
       'Other',
+      'Limited Edition Print',
+      'Limited Edition Photograph',
     ],
     color: [
       'Black',
-      'White',
+      'white',
       'Gray',
       'Yellow',
       'Orange',
@@ -78,7 +80,8 @@ export class ArtForm extends React.Component {
       'Brown',
       'Beige',
     ],
-    material: ['Canvas', 'Wood', 'Paper', 'Other'],
+    material: ['Canvas', 'Wood', 'paper', 'Other'],
+
   };
 
   handleChange = ({ target }) => {
@@ -120,6 +123,7 @@ export class ArtForm extends React.Component {
     ev.preventDefault();
     const { art } = this.state;
     await this.props.saveArt(art);
+    //console.log('art in art form', art);
     // go to explore page
     this.props.history.push(`/account/arts`);
   };

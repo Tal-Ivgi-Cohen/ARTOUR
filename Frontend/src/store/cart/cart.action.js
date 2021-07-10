@@ -6,7 +6,7 @@ export function loadCartItems(user) {
         try {
             const cartItems = await userService.updateUser(user);
             dispatch({ type: 'SET_CART_ITEMS', cartItems });
-            console.log('load arts', cartItems);
+            //console.log('load arts', cartItems);
         } catch (err) {
             console.log('Art Actions: err in loaded Arts', err);
         }
@@ -27,9 +27,9 @@ export function removeCartItem(cartItemId) {
 export function saveCartItem(cartItem) {
     return async () => {
         try {
-            console.log('saving to cart', cartItem)
+           // console.log('saving to cart', cartItem)
             const cartItems = await cartService.add(cartItem);
-            console.log('user\'s cart after update', cartItems);
+           // console.log('user\'s cart after update', cartItems);
         } catch (err) {
             console.log('CartActions: err in saveCart', err);
         }

@@ -57,9 +57,9 @@ export function WishListModal({ selectedArt, saveWishItem }) {
 
     return (
         <div>
-            <a className="btn-wish-list" type="button" onClick={handleWish}>
+            <button className="btn-wish-list" type="button" onClick={handleWish}>
                 ♡ WISHLIST
-            </a>
+            </button>
             <Modal
                 open={open}
                 onClick={handleClose}

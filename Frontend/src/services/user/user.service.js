@@ -1,7 +1,8 @@
+import { storageService } from './user-storage.service'
+import { httpService } from '../http.service'
 
-import { storageService } from './user-storage.service';
 
-const STORAGE_KEY = 'users';
+
 export const userService = {
     login,
     logout,
@@ -10,18 +11,15 @@ export const userService = {
     query,
     updateUser,
     resetPassword,
-    // remove,
-    // update,
-    // increaseScore
 };
 
+window.userService = userService
 
 async function login(credentials) {
-    try {
-        return await storageService.login(credentials);
-    } catch (err) {
-        throw err;
-    }
+
+    //console.log('credentials', credentials);
+    const user = await httpService.post('auth/login', credentials)
+    if (user) return _saveLocalUser(user) 
 }
 
 async function signup(userInfo) {
@@ -33,21 +31,25 @@ async function signup(userInfo) {
 }
 
 async function logout() {
-    try {
-        return await storageService.logout(STORAGE_KEY);
-    } catch (err) {
-        throw err;
-    }
+    /* try {
+         return await storageService.logout(STORAGE_KEY);
+     } catch (err) {
+         throw err;
+     }*/
+    return httpService.post('auth/logout/')
 }
 
 
-async function getLoggedInUser() {
-    return await storageService.getUser();
+async function getLoggedInUser(userId) {
+    //return await storageService.getUser();
+    //return httpService.get(`user/${userId}`)
+    const loggedInUser = await httpService.get(`user/${userId}`);
+    return loggedInUser;
 }
 
-async function query() {
-    console.log('service user');
-    return await storageService.query(STORAGE_KEY);
+function query() {
+    // return await storageService.query(STORAGE_KEY);
+    return httpService.get(`user`)
 }
 
 async function resetPassword(email, password) {
@@ -55,18 +57,12 @@ async function resetPassword(email, password) {
 }
 
 
-
-// function getById(userId) {
-//     return storageService.get('user', userId)
-//     // return httpService.get(`user/${userId}`)
-// }
-// function remove(userId) {
-//     return storageService.remove('user', userId)
-//     // return httpService.delete(`user/${userId}`)
-// }
-
 async function updateUser(user) {
-    console.log('user in service', user);
+  //  console.log('user in service', user);
     return storageService.updateUser(user);
 }
 
+function _saveLocalUser(user) {
+    sessionStorage.setItem('loggedinUser', JSON.stringify(user))
+    return user
+}

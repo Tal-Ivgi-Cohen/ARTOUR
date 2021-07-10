@@ -1,81 +1,68 @@
 const logger = require('../../service/logger.service')
-// const userService = require('../user/user.service')
-// const socketService = require('../../services/socket.service')
 const artService = require('./art.service')
 
 module.exports = {
     getArts,
     deleteArt,
-    // addToy,
+    addArt,
+    updateArt,
     getArt
 }
 
 async function getArt(req, res) {
     try {
-         console.log('req.params.id',req.params.id);
-        const arts = await artService.query({ _id: req.params.id})
-        console.log('art', arts);
-        res.send(arts[0])
+        const art = await artService.getById(req.params.id)
+        res.send(art)
     } catch (err) {
-        // logger.error('Cannot get arts', err)
-        console.log('Cannot get arts', err);
-        res.status(500).send({ err: 'Failed to get arts' })
+        logger.error('Failed to get toy', err)
+        res.status(500).send({ err: 'Failed to get toy' })
     }
 }
 
 async function getArts(req, res) {
-    const filterBy ={}
-    const {_id, artistId}  = req.query
-    console.log('getArts', req.query);
-
-        try {
-            filterBy['_id'] = _id
-            filterBy.artistId = artistId
-             
+    console.log('req.query', req.query);
+    const filterBy = {}
+    const { _id, artistId } = req.query
+    //console.log('getArts', req.query);
+    try {
+        filterBy['_id'] = _id
+        filterBy.artistId = artistId
         const arts = await artService.query(filterBy)
-        // console.log('arts controler',arts);
         res.send(arts)
     } catch (err) {
-        // logger.error('Cannot get arts', err)
         console.log('Cannot get arts', err);
         res.status(500).send({ err: 'Failed to get arts' })
     }
 }
 
-
-
 async function deleteArt(req, res) {
-    console.log('req.params.id', req.params.id);
     try {
-        console.log('artcontroller',req.params.id);
-
         await artService.remove(req.params.id)
         res.send({ msg: 'Deleted successfully' })
     } catch (err) {
-        // logger.error('Failed to delete toy', err)
+        logger.error('Failed to delete toy', err)
         res.status(500).send({ err: 'Failed to delete art' })
     }
 }
+async function updateArt(req, res) {
+    try {
+        const art = req.body
+        const savedArt = await artService.update(art)
+        res.send(savedArt)
+    } catch (err) {
+        //logger.error('Failed to update art', err)
+        res.status(500).send({ err: 'Failed to update art' })
+    }
+}
 
-// async function addToy(req, res) {
-//     try {
-//         var toy = req.body
-//         toy.byUserId = req.session.user._id
-//         toy = await toyService.add(toy)
-        
-//         // prepare the updated toy for sending out
-//         toy.byUser = await userService.getById(toy.byUserId)
-//         toy.aboutUser = await userService.getById(toy.aboutUserId)
 
-//         console.log('CTRL SessionId:', req.sessionID);
-//         socketService.broadcast({type: 'toy-added', data: toy})
-//         socketService.emitToAll({type: 'user-updated', data: toy.byUser, room: req.session.user._id})
-//         res.send(toy)
-
-//     } catch (err) {
-//         console.log(err)
-//         logger.error('Failed to add toy', err)
-//         res.status(500).send({ err: 'Failed to add toy' })
-//     }
-// }
-
+async function addArt(req, res) {
+    try {
+        var art = req.body
+        const savedArt = await artService.add(art)
+        res.send(savedArt)
+    } catch (err) {
+        logger.error('Failed to add toy', err)
+        res.status(500).send({ err: 'Failed to add toy' })
+    }
+}

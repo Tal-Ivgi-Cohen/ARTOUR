@@ -12,7 +12,7 @@ export function artReducer(state = initialState, action = {}) {
         case 'ADD_ART':
             return { ...state, arts: [...state.arts, action.art] };
         case 'UPDATE_ART':
-            return { ...state, arts: [...state.arts.filter(art => action.art._id !== art._id), action.art,] };
+            return { ...state, arts: [ ...state.arts.filter(art => action.art._id !== art._id),action.art] };
         case 'REMOVE_ART':
             return { ...state, arts: state.arts.filter(art => art._id !== action.artId) };
         default:

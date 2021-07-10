@@ -1,31 +1,35 @@
 const dbService = require('../../service/db.service.js')
 const ObjectId = require('mongodb').ObjectId
-// const regexp = require('regexp')
-// const asyncLocalStorage = require('../../services/als.service')
-//JSON
-// const artsData = require('../../data/art.json')
+const logger = require('../../service/logger.service')
 
 async function query(filterBy) {
     let criteria = {}
     if (filterBy._id) {
-        console.log('filterBy serverr', filterBy);
+        //console.log('filterBy serverr', filterBy);
         criteria = _buildCriteria(filterBy)
     }
     try {
-
-        console.log('filterBy service bk', criteria);
-        // const criteria = filterBy
+      //  console.log('filterBy service bk', criteria);
         const collection = await dbService.getCollection('art')
-        console.log('criteria service before filter', criteria);
-        const arts = await collection.find(criteria).toArray()
-        console.log('arts', arts);
+   //     console.log('criteria', criteria);
+        var arts = await collection.find(criteria).toArray()
         return arts
     } catch (err) {
-        // logger.error('cannot find toys', err)
+        logger.error('cannot find arts', err)
         console.log('cannot find arts', err);
         throw err
     }
-    // return artsData.arts
+}
+
+async function getById(artId) {
+    try {
+        const collection = await dbService.getCollection('art')
+        const art = await collection.findOne({ '_id': ObjectId(artId) })
+        return art
+    } catch (err) {
+        logger.error(`while finding art ${artId}`, err)
+        throw err
+    }
 }
 
 
@@ -33,61 +37,96 @@ async function remove(artId) {
     console.log('artId', artId);
     try {
         const collection = await dbService.getCollection('art')
-        // const store = asyncLocalStorage.getStore()
-        // const { userId, isAdmin } = store
-        // const collection = await dbService.getCollection('toy')
-        // remove only if user is owner/admin
-        // const criteria = { _id: ObjectId(artId) }
-        const criteria = { _id: artId}
-
-        // if (!isAdmin) query.byUserId = ObjectId(artId)
-        await collection.deleteOne(criteria)
-        console.log(`remove art ${toyId}`)
-        // return await collection.deleteOne({ _id: ObjectId(artId), byUserId: ObjectId(userId) })
+        await collection.deleteOne({ '_id': ObjectId(artId) })
+       // console.log(`remove art ${toyId}`)
     } catch (err) {
-        console.log(`cannot remove art ${toyId}`, err)
+        console.log(`cannot remove art ${artId}`, err)
+        throw err
+    }
+}
+async function update(art) {
+    try {
+        // peek only updatable fields!
+        const artToSave = {
+            _id: ObjectId(art._id),
+            title: art.title,
+            price: art.price,
+           category: art.category,
+            technique: art.technique,
+            description: art.description,
+            style: art.style,
+            color: art.color,
+            size: art.size,
+            material: art.material,
+            imgUrl: art.imgUrl, 
+        }
+        const collection = await dbService.getCollection('art')
+        await collection.updateOne({ '_id': artToSave._id }, { $set: artToSave })
+        return artToSave;
+    } catch (err) {
+        logger.error(`cannot update art ${art._id}`, err)
         throw err
     }
 }
 
+async function add(art) {
+   try {
 
-// async function add(toy) {
-//     try {
-
-//         // peek only updatable fields!
-//         const toyToAdd = {
-//             byUserId: ObjectId(toy.byUserId),
-//             aboutUserId: ObjectId(toy.aboutUserId),
-//             txt: toy.txt
-//         }
-//         const collection = await dbService.getCollection('toy')
-//         await collection.insertOne(toyToAdd)
-//         return toyToAdd;
-//     } catch (err) {
-//         logger.error('cannot insert toy', err)
-//         throw err
-//     }
-// }
+         // peek only updatable fields!
+         const artToAdd = {
+            title: art.title,
+            price: art.price,
+            category: art.category,
+            technique: art.technique,
+            color:art.color
+         }
+         const collection = await dbService.getCollection('art')
+         await collection.insertOne(artToAdd)
+         return artToAdd;
+     } catch (err) {
+         logger.error('cannot insert art', err)
+         throw err
+     }
+ }
 
 function _buildCriteria(filterBy) {
-
     const criteria = {}
     const _id = (filterBy._id) ? filterBy._id : ''
     const artistId = (filterBy.artistId) ? filterBy.artistId : ''
+    //console.log('filterBy', filterBy);
+    criteria.artistId = {
+        $in:[
+            {
+                artistId: artistId
+            }
+        ]
+    }
+    
+    return criteria
+}
 
-    criteria.$or = [{
+
+function _buildCriteria(filterBy) {
+    const criteria = {}
+    const _id = (filterBy._id) ? filterBy._id : ''
+    const artistId = (filterBy.artistId) ? filterBy.artistId : ''
+    console.log('filterBy', filterBy);
+    criteria.$or = [
+        {
             _id: _id
         },
         {
-            "artist._id": artistId
+            artistId: artistId
         }
     ]
-
     return criteria
 }
 
 module.exports = {
     query,
     remove,
-    // add
+    add,
+    getById,
+    update,
 }
+ 

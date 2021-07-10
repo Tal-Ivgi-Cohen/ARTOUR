@@ -1,9 +1,6 @@
 const express = require('express')
-// const {requireAuth, requireAdmin} = require('../../middlewares/requireAuth.middleware')
-// const {log} = require('../../middlewares/logger.middleware')
-// const {addToy, getToys, deleteToy ,getToy} = require('./toy.controller')
-const { getArts , getArt , deleteArt} = require('./art.controller')
-
+const { requireArtist } = require('../../middlewares/requireAuth.middleware')
+const { getArts, getArt, deleteArt, updateArt, addArt } = require('./art.controller')
 const router = express.Router()
 
 // middleware that is specific to this router
@@ -12,10 +9,9 @@ const router = express.Router()
 
 router.get('/', getArts)
 router.get('/:id', getArt)
-// router.post('/',  requireAuth, addToy)
-// router.post('/', addToy)
-router.delete('/:id',deleteArt)
-// router.delete('/:id',  requireAuth, deleteToy)
+router.put('/:id', updateArt)
+router.post('/', requireArtist, addArt)
+router.delete('/:id',requireArtist, deleteArt)
 
 
 module.exports = router

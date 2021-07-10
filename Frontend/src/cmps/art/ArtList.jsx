@@ -1,7 +1,6 @@
 import { ArtPreview } from './ArtPreview.jsx';
 
 export function ArtList({ arts }) {
-
     return (
         <section className="art-list-container">
             <div className="art-list">

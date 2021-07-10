@@ -1,6 +1,6 @@
 import React from 'react'
 import { ArtApp } from '../art/ArtApp.jsx'
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { Hero } from '../../cmps/art/Hero.jsx'
 
 

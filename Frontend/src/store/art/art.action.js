@@ -4,8 +4,9 @@ export function loadArts(filterBy) {
     return async dispatch => {
         try {
             // loadArts
-            const arts = await artService.loadArts(filterBy);
-        console.log(arts);
+        const arts = await artService.loadArts(filterBy);
+        //console.log('arts',arts);
+        //console.log('filterBy action', filterBy);
             dispatch({ type: 'SET_ARTS', arts });
 
         } catch (err) {
@@ -24,11 +25,11 @@ export function removeArt(artId) {
         }
     };
 }
-export function saveArt(art) {
+/*export function saveArt(art) {
     return async dispatch => {
         try {
             const arts = await artService.save(art);
-            console.log('arts after update', arts);
+            //console.log('arts after update', arts);
             const action = {
                 type: 'SET_ARTS',
                 arts: arts
@@ -39,11 +40,25 @@ export function saveArt(art) {
         }
 
     };
+}*/
+export function saveArt(art) {
+    return async dispatch => {
+        try {
+            await artService.save(art)
+           // console.log('arts after update', art);
+            dispatch({ type: art._id ? 'UPDATE_ART' : 'ADD_ART', art: art })
+        } catch (err) {
+            console.log(`ToysActions: err in ${art._id ? 'update art' : 'add art'}${err}`)
+        }
+    }
 }
+
+
 export function setArt(artId) {
     return async dispatch => {
         try {
             const art = await artService.getById(artId);
+           // console.log('art', art);
             dispatch({ type: 'SET_ART', art });
         } catch (err) {
             console.log('Art Actions: err in selected Art', err);

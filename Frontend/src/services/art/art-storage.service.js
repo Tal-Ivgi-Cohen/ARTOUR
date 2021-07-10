@@ -27,14 +27,14 @@ async function query(entityType,filterBy) {
   let entities = await JSON.parse(localStorage.getItem(entityType)) || [];
   if (!entities || !entities.length) {
     entities = gData[entityType];
-    console.log('entities',entities);
+   // console.log('entities',entities);
     _save(entityType, entities);
   }
   if (filterBy){
   entities = entities.filter(art => (art.artist._id === filterBy.artistId));
-  console.log('filterBy.artistId',filterBy.artistId);
+ // console.log('filterBy.artistId',filterBy.artistId);
   }
-  console.log('entities',entities);
+ // console.log('entities',entities);
   return entities;
 }
 //DETAILS FIND ONE BY ID
@@ -52,7 +52,7 @@ async function post(entityType, newEntity) {
 }
 //UPDATE
 async function put(entityType, updatedEntity) {
-  console.log('the art in storage service', updatedEntity);
+ // console.log('the art in storage service', updatedEntity);
   const entities = await query(entityType);
   const idx = entities.findIndex(entity => entity._id === updatedEntity._id);
   entities.splice(idx, 1, updatedEntity);

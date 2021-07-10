@@ -26,12 +26,13 @@ class _ArtDetails extends React.Component {
     await setArt(artId);
     const { selectedArt } = this.props;
     const { _id, artist } = selectedArt;
+    //console.log('selectedArt', selectedArt)
     const filterBy = {
       _id,
       artistId: artist._id,
     };
     this.setState({ filterBy }, () => {
-      console.log("this.state.filterBy", this.state.filterBy);
+      //console.log("this.state.filterBy", this.state.filterBy);
      loadArts(this.state.filterBy);
     });
     saveCartItem();
@@ -165,7 +166,7 @@ class _ArtDetails extends React.Component {
         
          
         <div className="artist-list-details flex  column space-between">
-        <Link to={`/artist/${selectedArt.artist.id}`}>
+        <Link to={`/artist/${selectedArt.artist._id}`}>
            <button className="btn-more-work">More work by {selectedArt.artist.fullname}
             </button>
              {" "} 

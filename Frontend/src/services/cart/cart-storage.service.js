@@ -30,7 +30,7 @@ async function post(entityType, newEntity) {
 }
 //UPDATE
 async function put(entityType, updatedEntity) {
-  console.log('the art in storage service', updatedEntity);
+  //console.log('the art in storage service', updatedEntity);
   const entities = await query(entityType);
   const idx = entities.findIndex(entity => entity._id === updatedEntity._id);
   entities.splice(idx, 1, updatedEntity);

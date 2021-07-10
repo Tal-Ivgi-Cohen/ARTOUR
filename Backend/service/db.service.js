@@ -7,8 +7,8 @@ module.exports = {
 }
 
 // Database Name
-const dbName = 'ARTOUR_DB'
-// const dbName = 'artour'
+const dbName = 'ARTOURM_DB'
+//const dbName = 'artour'
 
 var dbConn = null
 
@@ -16,7 +16,7 @@ async function getCollection(collectionName) {
     try {
         const db = await connect()
         const collection = await db.collection(collectionName)
-        console.log('collection db service');
+        console.log('collection db service', collectionName);
         return collection
     } catch (err) {
         // logger.error('Failed to get Mongo collection', err)

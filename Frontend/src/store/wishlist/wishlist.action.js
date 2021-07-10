@@ -14,9 +14,9 @@ export function removeWishItem(wishItemId) {
 export function saveWishItem(wishItem) {
     return async () => {
         try {
-            console.log('saving to cart', wishItem)
+            //console.log('saving to cart', wishItem)
             const wishItems = await wishlistService.add(wishItem);
-            console.log('user\'s cart after update', wishItems);
+           // console.log('user\'s cart after update', wishItems);
         } catch (err) {
             console.log('CartActions: err in saveCart', err);
         }
