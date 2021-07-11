@@ -50,8 +50,7 @@ const logger = require('./service/logger.service')
 
 
 const port = process.env.PORT || 3030;
-app.listen(port, () => {
-    //logger.info('Server is running on port: ' + port)
+http.listen(port, () => {
     console.log('Server is running on port: ' + port);
 })
 console.log('I am Here!, am I?')

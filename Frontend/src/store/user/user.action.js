@@ -6,7 +6,7 @@ export function loadUsers() {
             const users = await userService.query();
             dispatch({ type: 'SET_USERS', users });
         } catch (err) {
-            console.log('User Actions: err in loaded users', err);
+           // console.log('User Actions: err in loaded users', err);
         }
     };
 }
@@ -20,7 +20,7 @@ export function loadLoggedInUser() {
             }
 
         } catch (err) {
-            console.log('User Actions: err in loaded User', err);
+            //console.log('User Actions: err in loaded User', err);
         }
     };
 }
@@ -34,7 +34,7 @@ export function login(credentials) {
                 dispatch({ type: 'LOGIN', user });
             }
         } catch (err) {
-            console.log('User Actions: err in login', err);
+           // console.log('User Actions: err in login', err);
         }
     };
 }
@@ -45,7 +45,7 @@ export function logout() {
             userService.logout();
             dispatch({ type: 'LOGOUT' });
         } catch (err) {
-            console.log('User Actions: err in logout', err);
+          //  console.log('User Actions: err in logout', err);
         }
     };
 }
@@ -59,7 +59,7 @@ export function signup(userInfo) {
                 dispatch({ type: 'SIGNUP', user, users });
             }
         } catch (err) {
-            console.log('User Actions: err in signUp', err);
+            //console.log('User Actions: err in signUp', err);
         }
     };
 }
@@ -72,7 +72,7 @@ export function updateUser(user) {
                 dispatch({ type: 'UPDATE_USER', users, user });
             }
         } catch (err) {
-            console.log('User Actions: err in updating a user', err);
+           //console.log('User Actions: err in updating a user', err);
         }
     };
 }
@@ -85,7 +85,7 @@ export function resetPassword(email, password) {
                 dispatch({ type: 'RESET_PASSWORD', users });
             }
         } catch (err) {
-            console.log('User Actions: err in resetting user password', err);
+          //  console.log('User Actions: err in resetting user password', err);
         }
     };
 }

@@ -7,7 +7,7 @@ export function removeWishItem(wishItemId) {
         try {
             await wishlistService.remove(wishItemId);
         } catch (err) {
-            console.log('ArtActions: err in removeArt', err);
+            //console.log('ArtActions: err in removeArt', err);
         }
     };
 }
@@ -18,7 +18,7 @@ export function saveWishItem(wishItem) {
             const wishItems = await wishlistService.add(wishItem);
            // console.log('user\'s cart after update', wishItems);
         } catch (err) {
-            console.log('CartActions: err in saveCart', err);
+            //console.log('CartActions: err in saveCart', err);
         }
 
     };

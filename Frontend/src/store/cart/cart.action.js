@@ -8,7 +8,7 @@ export function loadCartItems(user) {
             dispatch({ type: 'SET_CART_ITEMS', cartItems });
             //console.log('load arts', cartItems);
         } catch (err) {
-            console.log('Art Actions: err in loaded Arts', err);
+           // console.log('Art Actions: err in loaded Arts', err);
         }
     };
 }
@@ -20,7 +20,7 @@ export function removeCartItem(cartItemId) {
             //await cartService.remove(cartItemId);
             // dispatch({ type: 'REMOVE_CART_ITEM', cartItemId });
         } catch (err) {
-            console.log('ArtActions: err in removeArt', err);
+          // console.log('ArtActions: err in removeArt', err);
         }
     };
 }
@@ -31,7 +31,7 @@ export function saveCartItem(cartItem) {
             const cartItems = await cartService.add(cartItem);
            // console.log('user\'s cart after update', cartItems);
         } catch (err) {
-            console.log('CartActions: err in saveCart', err);
+            //console.log('CartActions: err in saveCart', err);
         }
 
     };

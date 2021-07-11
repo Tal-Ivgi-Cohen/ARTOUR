@@ -64,7 +64,7 @@ class _ArtCart extends React.Component {
       buyerId,
       artId
     })
-    console.log('artist.orders', artist.orders);
+    //console.log('artist.orders', artist.orders);
     updateUser(artist)
     localStorage.setItem('shoppingCart', [])
   };
@@ -119,7 +119,7 @@ class _ArtCart extends React.Component {
             </Table>
           </div>
         ) : (
-          <EmptyState className="empty-state" txt="Your bag is currently empty" />
+          <EmptyState className="empty-state" txt="Please sign into your account to view your cart" />
         )}
 
 
