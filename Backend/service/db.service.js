@@ -8,7 +8,6 @@ module.exports = {
 
 // Database Name
 const dbName = 'ARTOURM_DB'
-//const dbName = 'artour'
 
 var dbConn = null
 
@@ -19,7 +18,6 @@ async function getCollection(collectionName) {
         console.log('collection db service', collectionName);
         return collection
     } catch (err) {
-        // logger.error('Failed to get Mongo collection', err)
         console.log('Failed to get Mongo collection', err);
         throw err
     }
@@ -33,7 +31,6 @@ async function connect() {
         dbConn = db
         return db
     } catch (err) {
-        // logger.error('Cannot Connect to DB', err)
         console.log('Cannot Connect to DB', err);
 
 
