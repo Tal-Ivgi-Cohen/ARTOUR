@@ -23,7 +23,6 @@ async function getArts(req, res) {
     console.log('req.query', req.query);
     const filterBy = {}
     const { _id, artistId } = req.query
-    //console.log('getArts', req.query);
     try {
         filterBy['_id'] = _id
         filterBy.artistId = artistId
@@ -50,11 +49,9 @@ async function updateArt(req, res) {
         const savedArt = await artService.update(art)
         res.send(savedArt)
     } catch (err) {
-        //logger.error('Failed to update art', err)
         res.status(500).send({ err: 'Failed to update art' })
     }
 }
-
 
 async function addArt(req, res) {
     try {
