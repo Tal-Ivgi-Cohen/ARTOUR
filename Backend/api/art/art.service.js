@@ -5,13 +5,10 @@ const logger = require('../../service/logger.service')
 async function query(filterBy) {
     let criteria = {}
     if (filterBy._id) {
-        //console.log('filterBy serverr', filterBy);
         criteria = _buildCriteria(filterBy)
     }
     try {
-      //  console.log('filterBy service bk', criteria);
         const collection = await dbService.getCollection('art')
-   //     console.log('criteria', criteria);
         var arts = await collection.find(criteria).toArray()
         return arts
     } catch (err) {
@@ -38,7 +35,6 @@ async function remove(artId) {
     try {
         const collection = await dbService.getCollection('art')
         await collection.deleteOne({ '_id': ObjectId(artId) })
-       // console.log(`remove art ${toyId}`)
     } catch (err) {
         console.log(`cannot remove art ${artId}`, err)
         throw err
@@ -93,7 +89,6 @@ function _buildCriteria(filterBy) {
     const criteria = {}
     const _id = (filterBy._id) ? filterBy._id : ''
     const artistId = (filterBy.artistId) ? filterBy.artistId : ''
-    //console.log('filterBy', filterBy);
     criteria.artistId = {
         $in:[
             {
