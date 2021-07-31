@@ -33,11 +33,6 @@ async function getById(userId) {
         const collection = await dbService.getCollection('user')
         const user = await collection.findOne({ '_id': ObjectId(userId) })
         delete user.password
-        //user.givenReviews = await reviewService.query({ byUserId: ObjectId(user._id) })
-        /*user.givenReviews = user.givenReviews.map(review => {
-            delete review.byUser
-            return review
-        })*/
         return user
     } catch (err) {
         logger.error(`while finding user ${userId}`, err)
@@ -48,7 +43,6 @@ async function getByUserMail(email) {
     try {
         const collection = await dbService.getCollection('user')
         const user = await collection.findOne({ email })
-        //console.log('user in user service', user);
         return user
     } catch (err) {
         logger.error(`while finding user ${username}`, err)
@@ -85,7 +79,6 @@ async function update(user) {
 
 async function add(user) {
     try {
-        // peek only updatable fields!
         const userToAdd = {
             username: user.username,
             password: user.password,
@@ -112,9 +105,6 @@ function _buildCriteria(filterBy) {
                 fullname: txtCriteria
             }
         ]
-    }
-    if (filterBy.minBalance) {
-        criteria.score = { $gte: filterBy.minBalance }
     }
     return criteria
 }
