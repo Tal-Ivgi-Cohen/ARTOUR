@@ -12,8 +12,6 @@ const rootReducer = combineReducers({
   cartModule: cartReducer
 });
 
-
-
 export const store = createStore(rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
