@@ -8,8 +8,7 @@ import { PurchaseModal } from "../../cmps/art/PurchaseModal.jsx";
 import { WishListModal } from "../../cmps/art/WishlistModal.jsx"
 import { saveCartItem } from "../../store/cart/cart.action.js";
 import { saveWishItem } from "../../store/wishlist/wishlist.action.js"
-// test url :
-// http://localhost:3000/#/art/a101
+
 
 class _ArtDetails extends React.Component {
   state = {
@@ -32,7 +31,6 @@ class _ArtDetails extends React.Component {
       artistId: artist._id,
     };
     this.setState({ filterBy }, () => {
-      //console.log("this.state.filterBy", this.state.filterBy);
      loadArts(this.state.filterBy);
     });
     saveCartItem();
