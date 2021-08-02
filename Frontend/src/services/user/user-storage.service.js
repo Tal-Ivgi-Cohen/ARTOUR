@@ -12,7 +12,6 @@ export const storageService = {
 };
 
 
-//READ LIST
 async function query(entityType) {
   let entities = await JSON.parse(localStorage.getItem(entityType)) || [];
   if (!entities || !entities.length) {
@@ -52,7 +51,6 @@ async function signup(newUser) {
   return { users, user: newUser };
 }
 
-//UPDATE
 async function updateUser(updatedUser) {
   const users = await query('users');
   const idx = users.findIndex(user => updatedUser._id === user._id);
@@ -62,7 +60,6 @@ async function updateUser(updatedUser) {
   return users;
 }
 
-//RESET PASSWORD
 async function resetPassword(email, password) {
   const users = await query('users');
   const idx = users.findIndex(user => user.email === email);
@@ -71,13 +68,11 @@ async function resetPassword(email, password) {
   return users;
 }
 
-//SAVE USER TO STORAGE
 function _saveLocalUser(user) {
   sessionStorage.setItem("user", JSON.stringify(user));
   return user;
 }
 
-//SAVE ENTITIES TO STORAGE
 function _save(entityType, entities) {
   localStorage.setItem(entityType, JSON.stringify(entities));
 }
