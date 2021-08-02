@@ -7,7 +7,6 @@ import {
 import { routes } from './routes.js';
 import { Header } from './cmps/util/header/Header.jsx';
 import { Footer } from './cmps/util/Footer.jsx';
-
 import './styles/styles.scss';
 
 export function App() {
