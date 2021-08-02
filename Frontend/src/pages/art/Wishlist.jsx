@@ -30,12 +30,6 @@ class _Wishlist extends React.Component {
         this.setState({ wishlist })
     }
 
-    /*handleChange = ({ target }) => {
-      const value = target.value
-      const field = target.name
-      this.setState({ note: value })
-    }*/
-
 
     render() {
         const { wishlist } = this.state;
