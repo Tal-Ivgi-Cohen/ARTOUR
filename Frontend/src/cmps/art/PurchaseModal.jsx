@@ -11,7 +11,6 @@ function getModalStyle() {
         right: 0,
         
 
-        //transform: `translate(-${top}%, -${left}%)`,
     };
 }
 
