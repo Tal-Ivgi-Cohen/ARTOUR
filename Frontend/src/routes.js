@@ -10,9 +10,6 @@ import { Checkout } from './pages/art/Checkout.jsx';
 import { ArtistProfile } from './pages/artist/ArtistProfile.jsx';
 import { Wishlist } from './pages/art/Wishlist.jsx';
 
-
-
-
 export const routes = [
     {
         path: '/home',
