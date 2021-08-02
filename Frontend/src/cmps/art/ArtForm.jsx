@@ -26,13 +26,11 @@ export class ArtForm extends React.Component {
   componentDidMount() {
     const { user, history, selectedArt } = this.props;
     if (selectedArt) {
-      // Edit mode - check if curr user is the artist
       if (user && selectedArt.artist._id === user._id) {
         this.setState({ art: selectedArt });
         this.setState({ isEditMode: true });
       } else history.push('/account');
     } else {
-      // Add mode - check if a user is logged in
       if (user) {
         const { _id, fullName, imgUrl } = user;
         const currUserArtist = { _id, fullName, imgUrl };
@@ -123,8 +121,6 @@ export class ArtForm extends React.Component {
     ev.preventDefault();
     const { art } = this.state;
     await this.props.saveArt(art);
-    //console.log('art in art form', art);
-    // go to explore page
     this.props.history.push(`/account/arts`);
   };
 
