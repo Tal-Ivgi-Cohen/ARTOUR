@@ -35,10 +35,6 @@ class _Account extends Component {
       const userArts = arts
         ? arts.filter((art) => art.artist._id === loggedInUser._id)
         : [];
-        //console.log('arts in account', art)
-      // const ordersByUser = orders.filter(order => order.buyer.id === userId);
-      // const ordersToUser = orders.filter(order => order.items.filter(item => item.artist.id === userId));
-      // const userOrders = {ordersByUser,ordersToUser}
       const userOrders = loggedInUser.orders;
       return (
         <div className='account-page'>
