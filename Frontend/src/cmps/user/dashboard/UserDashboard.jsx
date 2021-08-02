@@ -14,7 +14,6 @@ export class UserDashboard extends Component {
   };
 
   async componentDidMount() {
-    // check if desktop or mobile
     const setResponsiveness = () => {
       return window.innerWidth < 900
         ? this.setState({ isMobileView: true })
@@ -23,7 +22,6 @@ export class UserDashboard extends Component {
     setResponsiveness();
     window.addEventListener('resize', () => setResponsiveness());
 
-    // check current tab
     this.props.history.push(`/account/${this.state.currTab}`);
     const { tab } = this.props;
     if (tab && this.tabs.includes(tab)) {
