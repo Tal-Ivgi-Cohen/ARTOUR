@@ -25,14 +25,11 @@ state={
       artistId: artist._id,
     };
     this.setState({ filterBy }, () => {
-      //console.log("this.state.filterBy", this.state.filterBy);
       loadArts(this.state.filterBy);
     });
 }
 findArtistUser=()=>{
- // console.log('props', this.props);
   const user = this.props.users.find((user)=> user._id === this.props.artist._id)
-  //console.log(('user',user));
   return user
 }
 
