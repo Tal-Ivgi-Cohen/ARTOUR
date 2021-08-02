@@ -9,7 +9,6 @@ import {
 import { EmptyState } from '../../util/EmptyState';
 
 export function UserOrders({ arts }) {
-  //console.log('arts', arts);
 
   return (
     <section className='user-orders'>
@@ -25,7 +24,6 @@ export function UserOrders({ arts }) {
               <TableCell title={'Title'}>Title</TableCell>
               <TableCell title={'Material'}>Material</TableCell>
               <TableCell title={'Price'}>Price</TableCell>
-              {/*  <TableCell>Size</TableCell>*/}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -41,7 +39,6 @@ export function UserOrders({ arts }) {
                 <TableCell title={art.title}>{art.title} </TableCell>
                 <TableCell title={art.material}>{art.material} </TableCell>
                 <TableCell title={`${art.price} $`}>{art.price} $</TableCell>
-                {/* <TableCell>{art.size.height}x{art.size.width} </TableCell>*/}
               </TableRow>
             ))}
           </TableBody>
