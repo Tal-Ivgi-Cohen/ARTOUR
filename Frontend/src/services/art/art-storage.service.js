@@ -11,7 +11,6 @@ export const storageService = {
 };
 
 
-//LOAD ARTS WITH ARTISTS
 async function loadArtsWithArtists(arts) {
   const users = await query('users');
   const artsWithArtists = arts.map(art => {
@@ -22,7 +21,6 @@ async function loadArtsWithArtists(arts) {
   return artsWithArtists;
 }
 
-//READ LIST
 async function query(entityType,filterBy) {
   let entities = await JSON.parse(localStorage.getItem(entityType)) || [];
   if (!entities || !entities.length) {
@@ -32,17 +30,15 @@ async function query(entityType,filterBy) {
   }
   if (filterBy){
   entities = entities.filter(art => (art.artist._id === filterBy.artistId));
- // console.log('filterBy.artistId',filterBy.artistId);
   }
- // console.log('entities',entities);
   return entities;
 }
-//DETAILS FIND ONE BY ID
+
 async function get(entityType, entityId) {
   const entities = await query(entityType);
   return entities.find(entity => entity._id === entityId);
 }
-//ADD
+
 async function post(entityType, newEntity) {
   newEntity._id = utilService.makeId();
   const entities = await query(entityType);
@@ -50,23 +46,22 @@ async function post(entityType, newEntity) {
   _save(entityType, entities);
   return entities;
 }
-//UPDATE
+
 async function put(entityType, updatedEntity) {
- // console.log('the art in storage service', updatedEntity);
   const entities = await query(entityType);
   const idx = entities.findIndex(entity => entity._id === updatedEntity._id);
   entities.splice(idx, 1, updatedEntity);
   _save(entityType, entities);
   return entities;
 }
-//DELETE
+
 async function remove(entityType, entityId) {
   const entities = await query(entityType);
   const idx = entities.findIndex(entity => entity._id === entityId);
   entities.splice(idx, 1);
   _save(entityType, entities);
 }
-//SAVE TO STORAGE
+
 function _save(entityType, entities) {
   localStorage.setItem(entityType, JSON.stringify(entities));
 }
