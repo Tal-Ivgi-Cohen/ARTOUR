@@ -39,7 +39,6 @@ export class UserForm extends Component {
 
   componentDidMount() {
     if (this.props.user) {
-      // Edit mode
       const { email, fullname, password, isArtist, imgUrl, orders } =
         this.props.user;
       this.setState({
@@ -72,7 +71,6 @@ export class UserForm extends Component {
   onSubmit = (ev) => {
     ev.preventDefault();
     const { email, fullname, password, isArtist, imgUrl, orders } = this.state;
-    // TODO: validate email & password
     const userInfo = {
       email,
       fullname,
@@ -82,12 +80,10 @@ export class UserForm extends Component {
       orders,
     };
     if (this.props.user) {
-      // Edit mode
       userInfo._id = this.props.user._id;
       this.props.updateUser(userInfo);
       this.props.editModeOff();
     } else {
-      // Add mode
       userInfo.isAdmin = false;
       this.props.signup(userInfo);
     }
@@ -201,5 +197,3 @@ export class UserForm extends Component {
     );
   }
 }
-
-// export const UserForm = withStyles(styles)(_UserForm);
